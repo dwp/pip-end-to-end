@@ -1,0 +1,572 @@
+{% block pageTitle %}
+Tell us how your health condition or disability affects you
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-signed-in-pip2.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            Submit your application by 3 December 2021
+
+          </p>
+        </div>
+      </div> -->
+
+      <h1 class="govuk-heading-l" style="margin-bottom: 40px;">
+        Tell us how your health condition or disability affects you
+      </h1>
+
+      <p class="govuk-heading">Download and read the instructions <a href="/public/pdfs/pip2-info-booklet-v1.pdf" download>Help with answering questions and providing evidence (PDF)</a></p>
+
+      <p>You can download a copy of your completed application when you've finished.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Tell us about your health
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.aboutyourhealth === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health/check">
+                    About your health
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-1-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="aboutyourhealth">Completed</strong>
+                </div>
+              {% elif sectionStatus.aboutyourhealth === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health/condition">
+                    About your health
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-1-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="aboutyourhealth">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health/condition">
+                    About your health
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-1-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="aboutyourhealth">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.aboutyourhealthprofessionals === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health-professionals/check">
+                    About your health or care professionals
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-2-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="about-your-health-professionals">Completed</strong>
+                </div>
+              {% elif sectionStatus.aboutyourhealthprofessionals === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health-professionals/check">
+                    About your health or care professionals
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-2-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="aboutyourhealth">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health-professionals/introduction">
+                    About your health or care professionals
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-2-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="aboutyourhealth">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+        {# Daily living activities #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Tell us about your daily living activities
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.preparingfood === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/preparing-food/check">
+                    Preparing food
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-1-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="preparingfood">Completed</strong>
+                </div>
+              {% elif sectionStatus.preparingfood === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/preparing-food/intro">
+                    Preparing food
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-1-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="preparingfood">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/preparing-food/intro">
+                    Preparing food
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-1-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="preparingfood">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.eatinganddrinking === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/eating-and-drinking/check">
+                    Eating and drinking
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-2-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="eatinganddrinking">Completed</strong>
+                </div>
+              {% elif sectionStatus.eatinganddrinking === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/eating-and-drinking/intro">
+                    Eating and drinking
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-2-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="eatinganddrinking">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/eating-and-drinking/intro">
+                    Eating and drinking
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-2-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="eatinganddrinking">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.managingtreatments === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-treatments/check">
+                  Managing treatments
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-3-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="managingtreatments">Completed</strong>
+                </div>
+              {% elif sectionStatus.managingtreatments === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-treatments/intro">
+                    Managing treatments
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-3-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="managingtreatments">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-treatments/intro">
+                    Managing treatments
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-3-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="managingtreatments">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.washingandbathing === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/washing-and-bathing/check">
+                    Washing and bathing
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-4-status">
+                  <strong class="govuk-tag govuk-tag--blue"  id="washingandbathing">Completed</strong>
+                </div>
+              {% elif sectionStatus.washingandbathing === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/washing-and-bathing/intro">
+                    Washing and bathing
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-4-status">
+                  <strong class="govuk-tag govuk-tag--light-blue"  id="washingandbathing">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/washing-and-bathing/intro">
+                    Washing and bathing
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-4-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="washingandbathing">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.managingtoiletneeds === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-toilet-needs/check">
+                    Using the toilet and managing incontinence
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-5-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="managingtoiletneeds">Completed</strong>
+                </div>
+              {% elif sectionStatus.managingtoiletneeds === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-toilet-needs/intro">
+                    Using the toilet and managing incontinence
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-5-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="managingtoiletneeds">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-toilet-needs/intro">
+                    Using the toilet and managing incontinence
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-5-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="managingtoiletneeds">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.dressingandundressing === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/dressing-and-undressing/check">
+                    Dressing and undressing
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-6-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="dressingandundressing">Completed</strong>
+                </div>
+              {% elif sectionStatus.dressingandundressing === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/dressing-and-undressing/intro">
+                    Dressing and undressing
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-6-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="dressingandundressing">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/dressing-and-undressing/intro">
+                    Dressing and undressing
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-6-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="dressingandundressing">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.talkingandlistening === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/talking-and-listening/check">
+                    Talking, listening and understanding
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-7-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="talkingandlistening">Completed</strong>
+                </div>
+              {% elif sectionStatus.talkingandlistening === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/talking-and-listening/intro">
+                    Talking,listening and understanding
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-7-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="talkingandlistening">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/talking-and-listening/intro">
+                    Talking,listening and understanding
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-7-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="talkingandlistening">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.reading === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/reading/check">
+                    Reading
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-8-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="reading">Completed</strong>
+                </div>
+              {% elif sectionStatus.reading === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/reading/intro">
+                    Reading
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-8-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="reading">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/reading/intro">
+                    Reading
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-8-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="reading">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.mixingwithotherpeople === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/mixing-with-other-people/check">
+                    Mixing with other people
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-9-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="mixingwithotherpeople">Completed</strong>
+                </div>
+              {% elif sectionStatus.mixingwithotherpeople === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/mixing-with-other-people/intro">
+                    Mixing with other people
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-9-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="mixingwithotherpeople">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/mixing-with-other-people/intro">
+                    Mixing with other people
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-9-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="mixingwithotherpeople">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.managingmoney === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-money/check">
+                    Managing money
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-10-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="managingmoney">Completed</strong>
+                </div>
+              {% elif sectionStatus.managingmoney === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-money/intro">
+                    Managing money
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-10-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="managingmoney">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/managing-money/intro">
+                    Managing money
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="daily-living-activities-10-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="managingmoney">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+        {# Mobility activities #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Tell us about your mobility activities
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.planningandfollowingajourney === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/planning-and-following-a-journey/check">
+                    Planning and following a journey
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="mobility-activities-1-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="planningandfollowingajourney">Completed</strong>
+                </div>
+              {% elif sectionStatus.planningandfollowingajourney === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/planning-and-following-a-journey/intro">
+                    Planning and following a journey
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="mobility-activities-1-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="planningandfollowingajourney">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/planning-and-following-a-journey/intro">
+                    Planning and following a journey
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="mobility-activities-1-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="planningandfollowingajourney">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.movingaround === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/moving-around/check">
+                    Moving around
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="mobility-activities-2-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="movingaround">Completed</strong>
+                </div>
+              {% elif sectionStatus.movingaround === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/moving-around/intro">
+                    Moving around
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="mobility-activities-2-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="movingaround">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/moving-around/intro">
+                    Moving around
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="mobility-activities-2-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="movingaround">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+        {# Additional information #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Tell us about anything else
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if sectionStatus.additionalinformation === "completed" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/additional-information/check">
+                    Additional information
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="additional-info-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="additionalinformation">Completed</strong>
+                </div>
+              {% elif sectionStatus.additionalinformation === "inprogress" %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/additional-information/intro">
+                    Additional information
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="additional-info-status">
+                  <strong class="govuk-tag govuk-tag--light-blue" id="additionalinformation">Not complete</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link"  href="/apply-for-pip/health-form/additional-information/intro">
+                    Additional information
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="additional-info-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="additionalinformation">Not started</strong>
+                </div>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+        {# Upload supporting evidence and apply #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">5. </span> Upload supporting evidence and apply
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              {% if
+                sectionStatus.preparingfood === "completed" and
+                sectionStatus.eatinganddrinking === "completed" and
+                sectionStatus.managingtreatments === "completed" and
+                sectionStatus.washingandbathing === "completed" and
+                sectionStatus.managingtoiletneeds === "completed" and
+                sectionStatus.dressingandundressing === "completed" and
+                sectionStatus.talkingandlistening === "completed" and
+                sectionStatus.reading === "completed" and
+                sectionStatus.mixingwithotherpeople === "completed" and
+                sectionStatus.managingmoney === "completed" and
+                sectionStatus.planningandfollowingajourney === "completed" and
+                sectionStatus.movingaround === "completed" and
+                sectionStatus.additionalinformation === "completed"
+              %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/supporting-evidence">
+                    Upload supporting evidence and apply
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="apply-status">
+                  <strong class="govuk-tag govuk-tag--grey" id="uploadsupportingevidenceandapply">Not started</strong>
+                </div>
+              {% else %}
+                <div class="govuk-task-list__name-and-hint">
+                  <div>
+                    Submit your application
+                  </div>
+                </div>
+                <div class="govuk-task-list__status govuk-task-list__status--cannot-start-yet" id="apply-status">
+                  Cannot start yet
+                </div>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+{#       {% include "live-pip2-v1-0/_prototype-shortcuts.html" %} #}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

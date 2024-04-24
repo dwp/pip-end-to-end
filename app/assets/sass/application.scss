@@ -1,6 +1,45 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+
+//VISION PHASE BANNER
+
+div.govuk-event-banner {
+  border: 4px dotted #491644;
+  margin:40px 0;
+  background-color: #ffffff;
+}
+
+div.govuk-event-banner__content {
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+//WELSH TOGGLE
+
+.dwp-language-toggle__list {
+  margin-top: 1em;
+  text-align: right;
+}
+
+.dwp-language-toggle__list-item:first-child:after {
+  content: "";
+  display: inline-block;
+  border-right: 1px solid #0b0c0c;
+  position: relative;
+  top: 0.1875em;
+  height: 1em;
+}
+
+.dwp-language-toggle__list-item {
+  display: inline-block;
+}
+
+//INSET LIGHT
+
+div.govuk-inset-text-light {
+  border-left: 1px solid #b1b4b6;
+}

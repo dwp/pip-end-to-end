@@ -1,0 +1,43 @@
+{% block pageTitle %}
+We need you to confirm your identity
+{% endblock %}
+
+{% extends "apply-for-pip/includes/layout-oidv.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/lang-toggle.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form id="form" method="post" action="#">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">We need you to confirm your identity</h1>
+
+      <p>We will ask you about items you may have, like your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>UK passport</li>
+        <li>UK driving licence</li>
+        <li>Payslips or P60</li>
+        <li>Self Assessment</li>
+        <li>Tax credits (optional Voice ID)</li>
+        <li>Credit record</li>
+      </ul>
+
+      <p>You will be able to choose how to confirm your identity.</p>
+
+      <p>We do this to protect you against fraud.</p>
+
+      <input type="submit" class="govuk-button" value="Continue" id="submit">
+
+      <p><a href="more-information-from-cyi-start">I do not have any of these items</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+</form>
+
+{% endblock %}
