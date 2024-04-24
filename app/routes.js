@@ -3,7 +3,20 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 
+const util = require('util')
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Add your routes here
+// ROUTES REDIRECT START
+
+const applyforpip = require('./routes/apply-for-pip')
+const pipregister = require('./routes/pip-register')
+
+// ROUTES REDIRECT END
+
+// ROUTER LIST START
+
+applyforpip(router);
+pipregister(router);
+
+// ROUTER LIST END
