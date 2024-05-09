@@ -1,0 +1,33 @@
+{% if data["application-about-a12-score-overwrite"] == "a1" %}
+  Descriptor A: Can stand and then move more than 200 metres, either aided or unaided
+
+{% elif data["application-about-a12-score-overwrite"] == "b2" %}
+  Descriptor B: Can stand and then move more than 50 metres but no more than 200 metres, either aided or unaided
+
+{% elif data["application-about-a12-score-overwrite"] == "c3" %}
+  Descriptor C: Can stand and then move unaided more than 20 metres but no more than 50 metres
+
+{% elseif data["application-about-a12-score-overwrite"] == "d4" %}
+  Descriptor D: Can stand and then move using an aid or appliance more than 20 metres but no more than 50 metres
+
+{% elseif data["application-about-a12-score-overwrite"] == "e5" %}
+  Descriptor E: Can stand and then move more than 1 metre but no more than 20 metres, either aided or unaided
+
+{% elseif data["application-about-a12-score-overwrite"] == "f6" %}
+
+  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">
+    Descriptor F: Cannot, either aided or unaided:
+
+    <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+      <li>
+        stand; or
+      </li>
+      <li>
+        move more than 1 metre
+      </li>
+    </ul>
+
+{% else %}
+  Blank
+
+{% endif %}

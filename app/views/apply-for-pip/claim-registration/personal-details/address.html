@@ -2,6 +2,9 @@
 Address
 {% endblock %}
 
+{% set pageStatus="Explore" %}
+{% set pageNotes="To be replaced by 'Find an address' pattern" %}
+
 {% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
 
 {% block beforeContent %}
@@ -48,7 +51,7 @@ Address
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="address-county">
-              County 
+              County
             </label>
             <input class="govuk-input govuk-input--width-10" id="address-county" name="address-county" type="text">
           </div> <!-- govuk-form-group -->
@@ -103,6 +106,17 @@ Address
 
       <input type="submit" class="govuk-button" value="Continue" id="submit">
 
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Thin slice criteria 1 & 8</h2>
+          <p class="govuk-body-s">If a HAS postcode and has no alternitve correspondance address, then route through Thin Slice</p>
+          <p class="govuk-body-s">Criteria 1 - Postcode in HTA area (E5, N2, N3, N4, N6 and B14, B17, B19 and B78)</p>
+          <p class="govuk-body-s">Criteria 8 - Correspondance address does not differ from residential address</p>
+        </div>
       </div>
 
     </div> <!-- govuk-grid-column-two-thirds -->

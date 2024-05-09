@@ -2,6 +2,9 @@
 National Insurance number
 {% endblock %}
 
+{% set pageStatus="Explore" %}
+{% set pageNotes="May not need to display as part of FINDR work" %}
+
 {% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
 
 {% block beforeContent %}
@@ -28,6 +31,19 @@ National Insurance number
       </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Thin slice criteria 7</h2>
+          <p class="govuk-body-s">If NOT JY/GY, then route through Thin Slice</p>
+          <p class="govuk-body-s">Criteria 7 - NINo is present and not JY/GY NINo</p>
+        </div>
+      </div>
+
 
     </div> <!-- govuk-grid-column-two-thirds -->
   </div> <!-- govuk-grid-column-two-thirds -->

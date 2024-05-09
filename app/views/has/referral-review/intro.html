@@ -1,0 +1,45 @@
+{% set pageTitle = "Referral review" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Health Assessment Service (HAS)
+      </h1>
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Review referrals</h2>
+          <p class="govuk-body-s">Once NCAT have built the referral, HCPs will review the referral including any supporting evidence that's in HAS or in the claimant Sharepoint folder. 
+          <p class="govuk-body-s">HCPs will then record the outcome of that review and make a recommendation of how to progress the referral: 
+          <ul class="govuk-list govuk-list--bullet govuk-body-s">
+            <li>gather more evidence</li>
+            <li>require a paper based review</li>
+            <li>require a telephone assessment</li>
+            <li>require face to face assessment</li>
+            <li>SREL case</li>
+          </ul>
+          <p class="govuk-body-s">Healthcare professionals (HCP) update the timeline to say a HCP review is complete.</p>
+          <p class="govuk-body-s">The case has now been passed to the NCAT team who need to book an assessment.</p>
+
+          <p class="govuk-body-s"><a href="/has/assessment-booking/intro">Continue to NCAT assessment booking</a></p>
+          <p class="govuk-body-s"><a href="/has/assessment/intro">Skip and view next HCP activity</a></p>
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -2,6 +2,9 @@
 Date of birth
 {% endblock %}
 
+{% set pageStatus="Explore" %}
+{% set pageNotes="May be read only or not need to display as part of FINDR work" %}
+
 {% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
 
 {% block beforeContent %}
@@ -58,6 +61,18 @@ Date of birth
       </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Thin slice criteria 4</h2>
+          <p class="govuk-body-s">If of working age, then route through thin slice</p>
+          <p class="govuk-body-s">Criteria 4 - Age criteria met (bewteen 16 and 66)</p>
+        </div>
+      </div>
 
     </div> <!-- govuk-grid-column-two-thirds -->
   </div> <!-- govuk-grid-column-two-thirds -->

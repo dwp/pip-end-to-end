@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block header %}
+ {% include "explore-header-global-nav-multi.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-award-review-date-end-date-playback" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-0-3/record-id.html" %}
+
+      {{ govukDateInput({
+        id: "application-6-assessment-report-completed",
+        namePrefix: "application-6-assessment-report-completed",
+        fieldset: {
+          legend: {
+            html: "Enter the date the assessment report was completed",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["application-6-assessment-report-completed-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["application-6-assessment-report-completed-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["application-6-assessment-report-completed-year"]
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

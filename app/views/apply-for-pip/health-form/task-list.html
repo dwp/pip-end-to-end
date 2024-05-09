@@ -73,7 +73,16 @@ Tell us how your health condition or disability affects you
               {% endif %}
             </li>
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              {% if sectionStatus.aboutyourhealthprofessionals === "completed" %}
+              {% if data['health-hcps'] === 'Yes' %}
+                <div class="govuk-task-list__name-and-hint">
+                  <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health-professionals/check">
+                    About your health or care professionals
+                  </a>
+                </div>
+                <div class="govuk-task-list__status" id="about-your-health-2-status">
+                  <strong class="govuk-tag govuk-tag--blue" id="about-your-health-professionals">Completed</strong>
+                </div>
+              {% elif sectionStatus.aboutyourhealthprofessionals === "completed" %}
                 <div class="govuk-task-list__name-and-hint">
                   <a class="govuk-link govuk-task-list__link" href="/apply-for-pip/health-form/about-your-health-professionals/check">
                     About your health or care professionals

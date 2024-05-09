@@ -1,0 +1,51 @@
+{% set pageTitle = "Case worker - manual checks" %}
+
+{% set pageStatus="Requirement" %}
+{% set pageNotes="New screens and UI required for case worker manual checks" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Case worker
+      </h1>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          New screens required
+        </strong>
+      </div>
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Case worker - manual checks</h2>
+          <p class="govuk-body-s">Once the claimant has registered, the service will set a date of claim and timer for completion. A case worker will manually check against thin slice rules based on what the claimant has entered.</p>
+          <p class="govuk-body-s">If the rules to retain it in the new service are met and the service isn't at capacity it will continue through the thin slice. </p>
+          <p class="govuk-body-s">A case worker will also complete a series of eligibility checks using the new service. They will check other systems like Customer Information System (CIS) / Searchlight.
+          <p class="govuk-body-s">If the answers to the eligibility question make it complicated, then it will be disallowed from the thin slice and routed back to PIPCS for Business as Usual.</p>
+          <p class="govuk-body-s">Once the Health Information Gather has been completed by the claimant and there are no further tasks, the case is referred to the Health Assessment Service (HAS).</p>
+
+          <p class="govuk-body-s"><a href="/has/referral-build/intro">View HAS journey</a>
+          <p class="govuk-body-s"><a href="/case-management">Skip and view case manager journey</a>
+
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

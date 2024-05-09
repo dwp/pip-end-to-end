@@ -1,0 +1,39 @@
+{% set pageTitle = "Assessment" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Health Assessment Service (HAS)
+      </h1>
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Conduct an assessment</h2>
+
+          <p class="govuk-body-s">A Health Care Professional will check the rota to see what assessments they have to complete that day. </p>
+          <p class="govuk-body-s">Health Care Professional assessments can take place over the phone or face-to-face. They will navigate the journey and add notes based on the flow of conversation.</p>
+          <p class="govuk-body-s">Depending on the level of the Health Care Professional (HCP), they pass it to a Senior HCP to audit. This process is done offline using spreadsheets.</p>
+          <p class="govuk-body-s">Once the audit is complete, the HCP who conducted the assessment can submit the recommendation report. The status will automatically update to Report Ready.</p>
+          <p class="govuk-body-s">The Health Care Professional (HCP) has completed their actions and the claim is now passed to the Non Clinical Admin Team.</p>
+
+          <p class="govuk-body-s"><a href="/has/assessment-report/intro">Continue to assessment report preperation</a></p>
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

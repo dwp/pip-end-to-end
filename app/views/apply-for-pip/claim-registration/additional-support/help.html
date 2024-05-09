@@ -2,6 +2,9 @@
 Is someone helping you
 {% endblock %}
 
+{% set pageStatus="Explore" %}
+{% set pageNotes="New content from recent script changes incoming" %}
+
 {% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
 
 {% block beforeContent %}
@@ -63,6 +66,18 @@ Is someone helping you
       </div> <!-- govuk-form-group -->
 
       <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Thin slice criteria 12</h2>
+          <p class="govuk-body-s">If answer = No, then route through Thin Slice</p>
+          <p class="govuk-body-s">Criteria 12 - No one helping with claim. Assumtion that there is no Third Party/Appointees</p>
+        </div>
+      </div>
 
     </div> <!-- govuk-grid-column-two-thirds -->
   </div> <!-- govuk-grid-column-two-thirds -->

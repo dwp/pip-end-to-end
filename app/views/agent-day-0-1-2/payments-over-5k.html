@@ -1,0 +1,46 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% set pageStatus="Requirement" %}
+{% set pageNotes="New screens and UI required for payments over 5k" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        New screens required
+      </strong>
+    </div>
+
+    <div class="govuk-event-banner">
+      <div class="govuk-event-banner__content">
+        <strong class="govuk-tag govuk-tag--purple">
+          E2E vision '24
+        </strong>
+        <br><br>
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Arrears payment over 5k</h2>
+
+        <p class="govuk-body-s">Phoenix developed back-end procees comes back with a calculation over £5,000 requires call to claimant. </p>
+        <p class="govuk-body-s">Arrears payment more than £5,000 is confirmed with claimant to pay in lump sum - to be requested by CPS?</p>
+        <p class="govuk-body-s">If claimant chooses staggered, they are out of scope for thin slice - eject case, PIPCS rebuild.</p>
+        <p class="govuk-body-s"><a href="application-6-letter-review">Continue Case Manager journey</a></p>
+      </div>
+    </div>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+
+
+{% endblock %}

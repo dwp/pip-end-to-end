@@ -1,6 +1,5 @@
 const { compile } = require("nunjucks");
 const express = require('express')
-const router = express.Router()
 
 module.exports = function (router) {
 
@@ -1045,16 +1044,34 @@ router.post('/apply-for-pip/health-form/supporting-evidence/supporting-evidence-
     res.redirect('/apply-for-pip/health-form/declaration');
 });
 
+
 // ONLINE IDENTIFICTAION
 
 router.post('/apply-for-pip/oidv/check-identity', (req, res, next) => {
       const checkIdentity = req.session.data['check-identity'];
         if (checkIdentity === 'Yes') {
-          res.redirect('/apply-for-pip/oidv/hmrciv/start-page');
+          res.redirect('/apply-for-pip/oidv/register/collecting-your-personal-details');
       } else {
           res.redirect('/apply-for-pip/oidv/check-identity-call');
       }
 });
+
+router.post('/apply-for-pip/oidv/register/collecting-your-personal-details', (req, res, next) => {
+    res.redirect('/apply-for-pip/oidv/register/name');
+});
+
+router.post('/apply-for-pip/oidv/register/name', (req, res, next) => {
+    res.redirect('/apply-for-pip/oidv/register/date-of-birth');
+})
+
+router.post('/apply-for-pip/oidv/register/date-of-birth', (req, res, next) => {
+    res.redirect('/apply-for-pip/oidv/register/postcode');
+})
+
+router.post('/apply-for-pip/oidv/register/postcode', (req, res, next) => {
+    res.redirect('/apply-for-pip/oidv/hmrciv/start-page');
+})
+
 
 router.post('/apply-for-pip/oidv/hmrciv/start-page', (req, res, next) => {
     res.redirect('/apply-for-pip/oidv/hmrciv/enter-your-details');
