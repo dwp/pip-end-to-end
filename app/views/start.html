@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      {{ serviceName }}
+    </h1>
+
+    <p class="govuk-body-l">This is a full end-to-end prototype of PIP based on knowledge to date of what the service will look like in September 2024 and the introudction of the 'thin slice'.</p>
+    <p>Where do you want to start? You can navigate straight into any part of the end-to-end journey based on process, user type, etc. You can get back here at any time by clicking the title in the top bar of any page.</p>
+    <p>If you haven't seen it yet, we have a useful page to show you what to look out for while you navigate your journey and aid the narrative of the Septmeber '24 vision. <a href="/">View guidance</a>
+    <br><br>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag govuk-!-margin-bottom-2">
+          Citizen
+        </strong>
+        <h2 class="govuk-heading-m">Apply for PIP</h2>
+        <p class="govuk-!-margin-bottom-2"><a href="/apply-for-pip/govuk/what-pip-is-for">GOV.UK PIP pages</a></p>
+        <p class="govuk-!-margin-bottom-2"><a href="/apply-for-pip/claim-registration/start">Claim registration</a></p>
+        <p class="govuk-!-margin-bottom-2"><a href="/apply-for-pip/health-form/task-list">Health Information Gather</a></p>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag govuk-!-margin-bottom-2">
+          NCAT
+        </strong>
+        <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag govuk-!-margin-bottom-2">
+          HCP
+        </strong>
+          <h2 class="govuk-heading-m">Health Assessement Service (HAS)</h2>
+          <p class="govuk-!-margin-bottom-2"><a href="/has/referral-build/intro">Build new referrals</a></p>
+          <p class="govuk-!-margin-bottom-2"><a href="/has/referral-review/intro">Review referrals</a></p>
+          <p class="govuk-!-margin-bottom-2"><a href="/has/assessment-booking/intro">Book an assessment</a></p>
+          <p class="govuk-!-margin-bottom-2"><a href="/has/assessment/intro">Conduct an assessment</a></p>
+          <p class="govuk-!-margin-bottom-2"><a href="/has/assessment-report/intro">Prepare assessment report</a></p>
+          <br>
+          <!-- <a href="#" class="govuk-button govuk-button">View HAS home page</a> -->
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag govuk-!-margin-bottom-2">
+            Case worker/manager
+          </strong>
+          <h2 class="govuk-heading-m">Thin slice agent</h2>
+          <p class="govuk-!-margin-bottom-2"><a href="/pre-decide/cases">PIP pre decide</a></p>
+          <p class="govuk-!-margin-bottom-2"><a href="agent-day-0-1-2/entry-home">Process a PIP application</a>
+          </p>
+          <!-- <a href="apply-for-pip/govuk/how-to-claim" class="govuk-button govuk-button">View agent home page</a> -->
+        </div>
+      </div>
+
+  </div>
+</div>
+
+{% endblock %}

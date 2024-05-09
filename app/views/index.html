@@ -5,15 +5,77 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
+    <!-- {% include "govuk-prototype-kit/includes/homepage-top.njk" %} -->
 
     <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+      Welcome
     </h1>
+    <p class="govuk-body-l">This is a full end-to-end prototype of PIP based on knowledge to date of what the service will look like in September 2024 and the introudction of the 'thin slice'.</p>
+    <h2 class="govuk-heading-l">
+      Before you start
+    </h2>
+    <p>Throughtout the end-to-end journey there are some specific visual elements to communcate key aspects, including where an online process triggers an offline one, any thin slice specifics, outstanding requirements, etc.</p>
+    <p> Keep your eye out for the following:</p>
+    <h2 class="govuk-heading-m">
+      Information banner
+    </h2>
+    <p>At the top of every page is a banner, which at minimum will show that you are in the E2E vision space and the user type, followed by the team that looks after that specific page.</p>
+    <div class="vision govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag">
+          {{ serviceName }}
+        </strong>
+        <strong class="govuk-tag govuk-tag--light-blue govuk-phase-banner__content__tag">
+          Citizen - Goldcrest
+        </strong>
+      </p>
+    </div>
+    <br><br>
+    <p>At times you may see more. This could be becuase the page is in exploration, a change is due, there are additional requirements, etc. This will be accompanied by a short note.
+    <div class="vision govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-tag--purple govuk-phase-banner__content__tag">
+          {{ serviceName }}
+        </strong>
+        <strong class="govuk-tag govuk-tag--light-blue govuk-phase-banner__content__tag">
+          Citizen - Goldcrest
+        </strong>
+        <strong class="govuk-tag govuk-tag--red govuk-phase-banner__content__tag">
+          Exploration
+        </strong>
+        <span class="govuk-phase-banner__text">
+          The team are looking at updating the content displayed
+        </span>
+      </p>
+    </div>
+    <br><br>
+    <h2 class="govuk-heading-m">
+      Information box
+    </h2>
+    <p>When more information or detail is required and/or there are options to how you navigate your onward journey then you will see a notifcation style like this:</p>
+    <div class="govuk-event-banner">
+      <div class="govuk-event-banner__content">
+        <strong class="govuk-tag govuk-tag--purple">
+          E2E vision '24
+        </strong>
+        <br><br>
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Claimant journey impacted</h2>
+        <p class="govuk-body-s">Only those in specifc postcodes can continue to claim online</p>
+        <p class="govuk-body-s"><a href="">View list of postcodes</a></p>
+        <p class="govuk-body-s"><a href="postcode-end">View unhappy path</a></p>
+      </div>
+    </div>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <form action="start" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+
+    <!-- {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %} -->
   </div>
 </div>
 

@@ -1,0 +1,37 @@
+{% set pageTitle = "Assessment booking" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Health Assessment Service (HAS)
+      </h1>
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Book an assessment</h2>
+          <p class="govuk-body-s">Once HCPs have conducted their initial review of the referral and recorded the outcome of the review, NCAT will progress the next part of the journey.</p>
+          <p class="govuk-body-s">NCAT will book the assessment appointment, send an appointment letter out to claimant to notify them of their appointment. Then two days before the appointment is due to take place, NCAT will send a reminder SMS out to the claimant to remind them of the appointment details.</p>
+          <p class="govuk-body-s">The case will also be passed to Health Care Professional to conduct the assessment.</p>
+
+          <p class="govuk-body-s"><a href="/has/assessment/intro">Continue to HCP assessment</a></p>
+          <p class="govuk-body-s"><a href="/has/assessment-report/intro">Skip and view next NCAT activity</a></p>
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

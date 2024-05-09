@@ -2,6 +2,9 @@
 Check your answers help with applying
 {% endblock %}
 
+{% set pageStatus="Explore" %}
+{% set pageNotes="New content from recent script changes incoming" %}
+
 {% extends "apply-for-pip/includes/layout-signed-in-pip1.html" %}
 
 {% block beforeContent %}
@@ -26,7 +29,7 @@ Check your answers help with applying
             Need help to communicate with us
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['additional-support-communicating'] }}
+            {{ data['add-support-communicating'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./communicating">

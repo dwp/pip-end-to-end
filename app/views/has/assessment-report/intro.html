@@ -1,0 +1,35 @@
+{% set pageTitle = "Prepare assessement report" %}
+
+{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/phase-banner.html" %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Health Assessment Service (HAS)
+      </h1>
+
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Prepare assessment report</h2>
+
+          <p class="govuk-body-s">Once HCPs have conducted the health assessment with the claimant, NCAT prepare and upload the assessment report, ready for a Case Manager to review as part of the decision making process.</p>
+
+          <p class="govuk-body-s"><a href="/agent-day-0-1-2/entry-home">View case manager journey</a></p>
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

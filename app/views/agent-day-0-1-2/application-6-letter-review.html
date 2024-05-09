@@ -1,0 +1,683 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% set pageStatus="Requirement" %}
+{% set pageNotes="Payment details to be surfaced here and feed into Noitify template" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<form action="entry-home" method="post" class="form">
+  {% include "agent-day-0-1-2/includes/js-back-link.html" %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information you need for<br> the decision letter</h1>
+
+      <!------------H1 LEGEND------------>
+
+        {% set dynamicAgentNotes %}
+
+          {% if data["application-5-letter-edit"]%}
+          Change
+          {% else %}
+          Add
+          {% endif %}
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      <!------------OUTCOME LEGEND------------>
+
+        {% set dynamicOutcome %}
+
+        {% if data["system-application-selector"]  == "1" %}
+        We cannot award you PIP
+
+        {% else %}
+        Awarded enhanced for daily living and enhanced for mobility.
+
+        {% endif %}
+
+        {% endset %}
+
+        <!------------OUTCOME LEGEND------------>
+
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Jeff Bridges"
+            }
+          },
+          {
+            key: {
+              text: "National Insurance number"
+            },
+            value: {
+              text: "NA 11 22 33 c"
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
+            }
+          },
+          {
+            key: {
+              text: "Outcome"
+            },
+            value: {
+              html: dynamicOutcome
+            }
+          }
+
+        ]
+      }) }}
+
+              {% if data["system-application-selector"]  == "1" %}
+
+              <!-- I am Nill award -->
+
+                {% else %}
+
+
+
+              <!------------Q2 LEGEND------------>
+                {% set dynamicDateRange %}
+
+
+                From {{ data['application-6-award-period-date-start-day'] + ' ' + (data['application-6-award-period-date-start-month'] ) + ' ' + data['application-6-award-period-date-start-year']}}
+
+
+                {% if data["application-6-award-period-end-check"]  == "Yes" %}
+                to  {{ data['application-6-award-period-date-end-day'] + ' ' + (data['application-6-award-period-date-end-month'] ) + ' ' + data['application-6-award-period-date-end-year']}}
+                {% else %}
+                (there is no end date)
+                {% endif %}
+
+
+
+
+                {% endset %}
+              <!------------Legend--------------->
+
+                {{ govukSummaryList({
+                  rows: [
+                  {
+                      key: {
+                        text: "Award date"
+                      },
+                      value: {
+                        html: dynamicDateRange
+                      }
+                    },
+                    {
+                      key: {
+                        text: "Award review date"
+                      },
+                      value: {
+                        text: data['application-6-award-review-date-day'] + ' ' + (data['application-6-award-review-date-month'] ) + ' ' + data['application-6-award-review-date-year']
+                      }
+                    }
+                  ]
+                }) }}
+
+                {% endif %}
+
+
+      <h3 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
+
+      <!-- 1 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            1. Preparing food:
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a1-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a1-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a1-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a1-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a1-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a1-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 2 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            2. Taking nutrition
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a2-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a2-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 10
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a2-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a2-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a2-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a2-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 3 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            3. Managing therapy or monitoring a health condition
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a3-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a3-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a3-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a3-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a3-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a3-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 4 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            4. Washing and bathing
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a4-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a4-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a4-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a4-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a4-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a4-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 5 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            5. Managing toilet needs or incontinence
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a5-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a5-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a5-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a5-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a5-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a5-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 6 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            6. Dressing and undressing
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a6-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a6-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a6-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a6-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a6-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a6-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <!-- 7 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            7. Communicating verbally
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a7-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a7-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 12
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a7-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a7-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a7-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a7-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 8 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            8. Reading and understanding signs, symbols and words
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a8-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a8-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a8-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a8-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a8-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a8-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 9 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            9. Engaging with other people face to face
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a9-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a9-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 8
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a9-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a9-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a9-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a9-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 10 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            10. Making budgeting decisions
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a10-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a10-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 6
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a10-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a10-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a10-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a10-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+      <h3 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-6">Mobility scoring</h3>
+
+      <!-- 11 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            11. Planning and following journeys
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a11-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a11-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 12
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a11-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a11-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a11-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a11-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- 12 -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            12. Moving around
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            <strong>
+              {% if data["application-about-a12-score-overwrite"] %}
+              {% include "agent-day-0-1-2/application-about-a12-score-overwrite.html" %}
+              {% else %}
+              0
+              {% endif %}
+              out of 12
+            </strong>
+            <br>
+            {% include "agent-day-0-1-2/application-about-a12-descriptor-overwrite.html" %}
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a12-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            Justification
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data["application-about-a12-reason"]}}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="application-6-about-a12-score">
+              Change<span class="govuk-visually-hidden"> XXX justification</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+
+<br><br>
+
+<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will have finished processing this application <br>once you have created and sent the decision letter.</p>
+
+
+        {{ govukButton({
+          text: "Finish and close",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

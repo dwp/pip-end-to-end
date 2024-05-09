@@ -1,0 +1,164 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+      {% set legendHint %}
+
+        <p class="govuk-body govuk-!-margin-bottom-2">The applicant:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <!-- <li>
+            is 65 and will reach State Pension age on 20 February 2028
+          </li> -->
+          <li>
+            will be awarded the standard rate for daily living
+          </li>
+          <li>
+            will not be awarded for mobility
+          </li>
+        </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+
+      {% set dateOverwite %}
+
+
+  {{ govukDateInput({
+    id: "award-dates-review-manual-other",
+    namePrefix: "award-dates-review-manual-other",
+    fieldset: {
+      legend: {
+        html: "Enter the review date",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2"
+      }
+    },
+    hint: {
+      html: ""
+    },
+    items: [
+      {
+        name: "day",
+        classes: "govuk-input--width-2",
+        value: data["award-dates-review-manual-other-day"]
+      },
+      {
+        name: "month",
+        classes: "govuk-input--width-2",
+        value: data["award-dates-review-manual-other-month"]
+      },
+      {
+        name: "year",
+        classes: "govuk-input--width-4",
+        value: data["award-dates-review-manual-other-year"]
+      }
+    ]
+  }) }}
+
+
+    {% endset -%}
+
+
+
+    {{ govukRadios({
+      idPrefix: "award-dates-review-manual",
+      name: "award-dates-review-manual",
+      fieldset: {
+        legend: {
+          html: "Select the award review period you want to set",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-6"
+        }
+      },
+      hint: {
+        html: legendHint
+      },
+      classes: "govuk-radios",
+      items: [
+      {
+        value: "1y",
+        text: "1 year",
+        checked: (data["award-dates-review-manual"] == "1y")
+      },
+      {
+        value: "18m",
+        text: "18 months",
+        checked: (data["award-dates-review-manual"] == "18m")
+      },
+      {
+        value: "2y",
+        text: "2 years",
+        checked: (data["award-dates-review-manual"] == "2y")
+      },
+      {
+        value: "3y",
+        text: "3 years",
+        checked: (data["award-dates-review-manual"] == "3y")
+      },
+      {
+        value: "4y",
+        text: "4 years",
+        checked: (data["award-dates-review-manual"] == "4y")
+      },
+      {
+        value: "5y",
+        text: "5 years",
+        checked: (data["award-dates-review-manual"] == "5y")
+      },
+      {
+        value: "10y",
+        text: "10 years",
+        checked: (data["award-dates-review-manual"] == "10y")
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "Indefinite",
+        text: "Indefinite (no end date - light touch review in 10 years)",
+        checked: (data["award-dates-review-manual"] == "Indefinite")
+      },
+      {
+        value: "None",
+        text: "No review period needed",
+        checked: (data["award-dates-review-manual"] == "None")
+      },
+      {
+        value: "Other",
+        text: "Other",
+        checked: (data["award-dates-review-manual"] == "Other"),
+              conditional: {
+                html: dateOverwite
+              }
+          }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

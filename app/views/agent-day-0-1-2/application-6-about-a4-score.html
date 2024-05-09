@@ -1,0 +1,114 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH1 %}
+              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for washing and bathing?
+                  </h2>
+                  {% endset %}
+            <!------------Legend--------------->
+
+
+            {{ govukRadios({
+              idPrefix: "application-about-a4-score-overwrite",
+              name: "application-about-a4-score-overwrite",
+              fieldset: {
+                legend: {
+                  html: dynamicH1,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                html: legendNumbers
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "a1",
+                html: "<strong>Descriptor A (0 points): </strong> Can wash and bathe unaided",
+                checked: (data["application-about-a4-score-overwrite"] == "0")
+              },
+              {
+                value: "b2",
+                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to wash or bathe",
+                checked: (data["application-about-a4-score-overwrite"] == "2")
+              },
+              {
+                value: "c3",
+                html: "<strong>Descriptor C (2 points): </strong> Needs supervision or prompting to be able to wash or bathe",
+                checked: (data["application-about-a4-score-overwrite"] == "2")
+              },
+              {
+                value: "d4",
+                html: "<strong>Descriptor D (2 points):</strong> Needs assistance to be able to wash either their hair, or body below the waist",
+                checked: (data["application-about-a4-score-overwrite"] == "2")
+              },
+              {
+                value: "e5",
+                html: "<strong>Descriptor E (3 points):</strong> Needs assistance to be able to get in or out of a bath or shower",
+                checked: (data["application-about-a4-score-overwrite"] == "3")
+              },
+              {
+                value: "f6",
+                html: "<strong>Descriptor G (8 points):</strong> Cannot wash and bathe at all and needs another person to wash their entire bodyNeeds assistance to be able to wash their body between the shoulders and waist",
+                checked: (data["application-about-a4-score-overwrite"] == "8")
+              },
+              {
+                value: "f6",
+                html: "<strong>Descriptor G (8 points):</strong> Cannot wash and bathe at all and needs another person to wash their entire body",
+                checked: (data["application-about-a4-score-overwrite"] == "8")
+              }
+              ]
+            }) }}
+
+
+            <br>
+
+            {{ govukTextarea({
+              name: "application-about-a4-reason",
+              id: "application-about-a4-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "Justification",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                html: legendCanned
+              },
+              value: ""
+            }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
