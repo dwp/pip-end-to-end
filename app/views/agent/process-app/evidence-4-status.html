@@ -1,0 +1,24 @@
+<tr class="govuk-table__row">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell table-spacer"><a href="evidence-4">
+
+      {% if data["evidence-4-name"] == "Yes" %}     {{ data["evidence-4-name-overwrite"]}}
+      {% else %} Prescription receipt
+      {% endif %}
+    </a></td>
+
+<td class="govuk-table__cell table-spacer">1 Sept 2022 (1 year 3 months ago)</td>
+<td class="govuk-table__cell table-spacer">Yes</td>
+<td class="govuk-table__cell table-spacer">Yes</td>
+
+<td class="govuk-table__cell table-spacer">
+
+  {% if data["evidence-4-grade"] == "Good" %}        <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
+  {% elif data["evidence-4-grade"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
+  {% elif data["evidence-4-grade"] == "Remove" %}     <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
+
+  {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="X">To do</strong>
+  {% endif %}
+
+</td>
+</tr>

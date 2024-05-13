@@ -1,0 +1,50 @@
+
+            {% extends "layout.html" %}
+
+            {% block pageTitle %}
+              Process a PIP application
+            {% endblock %}
+
+            {% block header %}
+             {% include "explore-header-global-nav-multi.html" %}
+            {% endblock %}
+
+            {% block content %}
+
+
+            <form action="award-dates-playback" method="post" class="form">
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+
+                  {% include "agent-0-11/record-id.html" %}
+
+                    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Why did you change the assessment provider's recommended award review period?</h1>
+
+
+                  {{ govukTextarea({
+                    name: "letter-error",
+                    id: "letter-error",
+                    classes: " govukTextarea--overwrite",
+                    label: {
+                      text: "",
+                      classes: "govuk-label--m",
+                      isPageHeading: true
+                    },
+                    hint: {
+                      html: ""
+                    },
+                    value: data["letter-error"]
+                  }) }}
+
+                  {{ govukButton({
+                    text: "Continue",
+                    classes: "govuk-!-margin-bottom-8"
+                  }) }}
+
+                    </div>
+                  </div>
+
+              </form>
+
+            {% endblock %}

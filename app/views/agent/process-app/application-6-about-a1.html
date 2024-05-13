@@ -1,0 +1,141 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% include "agent/process-app/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Preparing food</h2>
+
+      <h3 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-6">Health information gather (PIP2)</h3>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Asked in application</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Does your condition affect you preparing food, or prevent you from doing so?</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-font-weight-bold govuk-!-margin-bottom-2">Response in application</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">I find it increasingly difficult to cook a hot meal due to heavy pans and opening cans.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">Standing for long periods hurts my legs, so I prepare veg sitting down.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">I rely heavily on my partner to do the cooking.</p>
+
+<!--  --><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Assessment report findings</h3>
+
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Difficulty reported is consistent with his diagnosis of fibromyalgia.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">He is prescribed medication for nerve pain and is known to the pain management team, though is currently just having phone calls with a clinical psychologist to manage his pain.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">He reports he is able to do things like make a sandwich, some days use a microwave and lift a kettle.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2"> It is reasonable to suggest he requires aids to complete this reliably.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">The need for assistance has been considered and ruled out as he has no medication prescribed for severe pain, though has input from rheumatology.</p>
+      <!-- <p class="govuk-body govuk-!-margin-bottom-2">He is still employed as a cleaner, working 12 hours per week over 5 days, supporting adequate function to use aids rather than assistance.</p> -->
+      <!-- <p class="govuk-body govuk-!-margin-bottom-8">This is why I have selected 1E.</p> -->
+
+
+      <!--  --><hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <!------------HELP WITH ASSESSMENT------------>
+
+        <!-- <h1 class="govuk-heading-s govuk-!-margin-bottom-2">Help with understanding something</h1> -->
+
+
+          {% set legenDetails %}
+          <p class="govuk-body govuk-!-margin-bottom-2">
+            <a class="" href="outbound-precall">Call the assessment provider</a> if you need help understanding something before deciding you cannot process the application.
+
+            <!-- <p class="govuk-!-margin-bottom-0"><a class="" href="outbound-precall">all to the Assement provider</a> -->
+          </p>
+
+          {{ govukDetails({
+            summaryText: "Contacting the assessment report provider",
+            classes: "govuk-!-margin-bottom-0",
+            html: legenDetails
+          }) }}
+
+          {% endset %}
+        <!------------Legend--------------->
+
+        <!------------H1 LEGEND------------>
+          {% set legendNumbersDetails %}
+
+          <p class="govuk-body govuk-!-margin-bottom-2"></p>
+
+          <ul class="govuk-list govuk-list">
+            <li><b>Descriptor A (0 points):</b> Can prepare and cook a simple meal unaided
+            <li><b>Descriptor B (2 points):</b> Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+            <li><b>Descriptor C (2 points):</b> Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave
+            <li><b>Descriptor D (2 points):</b> Needs prompting to be able to either prepare or cook a simple meal
+            <li><b>Descriptor E (4 points):</b> Needs supervision or assistance to either prepare or cook a simple meal
+            <li><b>Descriptor F (8 points):</b> Cannot prepare and cook food
+          </ul>
+
+          {% endset %}
+
+          {% set legendHint %}
+
+          {{ govukDetails({
+            summaryText: "Help with descriptors",
+            classes: "govuk-!-margin-bottom-0",
+            html: legendNumbersDetails
+          }) }}
+
+            {% endset %}
+          <!------------Legend--------------->
+
+      {{ govukRadios({
+        idPrefix: "application-5-about-a1",
+        name: "application-5-about-a1",
+        fieldset: {
+          legend: {
+            text: "The assessment report recommends Descriptor B (2 points) for this activity. Do you agree?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        classes: "govuk-radios",
+        items: [
+        {
+          value: "Agree",
+          text: "Yes",
+          checked: (data["application-5-about-a1"] == "Agree")
+        },
+        {
+          value: "Amended",
+          text: "No",
+          checked: (data["application-5-about-a1"] == "Amended")
+          },
+          {
+          value: "Pause",
+          text: "I need to come back to this later",
+          checked: (data["application-5-about-a1"] == "Pause")
+        }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<tr class="govuk-table__row">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell table-spacer"><a href="evidence-7">
+
+      {% if data["evidence-7-name"] == "Yes" %}     {{ data["evidence-7-name-overwrite"]}}
+      {% else %} Health information gather (PIP2)
+      {% endif %}
+    </a></td>
+
+<td class="govuk-table__cell table-spacer">19 Mar 2024 (2 weeks ago)</td>
+<td class="govuk-table__cell table-spacer">Yes</td>
+<td class="govuk-table__cell table-spacer">Yes</td>
+<td class="govuk-table__cell table-spacer">
+
+  {% if data["evidence-7-grade"] == "Good" %}        <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Read</strong>
+  {% elif data["evidence-7-grade"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">X</strong>
+  {% elif data["evidence-7-grade"] == "Remove" %}     <strong class="govuk-tag app-task-list__apl-task-done" id="eligibility-completed">Done</strong>
+  {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="X">Unread</strong>
+  {% endif %}
+
+</td>
+</tr>

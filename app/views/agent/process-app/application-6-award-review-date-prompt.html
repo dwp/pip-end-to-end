@@ -1,0 +1,72 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="payments-over-5k" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+
+
+        {% if data["application-5-award-review-check"] == "Yes"%}
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">PIP will be awarded for 1 year</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">A review will take place between 6 March 2025 and the end of the award.</p>
+
+        {% else %}
+
+            {% if data["application-5-award-review-date-manual"] == "None"%}
+
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">PIP will be awarded for 10&nbspyears<h1>
+            <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">A 'light touch' review will take place in 10 years</p>
+
+            {% else %}
+
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">PIP will be
+                {% if data["application-5-award-review-date-manual"] == "5y"%} awarded for 5 years
+                {% elif data["application-5-award-review-date-manual"] == "3y"%} awarded for 3 years
+                {% elif data["application-5-award-review-date-manual"] == "18m"%} awarded for 1 year 6 months
+                {% elif data["application-5-award-review-date-manual"] == "Other"%} awarded until 29 November 2033
+
+
+                {% endif %}
+              </h1>
+              <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">A review will take place before the end of the award</p>
+
+            {% endif %}
+
+        {% endif %}
+
+
+
+
+
+        </h1>
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

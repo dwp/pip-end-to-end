@@ -1,0 +1,43 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-view-evidence" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">View and assess this document</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: <strong>D Month YYYY</strong></p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Document supplied: <strong>D Month YYYY</strong> (X year X months ago)</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Seen by assessment provider: <strong>Yes</strong></p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Used by assessment provider: <strong>Yes</strong></p>
+      <p class="govuk-!-font-size-19 govuk-!-margin-bottom-8"><a class="" href="pip-doc8.pdf" target="_blank">You can also keep this document in a new tab or window</a></p>
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Age: <strong>One year ago</strong></p> -->
+
+      <iframe src="pip-doc8.pdf" width="100%" height="1350px" style="border:0;"></iframe>
+
+
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
