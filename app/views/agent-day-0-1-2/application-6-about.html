@@ -37,6 +37,35 @@
                           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
 
                             <table class="govuk-table">
+
+                              <h3 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents</h3>
+
+                              <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                  <td class="govuk-table__cell govuk-60-percent"></td>
+                                  <td class="govuk-table__cell govuk-25-percent"></td>
+                                  <td class="govuk-table__cell govuk-15-percent">Status</td>
+                                </tr>
+                                </thead>
+
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell table-spacer">
+                                      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="application-6-view-evidence">View supporting documents</a></p>
+                                    </td>
+
+                                    <td class="govuk-table__cell table-spacer"></td>
+                                    <td class="govuk-table__cell table-spacer">
+
+                                      {% if data["evidence-3-grade"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                                      {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                                      {% endif %}
+
+                                    </td>
+                                    </tr>
+
+                    </table>
+
+                            <table class="govuk-table">
                       <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Daily living activities</h1>
 
 

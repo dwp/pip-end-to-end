@@ -1,0 +1,84 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">
+        Do you agree with the assessment provider’s recommended claim review date of 6 March 2025 (1 year)?
+      </h2>
+
+      {% set legendHint %}
+
+        <p class="govuk-body govuk-!-margin-bottom-2">The person:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>
+            is 65 and will reach State Pension age on 20 February 2028
+          </li>
+          <li>
+            will be awarded the standard rate for daily living
+          </li>
+          <li>
+            will not be awarded for mobility
+          </li>
+        </ul>
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "award-dates-AP-rec-check",
+        name: "award-dates-AP-rec-check",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          html: legendHint
+        },
+        items: [
+        {
+          value: "Yes",
+          text: "Yes",
+          checked: (data["award-dates-AP-rec-check"] == "Yes")
+        },
+        {
+          value: "No",
+          text: "No",
+          checked: (data["award-dates-AP-rec-check"] == "No")
+        }
+        ]
+      }) }}
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

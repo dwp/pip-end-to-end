@@ -1,6 +1,8 @@
 {% set pageTitle = "Assessment" %}
 
-{% extends "apply-for-pip/includes/layout-signed-out.html" %}
+{% set teamName="HCP" %}
+
+{% extends "has/includes/layout.html" %}
 
 {% block beforeContent %}
   {% include "apply-for-pip/includes/phase-banner.html" %}
@@ -24,12 +26,13 @@
           <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Conduct an assessment</h2>
 
           <p class="govuk-body-s">A Health Care Professional will check the rota to see what assessments they have to complete that day. </p>
-          <p class="govuk-body-s">Health Care Professional assessments can take place over the phone or face-to-face. They will navigate the journey and add notes based on the flow of conversation.</p>
+          <p class="govuk-body-s">Health Care Professional assessments can take place over the phone or face-to-face. They will navigate the journey and add notes based on the conversation.</p>
           <p class="govuk-body-s">Depending on the level of the Health Care Professional (HCP), they pass it to a Senior HCP to audit. This process is done offline using spreadsheets.</p>
           <p class="govuk-body-s">Once the audit is complete, the HCP who conducted the assessment can submit the recommendation report. The status will automatically update to Report Ready.</p>
-          <p class="govuk-body-s">The Health Care Professional (HCP) has completed their actions and the claim is now passed to the Non Clinical Admin Team.</p>
+          <p class="govuk-body-s">The Health Care Professional (HCP) has completed their actions, an assessment outcome and the Health Care Professionals report will be automatically sent as data to the new PIP Service for a Case Manager to pick up and make their decision.</p>
+          <p class="govuk-body-s">If the Health Care Professional report can't be sent as data, a PDF will be automatically uploaded for a Case Manager to view.</p>
 
-          <p class="govuk-body-s"><a href="/has/assessment-report/intro">Continue to assessment report preperation</a></p>
+          <p class="govuk-body-s"><a href="/agent-day-0-1-2/entry-home">View case manager journey</a></p>
         </div>
       </div>
 

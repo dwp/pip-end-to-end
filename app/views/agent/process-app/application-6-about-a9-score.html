@@ -1,0 +1,118 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH1 %}
+              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for engaging with other people face to face?
+                  </h2>
+                  {% endset %}
+            <!------------Legend--------------->
+
+
+            <!------------Q2 LEGEND------------>
+              {% set dynamicQ4 %}
+
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+                <strong>Descriptor D (8 points):</strong> Cannot engage with other people due to such engagement causing either:
+
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    overwhelming psychological distress to the claimant; or
+                  </li>
+                  <li>
+                    the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                  </li>
+                </ul>
+
+              {% endset %}
+            <!------------Legend--------------->
+
+
+            {{ govukRadios({
+              idPrefix: "application-about-a9-score-overwrite",
+              name: "application-about-a9-score-overwrite",
+              fieldset: {
+                legend: {
+                  html: dynamicH1,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                html: legendNumbers
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "a1",
+                html: "<strong>Descriptor A (0 points):</strong> Can engage with other people unaided",
+                checked: (data["application-about-a9-score-overwrite"] == "0")
+              },
+              {
+                value: "b2",
+                html: "<strong>Descriptor B (2 points):</strong> Needs prompting to be able to engage with other people",
+                checked: (data["application-about-a9-score-overwrite"] == "2")
+              },
+              {
+                value: "c3",
+                html: "<strong>Descriptor C (4 points):</strong>  Needs social support to be able to engage with other people",
+                checked: (data["application-about-a9-score-overwrite"] == "4")
+              },
+              {
+                value: "d4",
+                html: dynamicQ4,
+                checked: (data["application-about-a9-score-overwrite"] == "8")
+              }
+              ]
+            }) }}
+
+
+            <br>
+
+            {{ govukTextarea({
+              name: "application-about-a9-reason",
+              id: "application-about-a9-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "Justification",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                html: legendCanned
+              },
+              value: ""
+            }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

@@ -1,8 +1,5 @@
 {% extends "agent-day-0-1-2/includes/layout.html" %}
 
-{% set pageStatus="Requirement" %}
-{% set pageNotes="Payment details to be surfaced here and feed into Noitify template" %}
-
 {% block pageTitle %}
   Process a PIP application
 {% endblock %}
@@ -12,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<form action="entry-home" method="post" class="form">
+<form action="entry-home-next" method="post" class="form">
   {% include "agent-day-0-1-2/includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
@@ -666,7 +663,7 @@
 
 <br><br>
 
-<p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will have finished processing this application <br>once you have created and sent the decision letter.</p>
+<!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will have finished processing this application <br>once you have created and sent the decision letter.</p> -->
 
 
         {{ govukButton({

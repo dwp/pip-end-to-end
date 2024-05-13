@@ -1,0 +1,22 @@
+{% if data["application-about-a11-score-overwrite"] == "a1" %}
+  Descriptor A: Can plan and follow the route of a journey unaided
+
+{% elif data["application-about-a11-score-overwrite"] == "b2" %}
+  Descriptor B: Needs prompting to be able to undertake any journey to avoid overwhelming psychological distress to the claimant
+
+{% elif data["application-about-a11-score-overwrite"] == "c3" %}
+  Descriptor C: Cannot plan the route of a journey
+
+{% elseif data["application-about-a11-score-overwrite"] == "d4" %}
+  Descriptor D: Cannot follow the route of an unfamiliar journey without another person, assistance dog or orientation aid
+
+{% elseif data["application-about-a11-score-overwrite"] == "e5" %}
+  Descriptor E: Cannot undertake any journey because it would cause overwhelming psychological distress to the claimant
+
+{% elseif data["application-about-a11-score-overwrite"] == "f6" %}
+  Descriptor F: Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+
+{% else %}
+  Blank
+
+{% endif %}

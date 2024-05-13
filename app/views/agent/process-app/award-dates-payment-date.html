@@ -1,0 +1,72 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="award-dates-playback" method="post" class="form">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+      {% set legendHint %}
+
+        <p class="govuk-body govuk-!-margin-bottom-2">Select a review period</p>
+
+
+        {% endset %}
+      <!------------Legend--------------->
+
+      {{ govukDateInput({
+        id: "award-dates-payment-date",
+        namePrefix: "award-dates-payment-date",
+        fieldset: {
+          legend: {
+            html: "Enter the end date <br> of the award",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl govuk-!-margin-bottom-2"
+          }
+        },
+        hint: {
+          html: ""
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-payment-date-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["award-dates-payment-date-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["award-dates-payment-date-year"]
+          }
+        ]
+      }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

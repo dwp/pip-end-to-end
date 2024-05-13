@@ -12,6 +12,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 const applyforpip = require('./routes/apply-for-pip')
 const pipregister = require('./routes/pip-register')
 const agent = require('./routes/agent-day-0-1-2')
+const processapp = require('./routes/agent-process-app')
 
 // ROUTES REDIRECT END
 
@@ -20,5 +21,6 @@ const agent = require('./routes/agent-day-0-1-2')
 applyforpip(router);
 pipregister(router);
 agent(router);
+processapp(router);
 
 // ROUTER LIST END

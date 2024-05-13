@@ -1,10 +1,10 @@
 const { compile } = require("nunjucks");
 const express = require('express')
+const path = require('path')
 
 module.exports = function (router) {
 
-
-// —————————————————————————————————
+router.use(`/pip-letter.pdf`, express.static(path.resolve('app/views/agent-day-0-1-2/pip-letter.pdf')))
 
 router.post('/agent-day-0-1-2/award-dates-data-input', (req, res, next) => {
         res.redirect('/agent-day-0-1-2/award-dates-AP-rec-check');
