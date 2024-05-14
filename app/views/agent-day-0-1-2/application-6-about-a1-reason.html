@@ -1,0 +1,75 @@
+{% extends "agent-day-0-1-2/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="application-6-about" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">
+
+          Add your reason for selecting
+
+          {% if data["application-about-a1-score-overwrite"] == "a1" %}
+            <strong>Descriptor A (0 points)</strong>
+          {% elif data["application-about-a1-score-overwrite"] == "b2" %}
+            <strong>Descriptor B (2 points)</strong>
+          {% elif data["application-about-a1-score-overwrite"] == "c3" %}
+            <strong>Descriptor C (2 points)</strong>
+          {% elseif data["application-about-a1-score-overwrite"] == "d4" %}
+            <strong>Descriptor D (2 points)</strong>
+          {% elseif data["application-about-a1-score-overwrite"] == "e5" %}
+            <strong>Descriptor E (4 points)</strong>
+          {% elseif data["application-about-a1-score-overwrite"] == "f6" %}
+            <strong>Descriptor F (8 points)</strong>
+          {% endif %}
+
+          for preparing food
+
+      </h2>
+
+
+
+
+            {{ govukTextarea({
+              name: "application-about-a1-reason",
+              id: "application-about-a1-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "",
+                classes: "govuk-label--m",
+                isPageHeading: true
+              },
+              hint: {
+                html: legendCanned
+              },
+              value: ""
+            }) }}
+
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
