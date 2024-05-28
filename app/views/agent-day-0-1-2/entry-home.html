@@ -18,38 +18,29 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <form action="XXX" method="post" class="form">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">My home page</h1>
 
-        {% include "agent-day-0-1-2/record-notifications.html" %}
-
-
-
-        <p class="govuk-heading-xl govuk-!-margin-bottom-8">My home page</p>
-
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-
-            {% include "agent-day-0-1-2/home-menu.html" %}
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          New designs required
+        </strong>
+      </div>
 
 
 
-
-  <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-1" class="govuk-link" rel="noreferrer noopener">Weekly</a></p>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-2" class="govuk-link" rel="noreferrer noopener">Monthy</a></p>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="process-c-nil-task-4-3" class="govuk-link" rel="noreferrer noopener">Annual</a></p> -->
-
-</form>
-
-<div class="govuk-event-banner">
-  <div class="govuk-event-banner__content">
-    <strong class="govuk-tag govuk-tag--purple">
-      E2E vision '24
-    </strong>
-    <br><br>
-    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Designs required</h2>
-    <p class="govuk-body-s">'Process an application' functionality is in progress</p>
-    <p class="govuk-body-s">Work to explore how the home page can expand beyond decide and become an agent hub for all required activities above such as, viewing tasks, searching and viewing a holisitc view of a claim, etc.</p>
-  </div>
-</div>
+      <div class="govuk-event-banner">
+        <div class="govuk-event-banner__content">
+          <strong class="govuk-tag govuk-tag--purple">
+            E2E vision '24
+          </strong>
+          <br><br>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Agent UI</h2>
+          <p class="govuk-body-s">Post HAS assessment 'Process an application' functionality and UI is in progress - <a href="http://localhost:3000/agent-day-0-1-2/application-6-overview">View agent decide</a></p>
+          <p class="govuk-body-s">Work to explore how the home page can expand beyond decide and become an agent hub for all required activities such as, viewing tasks throughout a claims jounrey (pre-decide through to maintain), searching and viewing a holisitc view of a claim, logging events on a timeline, managing payments etc.</p>
+          <p class="govuk-body-s">Teams working in this area include; Starling, Buzzard, Pelican, Toucan and Phoenix.</p>
+        </div>
+      </div>
 
 {% endblock %}

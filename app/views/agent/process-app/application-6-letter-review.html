@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<form action="entry-home-next" method="post" class="form">
+<form action="entry-home" method="post" class="form">
   {% include "agent-day-0-1-2/includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
@@ -660,8 +660,18 @@
 
       </dl>
 
+      <br><br>
 
-<br><br>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will have finished processing this application <br>once you have created and sent the decision letter.</p>
+
+
+      {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+
+<!--<br><br>
 
 {{ govukRadios({
   idPrefix: "application-5-letter-review",
@@ -697,7 +707,7 @@ text: "Continue",
 classes: "govuk-!-margin-bottom-8"
 }) }}
 
-
+-->
         </div>
       </div>
 
