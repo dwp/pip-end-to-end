@@ -1,0 +1,195 @@
+{% extends "pre-decide/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="entry-home" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent-day-0-1-2/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the applicant's details</h2>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+
+
+
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">Complete any remaining claim assurance and eligibillity checks before referring this claim to an assessment provider.</p>
+
+
+      <ul class="app-task-list__items govuk-!-margin-bottom-7 govuk-!-padding-left-0">
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="app-task-list__task-name" href="assurance-task-t1" aria-describedby="task-1">
+              <!-- [1-1]  --> Name
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="claim-assurance-1-status">
+            {% if data["assurance-task-t1"] == "Good" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+            {% elif data["assurance-task-t1"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag govuk-tag--red" id="X">Issue</strong>
+
+            {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag govuk-tag--grey" id="X">To do</strong>
+            {% endif %}
+          </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="app-task-list__task-name" href="assurance-task-t6" aria-describedby="task-1">
+              <!-- [1-1]  --> Date of death
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="claim-assurance-1-status">
+            {% if data["assurance-task-t6"] == "Good" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+            {% elif data["assurance-task-t6"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag govuk-tag--red" id="X">Issue</strong>
+
+            {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag govuk-tag--grey" id="X">To do</strong>
+            {% endif %}
+          </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="app-task-list__task-name" href="assurance-task-t7" aria-describedby="task-5">
+              <!-- [1-5]  -->Delegated authorities
+            </a>
+          </div>
+          <div class="govuk-task-list__status" id="claim-assurance-2-status">
+            {% if data["assurance-task-t7"] == "Good" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+            {% elif data["assurance-task-t7"] == "Bad" %}     <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag govuk-tag--red" id="X">Issue</strong>
+
+            {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment govuk-tag govuk-tag--grey" id="X">To do</strong>
+            {% endif %}
+          </div>
+        </li>
+
+    </ol>
+
+
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-0">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data["assurance-task-t7"] == "Request" %}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You cannot process this application yet</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to send the ID verification letter and wait for a response.</p>
+
+
+      {{ govukButton({
+      name: "process-c-nil-task-list",
+      value: "X",
+      checked: (data["X"] == "X"),
+      text: "Continue",
+      classes: "govuk-!-margin-right-2",
+      href: "entry-home"
+      }) }}
+
+    {% elif data["assurance-task-t1"] == "Good" and data["assurance-task-t6"] == "Good" and data["assurance-task-t7"] == "Good"%}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have checked all details</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">This application is ready to go to an assessment provider.</p>
+
+
+{{ govukButton({
+name: "entry-home",
+value: "X",
+checked: (data["X"] == "X"),
+text: "Continue",
+classes: "govuk-!-margin-right-2"
+}) }}
+
+
+    {% elif data["assurance-task-t7"] == "Bad"%}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You are not able to process<br>this application</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can tell us more about the issue on the next screen.</p> -->
+<br><br>
+
+{{ govukButton({
+name: "process-c-nil-task-list",
+value: "X",
+checked: (data["X"] == "X"),
+text: "Continue",
+classes: "govuk-!-margin-right-2",
+href:"application-1-exit-issue"
+}) }}
+
+{% elif data["assurance-task-t6"] == "Bad" and data["assurance-task-t7"] == "Good"%}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">You are not able to process<br>this application</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can tell us more about the issue on the next screen.</p> -->
+<br><br>
+
+{{ govukButton({
+name: "process-c-nil-task-list",
+value: "X",
+checked: (data["X"] == "X"),
+text: "Continue",
+classes: "govuk-!-margin-right-2",
+href:"assurance-exit-issue"
+}) }}
+
+
+    {% elif data["assurance-task-t7"] == "Pause" %}
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">You have paused processing<br>this application</h1>
+    <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You need to verify all details before you can continue.<br>We have saved the work you have done so far.</p>
+
+
+    {{ govukButton({
+    name: "process-c-nil-task-list",
+    value: "UF",
+    checked: (data["process-c-nil-task-list"] == "UF"),
+    text: "Exit and continue later",
+    classes: "govuk-button--secondary",
+    href: "assurance-exit-issue"
+    }) }}
+
+
+    {% else %}
+
+
+    {% endif %}
+
+
+
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
