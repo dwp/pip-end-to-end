@@ -31,7 +31,7 @@
 {% from "govuk/components/pagination/macro.njk"       import govukPagination %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-{% set teamName="Internal User - Starling" %}
+{% set teamName="Internal User - Pelican" %}
 
 {% block head %}
   {% include "includes/head.html" %}
@@ -43,11 +43,11 @@
 
 
 {% block header %}
-  <header class="govuk-header" role="banner" data-module="govuk-header">
-  <div class="govuk-header__container govuk-width-container">
+  <header class="govuk-header" role="banner" data-module="govuk-header" style="border-bottom: 0px;">
+  <div class="govuk-header__container govuk-width-container" style="border-bottom: 0px; padding-bottom: 10px;">
     <div class="govuk-header__content">
       <a href="/" class="govuk-header__link govuk-header__service-name">
-        PIP CASE REVIEW
+        PIP Case Review
       </a>
     </div>
   </div>
@@ -55,7 +55,8 @@
 {% endblock %}
 
 {% block beforeContent %}
-
+{% include "apply-for-pip/includes/phase-banner.html" %}
+{% include "apply-for-pip/includes/back-link.html" %}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
