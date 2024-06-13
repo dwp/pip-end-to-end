@@ -1,0 +1,77 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} Supporting documents {% endblock %}
+
+{% block main %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">Jane Doe</dt>
+
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">QQ 12 34 56 C</dt>
+      <!--  <strong class="govuk-tag govuk-tag--grey" id="tag">In review</strong> -->
+      </div>
+
+      <div class="key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>4 June 1972</dd>
+      </div>
+    </dl>
+</section>
+
+  <div class="govuk-width-container">
+    <div class="column-full">
+    <nav class="navigation-secondary">
+      <ul>
+        <li>
+          <a href="personal-details">Personal details</a>
+        </li>
+        <li>
+          <a href="supporting-documents">Supporting documents</a>
+        </li>
+        <li>
+          <a href="conditions" class="active" aria-current="section">Conditions</a>
+        </li>
+        <li>
+          <a href="activities">Activities</a>
+        </li>
+         <!--
+        <li>
+          <a href="summary">Questions and answers</a>
+        </li> -->
+      </ul>
+    </nav>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <h1 class="govuk-heading-l">
+        <span class="govuk-caption-l">Activity</span>
+        Preparing food
+   </h1>
+
+<h2 class="govuk-heading-s">Does your condition affect you preparing food, or prevent you from doing so?</h2>
+    <p>Yes</p>
+
+    <h3 class="govuk-heading-s">Tell us about the difficulties you have with preparing food and how you manage them</h3>
+
+      <p>
+        About twice a year, for about 3 weeks at a time I have difficulty remembering to turn the hob off because I get too distracted to complete tasks like this. My partner supervises me in the kitchen to make sure I stay safe.
+      </p>
+      <p>
+        Every day, I have difficulty standing while preparing food because my leg is too stiff and painful. I need to use a perching stool so I can rest my leg while preparing food.
+      </p>
+</main>
+  </div>
+</div>
+
+     </div>
+
+
+{% endblock %}
