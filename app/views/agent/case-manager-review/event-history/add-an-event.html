@@ -1,0 +1,193 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} Add an event {% endblock %}
+
+{% block main %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">Jane Doe</dt>
+
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">QQ 12 34 56 C</dt>
+      <!--  <strong class="govuk-tag govuk-tag--grey" id="tag">In review</strong> -->
+      </div>
+
+      <div class="key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>4 June 1972</dd>
+      </div>
+    </dl>
+</section>
+
+  <div class="govuk-width-container">
+    <div class="column-full">
+    <nav class="navigation-secondary">
+      <ul>
+        <li>
+          <a href="../personal-details">Personal details</a>
+        </li>
+        <li>
+          <a href="../conditions">Conditions</a>
+        </li>
+        <li>
+          <a href="../activities">Activities</a>
+        </li>
+        <li>
+          <a href="../event-history" class="active" aria-current="section">Event history</a>
+        </li>
+         <!--
+        <li>
+          <a href="summary">Questions and answers</a>
+        </li> -->
+      </ul>
+    </nav>
+</div>
+<a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Add an event
+        </h1>
+      </legend>
+      <div id="changedName-hint" class="govuk-hint">
+        Select the event you want to record. If you have more than one then you can come back to add more.
+      </div>
+
+
+
+
+    <div class="govuk-radios" data-module="govuk-radios">
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="inbound-call">
+        <label class="govuk-label govuk-radios__label" for="eventType">
+          Inbound call
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType-2" name="eventType" type="radio" value="outbound-call">
+        <label class="govuk-label govuk-radios__label" for="eventType-2">
+          Outbound call
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType-3" name="eventType" type="radio" value="issue-notification">
+        <label class="govuk-label govuk-radios__label" for="eventType-3">
+          Issue notification
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
+        <label class="govuk-label govuk-radios__label" for="eventType-4">
+          Case eject
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="disallow-claim">
+        <label class="govuk-label govuk-radios__label" for="eventType-5">
+          Disallow claim
+        </label>
+
+      </div>
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType-6" name="contact" type="radio" value="text" data-aria-controls="conditional-eventType-6">
+        <label class="govuk-label govuk-radios__label" for="eventType-6">
+          Other
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-eventType-6">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Enter an event type
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </fieldset>
+
+</div>
+
+
+
+
+
+
+
+
+
+<a href="add-a-note" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
+
+</main>
+</div>
+</div>
+
+     </div>
+
+
+{% endblock %}
