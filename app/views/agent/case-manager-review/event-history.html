@@ -1,0 +1,145 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} Event history {% endblock %}
+
+{% block main %}
+
+<section class="key-details-bar" role="contentinfo" aria-label="Key details">
+    <dl class="key-details-bar__key-details">
+      <div class="key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dt class="key-details-bar__name">Jane Doe</dt>
+
+        <dt class="govuk-visually-hidden">National Insurance number:</dt>
+        <dt class="key-details-bar__nino">QQ 12 34 56 C</dt>
+      <!--  <strong class="govuk-tag govuk-tag--grey" id="tag">In review</strong> -->
+      </div>
+
+      <div class="key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>4 June 1972</dd>
+      </div>
+    </dl>
+</section>
+
+  <div class="govuk-width-container">
+    <div class="column-full">
+    <nav class="navigation-secondary">
+      <ul>
+        <li>
+          <a href="personal-details">Personal details</a>
+        </li>
+        <li>
+          <a href="conditions">Conditions</a>
+        </li>
+        <li>
+          <a href="activities">Activities</a>
+        </li>
+        <li>
+          <a href="event-history" class="active" aria-current="section">Event history</a>
+        </li>
+         <!--
+        <li>
+          <a href="summary">Questions and answers</a>
+        </li> -->
+      </ul>
+    </nav>
+</div>
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <h1 class="govuk-heading-l">Event history</h1>
+  <a href="event-history/add-an-event" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Add new event
+  </a>
+  <table class="govuk-table">
+
+  <caption class="govuk-table__caption govuk-visually-hidden">Event history</caption>
+
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header">Date</th>
+
+      <th scope="col" class="govuk-table__header">Event</th>
+
+      <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Details</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+
+    <tr class="govuk-table__row">
+
+
+
+      <td class="govuk-table__cell">12/06/2024</td>
+
+
+
+
+      <td class="govuk-table__cell">Inbound contact</td>
+
+
+
+
+      <td class="govuk-table__cell">User generated content from add event process - consdierations to be had on character count for this block overall and the impact that this will have on displaying content here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus vitae beatae rerum harum eius, magnam odit fugit similique maiores accusamus.</td>
+
+
+    </tr>
+
+
+
+    <tr class="govuk-table__row">
+
+
+
+      <td class="govuk-table__cell">10/06/2024</td>
+
+
+
+
+      <td class="govuk-table__cell">Outbound contact</td>
+
+
+
+
+      <td class="govuk-table__cell">User generated content from add event process - consdierations to be had on character count for this block overall and the impact that this will have on displaying content here.</td>
+
+
+    </tr>
+
+
+
+    <tr class="govuk-table__row">
+
+
+
+      <td class="govuk-table__cell">9/06/2024</td>
+
+
+
+
+      <td class="govuk-table__cell">Claim registered</td>
+
+
+
+
+      <td class="govuk-table__cell">Succinct system generated statement</td>
+
+
+    </tr>
+
+
+  </tbody>
+</table>
+  </div></div>
+  </main>
+
+     </div>
+
+
+{% endblock %}
