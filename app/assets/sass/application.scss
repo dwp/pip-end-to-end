@@ -7,6 +7,17 @@
 
 //VISION PHASE BANNER
 
+div.vision {
+  position: absolute;
+  top: 0;
+  border-bottom: 0;
+}
+
+header.govuk-header {
+  margin-top:40px;
+
+}
+
 div.govuk-event-banner {
   border: 4px dotted #491644;
   margin:40px 0;

@@ -36,36 +36,13 @@
 
               <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
 
-                <table class="govuk-table">
 
-                  <h3 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents</h3>
 
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell govuk-60-percent"></td>
-                      <td class="govuk-table__cell govuk-25-percent"></td>
-                      <td class="govuk-table__cell govuk-15-percent">Status</td>
-                    </tr>
-                    </thead>
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h2>
 
-                    <tr class="govuk-table__row">
-                        <td class="govuk-table__cell table-spacer">
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="application-5-view-evidence">View and assess supporting documents</a></p>
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">(Open in a new window)</a></p>
-                        </td>
-
-                        <td class="govuk-table__cell table-spacer"></td>
-                        <td class="govuk-table__cell table-spacer">
-
-                          {% if data["evidence-3-grade"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
-                          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
-                          {% endif %}
-
-                        </td>
-                        </tr>
-
-        </table>
-
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/agent/case-manager-review/personal-details" target="_blank">Registration (PIP1) and health information gather (PIP2)</a></p>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents</a></p>
+<br/>
 
                           <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
 
@@ -86,10 +63,10 @@
                     <td class="govuk-table__cell table-spacer"><a href="application-6-about-a1">Preparing food</a></td>
                     <td class="govuk-table__cell table-spacer">
 
-                    {% if data["application-5-about-a1-score-overwrite"] %}
+                    {% if data["application-about-a1-score-overwrite"] %}
                     {% include "agent/process-app/application-about-a1-score-overwrite.html" %}
                     {% else %}
-                    0
+                    2
                     {% endif %}
 
                     </td>
@@ -380,12 +357,8 @@
 
 
           <!-- I am not nil award -->
-  <h1 class="govuk-heading-l govuk-!-margin-top-6 govuk-!-margin-bottom-2">You have confirmed your scores</h1>
-  <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">This person will:</p>
-  <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-    <li>be awarded the standard rate for daily living</li>
-    <li>not be awarded for mobility</li>
-  </ul>
+  <h1 class="govuk-heading-l govuk-!-margin-top-6 ">You have selected and justified your descriptors</h1>
+  <p class="govuk-body govuk-!-font-size-19 ">This person will be awarded PIP.</p>
 
 
         {{ govukButton({
@@ -394,7 +367,7 @@
         checked: (data["X"] == "X"),
         text: "Continue",
         classes: "govuk-!-margin-right-2",
-        href: "application-6-award-review-check"
+        href: "award-dates-data-input"
         }) }}
 
 

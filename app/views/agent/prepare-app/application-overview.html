@@ -1,0 +1,70 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Prepare an application for an assessment provider
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<form action="assurance-mm-tasklist" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for an assessment provider</h1>
+
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 25 January 2024</p>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 1 February 2024</p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Primary condition: Back pain</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-3">Secondary condition: Anxiety</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Age: 40 (1 January 1984)</p> -->
+
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <!-- <caption class="govuk-table__caption govuk-table__caption--m govuk-!-margin-bottom-2">Application details</caption> -->
+
+            <th scope="col" class="govuk-table__header govuk-60-percent"></th>
+            <th scope="col" class="govuk-table__header govuk-40-percent"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Application submitted</td>
+            <td class="govuk-table__cell">25 January 2024</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Age</td>
+            <td class="govuk-table__cell">40 (1 January 1984)</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+
+<br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
