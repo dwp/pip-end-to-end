@@ -40,66 +40,68 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-    <ol class="app-task-list">
-      <li>
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These are the remaining details for you to check. All other eligibility checks have been done already.</p> -->
 
-
-
-
-      <ul class="app-task-list__items app-task-list__items-pip">
-
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h2>
-
+        <h2 class="app-task-list__section">
+          Review supplied information
+        </h2>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/agent/case-manager-review/personal-details" target="_blank">Registration (PIP1) and health information gather (PIP2)</a></p>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents</a></p>
+        <br>
 
+        <h2 class="app-task-list__section">
+          Check application
+        </h2>
 
-<br>
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasks" aria-describedby="task-1">
+                Provided details and required support
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-sub-monolith-1-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% elif data["assurance-sub-monolith-1-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+                {% elif data["assurance-sub-monolith-1-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+                {% elif data["assurance-sub-monolith-1-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
-<h2 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-1">Check application</h2>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="entitlement-tasks" aria-describedby="task-5">
+                Eligibility
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-sub-monolith-2-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% elif data["assurance-sub-monolith-2-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+                {% elif data["assurance-sub-monolith-2-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+                {% elif data["assurance-sub-monolith-2-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
-        <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="assurance-tasks" aria-describedby="task-1">
-            <!-- [1-1]  --> Provided details and required support
-          </a>
-          {% if data["assurance-sub-monolith-1-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["assurance-sub-monolith-1-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["assurance-sub-monolith-1-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
-          {% elif data["assurance-sub-monolith-1-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="eligibility-tasks" aria-describedby="task-5">
+                Entitlement
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-sub-monolith-3-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
+                {% elif data["assurance-sub-monolith-3-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
+                {% elif data["assurance-sub-monolith-3-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
+                {% elif data["assurance-sub-monolith-3-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
 
-          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
-          {% endif %}
-        </li>
-
-        <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="eligibility-tasks" aria-describedby="task-5">
-            <!-- [1-1]  --> Eligibility
-          </a>
-          {% if data["assurance-sub-monolith-2-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["assurance-sub-monolith-2-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["assurance-sub-monolith-2-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
-          {% elif data["assurance-sub-monolith-2-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
-
-          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
-          {% endif %}
-        </li>
-
-        <li class="app-task-list__item">
-          <a class="app-task-list__task-name" href="entitlement-tasks" aria-describedby="task-5">
-            <!-- [1-1]  --> Entitlement
-          </a>
-          {% if data["assurance-sub-monolith-3-1"] == "Expected" %}      <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-done" id="X">Done</strong>
-          {% elif data["assurance-sub-monolith-3-1"] == "Unexpected" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-bad" id="X">Issue</strong>
-          {% elif data["assurance-sub-monolith-3-1"] == "Blocked" %}     <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-blocked" id="X">Done / PIP2 Missing</strong>
-          {% elif data["assurance-sub-monolith-3-1"] == "Pause" %}   <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-pause" id="X">Paused</strong>
-
-          {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
-          {% endif %}
-        </li>
-    </ol>
-
-
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-alignment app-task-list__apl-task-not-done" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+        </ul>
 
         <!------------ ––– ------------>
 
