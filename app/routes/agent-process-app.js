@@ -20,6 +20,22 @@ router.post(`/agent/process-app/application-6-about-a1`, (req, res) => {
  }
 })
 
+router.post('/agent/process-app/award-dates-data-input', (req, res, next) => {
+        res.redirect('/agent/process-app/award-dates-AP-rec-check');
+});
+
+router.post(`/agent/process-app/award-dates-AP-rec-check`, (req, res) => {
+  const agreeAPCheck = req.session.data['award-dates-AP-rec-check']
+
+  if (agreeAPCheck == 'Yes') {
+    res.redirect(`/agent/process-app/award-dates-playback`)
+  }
+   else {
+    res.redirect(`/agent/process-app/award-dates-review-manual`)
+  }
+})
+
+
 
 router.post(`/agent/process-app/application-6-award-review-check`, (req, res) => {
   const agreeAPCheck = req.session.data['application-5-award-review-check']

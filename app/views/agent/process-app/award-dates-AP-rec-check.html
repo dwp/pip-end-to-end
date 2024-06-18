@@ -18,16 +18,21 @@
       {% include "agent-day-0-1-2/record-id.html" %}
 
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">
-        Do you agree with the assessment provider’s recommended claim review date of 6 March 2025 (1 year)?
+        {% if data["award-dates-ap-period"] == "No future assessments required" %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Do you agree with the assessment provider's recommendation that no future assessments are needed?</h2>
+
+        {% elif data["award-dates-ap-period"] == "Other" %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4">Do you agree with the assessment provider's recommendation to award until {{ data['award-dates-ap-period-other-day'] + ' ' + (data['award-dates-ap-period-other-month'] ) + ' ' + data['award-dates-ap-period-other-year']}}?</h2>
+
+        {% else %}
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-4"> Do you agree with the assessment provider's recommended award period of {{data["award-dates-ap-period"]}}?</h2>
+        {% endif %}
       </h2>
 
       {% set legendHint %}
 
-        <p class="govuk-body govuk-!-margin-bottom-2">The person:</p>
+        <p class="govuk-body govuk-!-margin-bottom-2">The applicant:</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>
-            is 65 and will reach State Pension age on 20 February 2028
-          </li>
           <li>
             will be awarded the standard rate for daily living
           </li>

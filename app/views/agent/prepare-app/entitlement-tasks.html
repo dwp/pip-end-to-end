@@ -1,0 +1,213 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Check the applicant's details
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="assurance-mm-tasklist" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check if anything may affect the applicant's entitlement to PIP</h2>
+      <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
+
+
+
+
+    </div>
+  </div>
+
+
+    <!------------ ––– ------------>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+    <ol class="app-task-list">
+      <li>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXXX.</p> -->
+
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-3-1",
+  name: "assurance-sub-monolith-3-1",
+  fieldset: {
+    legend: {
+      html: "Is there anything that may affect payability?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check the health information gather (PIP2)."
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-3-1"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-3-1"] == "Unexpected")
+  },
+  {
+    value: "Blocked",
+    text: "Health information gather (PIP2) has not been returned",
+    checked: (data["assurance-sub-monolith-3-1"] == "Blocked")
+  }
+  ]
+}) }}
+
+
+          {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-3-2",
+  name: "assurance-sub-monolith-3-2",
+  fieldset: {
+    legend: {
+      html: "Do they meet the qualifying period and prospective test conditions?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check the health information gather (PIP2)."
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-3-2"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-3-2"] == "Unexpected")
+  },
+  {
+    value: "Blocked",
+    text: "Health information gather (PIP2) has not been returned",
+    checked: (data["assurance-sub-monolith-3-2"] == "Blocked")
+  }
+  ]
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-3-3",
+  name: "assurance-sub-monolith-3-3",
+  fieldset: {
+    legend: {
+      html: "Do they get War Pensioners' Mobility Supplement?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check Searchlight and the health information gather (PIP2). Email the war pensions team if necessary."
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-3-3"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
+  }
+  ]
+}) }}
+
+        {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-3-4",
+  name: "assurance-sub-monolith-3-4",
+  fieldset: {
+    legend: {
+      html: "Do they get Constant Attendance Allowance?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check Searchlight and the health information gather (PIP2)."
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Yes",
+    checked: (data["assurance-sub-monolith-3-4"] == "Expected")
+  },
+  {
+    value: "Unexpected",
+    text: "No",
+    checked: (data["assurance-sub-monolith-3-4"] == "Unexpected")
+  },
+  {
+    value: "Blocked",
+    text: "Health information gather (PIP2) has not been returned",
+    checked: (data["assurance-sub-monolith-3-4"] == "Blocked")
+  }
+  ]
+}) }}
+
+        <!-- {{ govukRadios({
+  classes: "govuk-radios--small govuk-!-margin-bottom-4",
+  idPrefix: "assurance-sub-monolith-3-5",
+  name: "assurance-sub-monolith-3-5",
+  fieldset: {
+    legend: {
+      html: "Check 5: Action",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+    }
+  },
+  hint: {
+    text: "Check details"
+  },
+  items: [
+  {
+    value: "Expected",
+    text: "Expected",
+    checked: (data["assurance-sub-monolith-3-5"] == "Expected")
+  },
+  {
+    value: "Unexpexted",
+    text: "Unexpexted",
+    checked: (data["assurance-sub-monolith-3-5"] == "Unexpected")
+  }
+  ]
+}) }} -->
+
+{{ govukButton({
+  text: "Return to tasklist",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
