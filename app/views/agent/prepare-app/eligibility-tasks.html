@@ -13,15 +13,16 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <form action="assurance-mm-tasklist" method="post" class="form">
 
+
+    <form action="entitlement-tasks" method="post" class="form">
 
     <div class="govuk-grid-column-two-thirds">
 
       {% include "agent/process-app/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check if anything may affect the applicant's eligibility for PIP</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any potential flags or markers</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -36,325 +37,238 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-      <ul class="govuk-task-list">
+    <ol class="app-task-list">
+      <li>
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXXX.</p> -->
+
+      <ul class="app-task-list__items app-task-list__items-pip">
+
+
+
+        {{ govukRadios({
+      classes: "govuk-radios--small govuk-!-margin-bottom-4",
+      idPrefix: "assurance-sub-monolith-2-1",
+      name: "assurance-sub-monolith-2-1",
+      fieldset: {
+      legend: {
+      html: "Do they need an alternative format?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m "
+      }
+      },
+      hint: {
+      text: "Check registration (PIP1) and Searchlight. You could also check PIPCS for any previous claims."
+      },
+      items: [
+      {
+      value: "Unexpected",
+      text: "Yes",
+      checked: (data["assurance-sub-monolith-2-1"] == "Unexpected")
+      },
+      {
+      value: "Expected",
+      text: "No",
+      checked: (data["assurance-sub-monolith-2-1"] == "Expected")
+      }
+      ]
+      }) }}
 
 
         {{ govukRadios({
-  classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-2-1",
-  name: "assurance-sub-monolith-2-1",
-  fieldset: {
-    legend: {
-      html: "Have they withdrawn their claim?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m "
-    }
-  },
-  hint: {
-    text: "Check Searchlight and event history."
-  },
-  items: [
-  {
-    value: "Expected",
-    text: "Yes",
-    checked: (data["assurance-sub-monolith-2-1"] == "Expected")
-  },
-  {
-    value: "Unexpected",
-    text: "No",
-    checked: (data["assurance-sub-monolith-2-1"] == "Unexpected")
-  }
-  ]
-}) }}
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-2",
+        name: "assurance-sub-monolith-2-2",
+        fieldset: {
+        legend: {
+        html: "Do debt management have an interest in them on Searchlight?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: ""
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-2"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-2"] == "Expected")
+        }
+        ]
+        }) }}
 
-
-          {{ govukRadios({
-  classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-2-2",
-  name: "assurance-sub-monolith-2-2",
-  fieldset: {
-    legend: {
-      html: "Do they meet the age criteria?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m "
-    }
-  },
-  hint: {
-    text: "Check Searchlight."
-  },
-  items: [
-  {
-    value: "Expected",
-    text: "Yes",
-    checked: (data["assurance-sub-monolith-2-2"] == "Expected")
-  },
-  {
-    value: "Unexpected",
-    text: "No",
-    checked: (data["assurance-sub-monolith-2-2"] == "Unexpected")
-  }
-  ]
-}) }}
 
         {{ govukRadios({
-  classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-2-3",
-  name: "assurance-sub-monolith-2-3",
-  fieldset: {
-    legend: {
-      html: "Is the Claimant deceased?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m "
-    }
-  },
-  hint: {
-    text: "Check Searchlight."
-  },
-  items: [
-  {
-    value: "Expected",
-    text: "Yes",
-    checked: (data["assurance-sub-monolith-2-3"] == "Expected")
-  },
-  {
-    value: "Unexpected",
-    text: "No",
-    checked: (data["assurance-sub-monolith-2-3"] == "Unexpected")
-  }
-  ]
-}) }}
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-3",
+        name: "assurance-sub-monolith-2-3",
+        fieldset: {
+        legend: {
+        html: "Is there evidence of fraud present?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "Check the event history and PIPCS for any previous claims which might indicate potential fraud."
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-3"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-3"] == "Expected")
+        }
+        ]
+        }) }}
 
+        {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-4",
+        name: "assurance-sub-monolith-2-4",
+        fieldset: {
+        legend: {
+        html: "Do they have an unacceptable customer behaviour (UCB) or keep customer interactions safe (KCIS) marker on Searchlight?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "You could also check PIPCS for any previous claims."
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-4"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-4"] == "Expected")
+        }
+        ]
+        }) }}
+
+
+        <!-- TBC
+        {{ govukRadios({
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-5",
+        name: "assurance-sub-monolith-2-5",
+        fieldset: {
+        legend: {
+        html: "2 Does their gender match what we hold in Searchlight?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "You can also call the applicant if necessary."
+        },
+        items: [
+        {
+        value: "Expected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-5"] == "Expected")
+        },
+        {
+        value: "Unexpected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-5"] == "Unexpected")
+        }
+        ]
+        }) }} -->
+
+
+
+
+<!--
         {{ govukRadios({
   classes: "govuk-radios--small govuk-!-margin-bottom-4",
   idPrefix: "assurance-sub-monolith-2-4",
   name: "assurance-sub-monolith-2-4",
   fieldset: {
     legend: {
-      html: "Have they returned the health information gather (PIP2) or has good reason been accepted?",
+      html: "Have they returned the health information gather (PIP2)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "If there is no health information gather (PIP2), check the event history for evidence of good reason. "
+    text: "If there is no health information gather (PIP2), check the event history for evidence of good cause for not returning it. "
   },
   items: [
   {
     value: "Expected",
-    text: "Health information gather (PIP2) has been returned",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-2-4"] == "Expected")
   },
   {
     value: "Expected",
-    text: "Good reason has been accepted for not returning",
+    text: "No - but good cause has been accepted for not returning it",
     checked: (data["assurance-sub-monolith-2-4"] == "Expected")
   },
   {
     value: "Blocked",
-    text: "Health information gather (PIP2) has not been returned and no good reason accepted",
+    text: "No",
     checked: (data["assurance-sub-monolith-2-4"] == "Blocked")
   }
   ]
-}) }}
+}) }} -->
 
-        {{ govukRadios({
+        <!-- {{ govukRadios({
   classes: "govuk-radios--small govuk-!-margin-bottom-4",
   idPrefix: "assurance-sub-monolith-2-5",
   name: "assurance-sub-monolith-2-5",
   fieldset: {
     legend: {
-      html: "Have they attended their assessment or has good reason been accepted?",
+      html: "Have they attended their assessment?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check assessment provider contact history"
+    text: "Check assessment provider contact history or event history for evidence of good cause if they have not attended their assessment."
   },
   items: [
   {
     value: "Expected",
-    text: "Assessment has been attended",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-2-5"] == "Expected")
   },
   {
     value: "Expected",
-    text: "Good reason has been accepted for not attending",
+    text: "No - but good cause has been accepted for not attending",
     checked: (data["assurance-sub-monolith-2-5"] == "Expected")
   },
   {
     value: "Unexpected",
-    text: "Assessment has not been attended and no good reason accepted",
+    text: "No",
     checked: (data["assurance-sub-monolith-2-5"] == "Unexpected")
   }
   ]
-}) }}
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-2-6",
-name: "assurance-sub-monolith-2-6",
-fieldset: {
-legend: {
-html: "Are they working abroad?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check the health information gather (PIP2). Call the applicant if necessary. "
-},
-items: [
-{
-value: "Expected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-2-6"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-2-6"] == "Unexpected")
-},
-{
-  value: "Blocked",
-  text: "Health information gather (PIP2) has not been returned",
-  checked: (data["assurance-sub-monolith-2-6"] == "Blocked")
-}
-]
-}) }}
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-2-7",
-name: "assurance-sub-monolith-2-7",
-fieldset: {
-legend: {
-html: "Do they get any foreign benefits?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check the health information gather (PIP2). Call the applicant if necessary. "
-},
-items: [
-{
-value: "Expected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-2-7"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-2-7"] == "Unexpected")
-},
-{
-  value: "Blocked",
-  text: "Health information gather (PIP2) has not been returned",
-  checked: (data["assurance-sub-monolith-2-7"] == "Blocked")
-}
-]
-}) }}
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-2-8",
-name: "assurance-sub-monolith-2-8",
-fieldset: {
-legend: {
-html: "Do they get Disability Living Allowance (DLA) – either rising 16 or natural DLA?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check Searchlight and CPS."
-},
-items: [
-{
-value: "Expected",
-text: "Yes - rising 16",
-checked: (data["assurance-sub-monolith-2-8"] == "Expected")
-},
-{
-value: "Expected",
-text: "Yes - natural DLA",
-checked: (data["assurance-sub-monolith-2-8"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-2-8"] == "Unexpected")
-}
-]
-}) }}
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-2-9",
-name: "assurance-sub-monolith-2-9",
-fieldset: {
-legend: {
-html: "Do they get Child Disability Payment (CDP) or Adult Disability Payment (ADP)?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check Searchlight. "
-},
-items: [
-{
-value: "Expected",
-text: "Yes - CDP",
-checked: (data["assurance-sub-monolith-2-9"] == "Expected")
-},
-{
-value: "Expected",
-text: "Yes - ADP",
-checked: (data["assurance-sub-monolith-2-9"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-2-9"] == "Unexpected")
-}
-]
-}) }}
-
-{{ govukRadios({
-classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-2-10",
-name: "assurance-sub-monolith-2-10",
-fieldset: {
-legend: {
-html: "Do they get  Armed Forces Personal Independence Payment (AFPIP)?",
-isPageHeading: true,
-classes: "govuk-fieldset__legend--m "
-}
-},
-hint: {
-text: "Check Searchlight. "
-},
-items: [
-{
-value: "Expected",
-text: "Yes",
-checked: (data["assurance-sub-monolith-2-10"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No",
-checked: (data["assurance-sub-monolith-2-10"] == "Unexpected")
-}
-]
-}) }}
+}) }} -->
 
 
-{{ govukButton({
-  text: "Return to tasklist",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
+
+<form action="entitlement-tasks" method="post" class="form">
+
+  {{ govukButton({
+    text: "Continue",
+    classes: "govuk-!-margin-bottom-8"
+  }) }}
+
+
 
 
         </div>
