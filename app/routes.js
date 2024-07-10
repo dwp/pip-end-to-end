@@ -22,5 +22,6 @@ applyforpip(router);
 pipregister(router);
 agent(router);
 processapp(router);
+processapp(router);
 
 // ROUTER LIST END
