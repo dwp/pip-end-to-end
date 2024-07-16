@@ -1,0 +1,310 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} View all claims {% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <h2 class="govuk-heading-m govuk-!-Margin-bottom-5">Filters</h2>
+    <div id="filter-hint" class="govuk-hint govuk-!-Marchgin-bottom-4">
+      Select one or more filters to apply to the list.
+    </div>
+    <div class="table-filter">
+      <form id="filters" action="index" method="post">
+
+        <!--Filters-->
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Current status
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input govuk-body" id="status-1" name="current-status" type="checkbox" value="registered" checked>
+                <label class="govuk-label govuk-checkboxes__label " for="status-1">
+                  Registration (2)
+                </label>
+
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-2" name="current-status" type="checkbox" value="health-dis" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Health and disability (1)
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="current-status" type="checkbox" value="submitted" {% if checkstatus-3 %} checked {% endif %}>
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Submitted
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-4" name="current-status" type="checkbox" value="disallowed" {% if checkstatus-4 %} checked {% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="status-4">
+                  Disallowed: failure to comply
+                </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-5" name="current-status" type="checkbox" value="Withdrawn" {% if checkstatus-5 %} checked {% endif %}>
+              <label class="govuk-label govuk-checkboxes__label" for="status-5">
+                Claim withdrawn
+              </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="status-6" name="current-status" type="checkbox" value="referred-ap" {% if checkstatus-6 %} checked {% endif %}>
+            <label class="govuk-label govuk-checkboxes__label" for="status-6">
+              Referred to assessment provider
+            </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="status-7" name="current-status" type="checkbox" value="Returned-ap" {% if checkstatus-7 %} checked {% endif %}>
+          <label class="govuk-label govuk-checkboxes__label" for="status-7">
+            Returned from assessment provider
+          </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="status-8" name="current-status" type="checkbox" value="Ready-decision" {% if checkstatus-8 %} checked {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="status-8">
+          Ready for decision
+        </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-9" name="current-status" type="checkbox" value="awarded" {% if checkstatus-9 %} checked {% endif %}>
+      <label class="govuk-label govuk-checkboxes__label" for="status-9">
+        Decision made: awarded
+      </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="status-10" name="current-status" type="checkbox" value="not-awarded" {% if checkstatus-10 %} checked {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="status-10">
+          Decision made: not awarded
+        </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-11" name="current-status" type="checkbox" value="sent-directly" {% if checkstatus-11 %} checked {% endif %}>
+      <label class="govuk-label govuk-checkboxes__label" for="status-11">
+        Sent directly to PIPCS
+      </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-12" name="current-status" type="checkbox" value="rebuilt" {% if checkstatus-12 %} checked {% endif %}>
+      <label class="govuk-label govuk-checkboxes__label" for="status-12">
+        Manually rebuilt in PIPCS
+      </label>
+    </div>
+    </div>
+
+        </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+          Apply filters
+        </button>
+
+      </form>
+
+  </div>
+    </div>
+
+
+      <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l">View cases</h1>
+        {%- from "govuk/components/table/macro.njk" import govukTable -%}
+
+{{ govukTable({
+  attributes: {
+    'data-module': 'moj-sortable-table'
+  },
+  head: [
+    {
+      text: "National Insurance number",
+      classes:"govuk-!-width-one-quarter"
+    },
+    {
+      text: "Claim start date",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "Claim status"
+    },
+    {
+      text: "Status change date",
+      attributes: {
+        "aria-sort": "none"
+      }
+  }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="../event-history" class="govuk-link">QQ 56 82 91 F'
+      },
+      {
+        text: "30 June 2024",
+        format: "numeric",
+        attributes: {
+          "data-sort-value": "30 June 2024"
+        }
+      },
+      {
+        text: "Health and Disability"
+      },
+      {
+        text: "3 July 2024"
+      }
+    ],
+    [
+      {
+        html: '<a href="../add-an-event" class="govuk-link">QQ 23 64 77 A'
+      },
+      {
+        text: "30 June 2024",
+        format: "numeric",
+        attributes: {
+          "data-sort-value": "30 June 2024"
+        }
+      },
+      {
+        text: "Registration"
+      },
+      {
+        text: "30 June 2024"
+      }
+    ],
+    [
+      {
+        html: '<a href="../add-an-event" class="govuk-link">QQ 12 34 56 C'
+      },
+      {
+        text: "1 July 2024",
+        format: "numeric",
+        attributes: {
+          "data-sort-value": "1 July 2024"
+        }
+      },
+      {
+        text: "Registration"
+      },
+      {
+        text: "1 July 2024"
+      }
+    ]
+  ]
+}) }}
+        </div>
+
+        <script>
+
+          function hideAllWithClass(classname) {
+            document.querySelectorAll("." + classname).forEach((element) => {
+              element.style.visibility = 'collapse';
+            });
+          }
+
+          function showAllWithClass(classname) {
+            document.querySelectorAll("." + classname).forEach((element) => {
+              element.style.visibility = 'visible';
+            });
+          }
+
+          document.querySelector("#filters").addEventListener("submit", function (e) {
+
+            e.preventDefault();    //stop form from submitting
+
+            showAllWithClass("status-1");
+            showAllWithClass("status-2");
+            showAllWithClass("status-3");
+            showAllWithClass("status-4");
+            showAllWithClass("status-5");
+            showAllWithClass("status-6");
+            showAllWithClass("status-7");
+            showAllWithClass("status-8");
+            showAllWithClass("status-9");
+            showAllWithClass("status-10");
+            showAllWithClass("status-11");
+            showAllWithClass("status-12");
+
+            let benefitTypes = [];
+            let sites = [];
+
+            if (document.getElementById('srel').checked == true) {
+              hideAllWithClass("no-srel");
+            }
+
+            if (document.getElementById('pip').checked == true || document.getElementById('esa').checked == true || document.getElementById('uc').checked == true) {
+              if (document.getElementById('pip').checked == false) {
+                hideAllWithClass("pip");
+              } else {
+                benefitTypes.push("Personal Independence Payment");
+              }
+
+              if (document.getElementById('esa').checked == false) {
+                hideAllWithClass("esa");
+              } else {
+                benefitTypes.push("Employment Support Allowance");
+              }
+
+              if (document.getElementById('uc').checked == false) {
+                hideAllWithClass("uc");
+              } else {
+                benefitTypes.push("Universal Credit");
+              }
+            }
+
+            if (document.getElementById('handsworth').checked == true || document.getElementById('tresco').checked == true) {
+              if (document.getElementById('handsworth').checked == false) {
+                hideAllWithClass("handsworth");
+              } else {
+                sites.push("Handsworth");
+              }
+
+              if (document.getElementById('tresco').checked == false) {
+                hideAllWithClass("tresco");
+              } else {
+                sites.push('Tresco');
+              }
+            }
+
+            var count = 0;
+            var elemnts = document
+              .querySelectorAll('.govuk-table tr').forEach((element) => {
+                if (element.style.visibility === 'visible') {
+                  count += 1;
+                }
+              })
+
+            if (count < 20) {
+              document.getElementById('pagination').style.visibility = 'collapse';
+            } else {
+              document.getElementById('pagination').style.visibility = 'visible';
+            }
+
+            document.getElementById('paginationTotal').innerText = count;
+
+            // var eol = document.getElementById('srel').checked ? " end of life" : "";
+            // var benefitTypeString = benefitTypes.join(", ");
+            // var sitesString = sites.join(", ");
+            // var ifBenefitType = benefitTypes.length > 0 ? ' for ' : '';
+            // var ifSites = sites.length > 0 ? ' at ' : '';
+
+            //11 HCP review end of life referrals in PIP, ESA, UC at Birmingham Handsworth
+            // var text = count + " report ready " + eol + " referrals " + ifBenefitType + benefitTypeString + ifSites + sitesString;
+            var text = count + " referrals";
+
+            document.getElementById('filter-playback').innerText = text;
+
+            // document.getElementById('srelCount').innertext = document.querySelectorAll('.govuk-table tr.srel').length;
+
+          });
+
+        </script>
+
+        {% endblock %}
