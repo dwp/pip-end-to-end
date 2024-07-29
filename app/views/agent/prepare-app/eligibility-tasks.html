@@ -44,34 +44,33 @@
       <ul class="app-task-list__items app-task-list__items-pip">
 
 
-
         {{ govukRadios({
-      classes: "govuk-radios--small govuk-!-margin-bottom-4",
-      idPrefix: "assurance-sub-monolith-2-1",
-      name: "assurance-sub-monolith-2-1",
-      fieldset: {
-      legend: {
-      html: "Do they need an alternative format?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m "
-      }
-      },
-      hint: {
-      text: "Check registration (PIP1) and Searchlight. You could also check PIPCS for any previous claims."
-      },
-      items: [
-      {
-      value: "Unexpected",
-      text: "Yes",
-      checked: (data["assurance-sub-monolith-2-1"] == "Unexpected")
-      },
-      {
-      value: "Expected",
-      text: "No",
-      checked: (data["assurance-sub-monolith-2-1"] == "Expected")
-      }
-      ]
-      }) }}
+        classes: "govuk-radios--small govuk-!-margin-bottom-4",
+        idPrefix: "assurance-sub-monolith-2-1",
+        name: "assurance-sub-monolith-2-1",
+        fieldset: {
+        legend: {
+        html: "Do they need additional support?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m "
+        }
+        },
+        hint: {
+        text: "Check registration (PIP1)."
+        },
+        items: [
+        {
+        value: "Unexpected",
+        text: "Yes",
+        checked: (data["assurance-sub-monolith-2-1"] == "Unexpected")
+        },
+        {
+        value: "Expected",
+        text: "No",
+        checked: (data["assurance-sub-monolith-2-1"] == "Expected")
+        }
+        ]
+        }) }}
 
 
         {{ govukRadios({
@@ -80,13 +79,13 @@
         name: "assurance-sub-monolith-2-2",
         fieldset: {
         legend: {
-        html: "Do debt management have an interest in them on Searchlight?",
+        html: "Do they need an alternative format?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m "
         }
         },
         hint: {
-        text: ""
+        text: "Check registration (PIP1) and Searchlight."
         },
         items: [
         {
@@ -109,13 +108,13 @@
         name: "assurance-sub-monolith-2-3",
         fieldset: {
         legend: {
-        html: "Is there evidence of fraud present?",
+        html: "Is there evidence of fraud?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m "
         }
         },
         hint: {
-        text: "Check the event history and PIPCS for any previous claims which might indicate potential fraud."
+        text: "Check Searchlight and event history."
         },
         items: [
         {
@@ -141,9 +140,6 @@
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m "
         }
-        },
-        hint: {
-        text: "You could also check PIPCS for any previous claims."
         },
         items: [
         {

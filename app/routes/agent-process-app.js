@@ -48,4 +48,68 @@ router.post(`/agent/process-app/application-6-award-review-check`, (req, res) =>
   }
 })
 
+
+
+
+
+// PREPARE APP
+
+router.post(`/agent/process-app/preparation-outcome`, (req, res) => {
+  const preparationOutcome = req.session.data['preparation-outcome']
+
+  if (preparationOutcome == 'Decide') {
+    res.redirect(`/agent/process-app/application-6-overview`)
+  }
+  else if (preparationOutcome == 'BAU') {
+    res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
+  }
+  else if (preparationOutcome == 'Withdraw') {
+    res.redirect(`/agent/prepare-app/assurance-withdraw-check`)
+  }
+})
+
+router.post(`/agent/prepare-app/assurance-outcome`, (req, res) => {
+  const assuranceOutcome = req.session.data['assurance-outcome']
+
+  if (assuranceOutcome == 'AP') {
+    res.redirect(`/agent/prepare-app/claim-referred-confirmation`)
+  }
+  else if (assuranceOutcome == 'BAU') {
+    res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
+  }
+  else if (assuranceOutcome == 'Withdraw') {
+    res.redirect(`/agent/prepare-app/assurance-withdraw-check`)
+  }
+   else {
+    res.redirect(`/agent/prepare-app/assurance-outcome`)
+  }
+})
+
+
+router.post(`/agent/prepare-app/assurance-withdraw-check`, (req, res) => {
+  const assuranceWithdrawCheck = req.session.data['assurance-withdraw-check']
+
+  if (assuranceWithdrawCheck == 'No') {
+    res.redirect(`/agent/prepare-app/assurance-withdraw-actions`)
+  }
+   else {
+    res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
+  }
+})
+
+router.post('/agent/prepare-app/assurance-withdraw-actions', (req, res, next) => {
+        res.redirect('/agent/prepare-app/claim-withdrawn-confirmation');
+});
+
+
+
+
+
+
+
+
+
+
+
+
 }

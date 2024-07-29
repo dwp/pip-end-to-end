@@ -1,7 +1,7 @@
 {% extends "agent/process-app/includes/layout.html" %}
 
 {% block pageTitle %}
-  Check the applicant's details
+  Outcome
 {% endblock %}
 
 {% set pageStatus="Work in progress" %}
@@ -39,8 +39,8 @@
 
 
           {{ govukRadios({
-            idPrefix: "assurance-mm-tasklist-outcome",
-            name: "assurance-mm-tasklist-outcome",
+            idPrefix: "assurance-outcome",
+            name: "assurance-outcome",
             fieldset: {
               legend: {
                 html: "What do you want to do now?",
@@ -56,22 +56,22 @@
             {
               value: "AP",
               text: "Send application to assessment provider",
-              checked: (data["assurance-mm-tasklist-outcome"] == "AP")
+              checked: (data["assurance-outcome"] == "AP")
             },
             {
               value: "BAU",
-              text: "Send application back to BAU",
-              checked: (data["assurance-mm-tasklist-outcome"] == "BAU")
-            },
-            {
-              value: "Withdraw",
-              text: "Withdraw application",
-              checked: (data["assurance-mm-tasklist-outcome"] == "Withdraw")
+              text: "Move application to PIPCS",
+              checked: (data["assurance-outcome"] == "BAU")
             },
             {
               value: "Disallow",
               text: "Disallow application",
-              checked: (data["assurance-mm-tasklist-outcome"] == "Disallow")
+              checked: (data["assurance-outcome"] == "Disallow")
+            },
+            {
+              value: "Withdraw",
+              text: "Withdraw application",
+              checked: (data["assurance-outcome"] == "Withdraw")
             }
             ]
           }) }}

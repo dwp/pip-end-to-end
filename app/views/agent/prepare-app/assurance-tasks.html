@@ -210,13 +210,13 @@ checked: (data["assurance-sub-monolith-1-5"] == "Unexpected")
   name: "assurance-sub-monolith-1-6",
   fieldset: {
     legend: {
-      html: "Do you think this application could be made under Special Rules End of Life (SREL)?",
+      html: "Is there any evidence to suggest this application could have been made under Special Rules End of Life (SREL)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
   },
   hint: {
-    text: "Check supporting documents for an SR1 form. You could also check PIPCS for any previous claims."
+    text: "Check supporting documents for an SR1 form."
   },
   items: [
   {
@@ -258,58 +258,30 @@ checked: (data["assurance-sub-monolith-1-5"] == "Unexpected")
   ]
 }) }}
 
-            {{ govukRadios({
-  classes: "govuk-radios--small govuk-!-margin-bottom-4",
-  idPrefix: "assurance-sub-monolith-1-8",
-  name: "assurance-sub-monolith-1-8",
-  fieldset: {
-    legend: {
-      html: "Do they need additional support?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m "
-    }
-  },
-  hint: {
-    text: "Check registration (PIP1). You could also check PIPCS for any previous claims."
-  },
-  items: [
-  {
-    value: "Unexpected",
-    text: "Yes",
-    checked: (data["assurance-sub-monolith-1-8"] == "Unexpected")
-  },
-  {
-    value: "Expected",
-    text: "No",
-    checked: (data["assurance-sub-monolith-1-8"] == "Expected")
-  }
-  ]
-}) }}
-
 {{ govukRadios({
 classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-1-9",
-name: "assurance-sub-monolith-1-9",
+idPrefix: "assurance-sub-monolith-1-8",
+name: "assurance-sub-monolith-1-8",
 fieldset: {
 legend: {
-html: "Have they withdrawn their claim?",
+html: "Have they withdrawn their application?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-text: "Check event history."
+text: "Check event history and supporting documents for a letter requesting their application to be withdrawn."
 },
 items: [
 {
 value: "Unexpected",
 text: "Yes",
-checked: (data["assurance-sub-monolith-1-9"] == "Unexpected")
+checked: (data["assurance-sub-monolith-1-8"] == "Unexpected")
 },
 {
 value: "Expected",
 text: "No",
-checked: (data["assurance-sub-monolith-1-9"] == "Expected")
+checked: (data["assurance-sub-monolith-1-8"] == "Expected")
 }
 ]
 }) }}
@@ -317,8 +289,8 @@ checked: (data["assurance-sub-monolith-1-9"] == "Expected")
 
   {{ govukRadios({
 classes: "govuk-radios--small govuk-!-margin-bottom-4",
-idPrefix: "assurance-sub-monolith-1-10",
-name: "assurance-sub-monolith-1-10",
+idPrefix: "assurance-sub-monolith-1-9",
+name: "assurance-sub-monolith-1-9",
 fieldset: {
 legend: {
 html: "Do they meet the age criteria?",
@@ -333,17 +305,12 @@ items: [
 {
 value: "Expected",
 text: "Yes",
-checked: (data["assurance-sub-monolith-1-10"] == "Expected")
-},
-{
-value: "Unexpected",
-text: "No - but they have received PIP before and were eligible for it in the year before reaching State Pension age",
-checked: (data["assurance-sub-monolith-1-10"] == "Unexpected")
+checked: (data["assurance-sub-monolith-1-9"] == "Expected")
 },
 {
 value: "Unexpected",
 text: "No",
-checked: (data["assurance-sub-monolith-1-10"] == "Unexpected")
+checked: (data["assurance-sub-monolith-1-9"] == "Unexpected")
 }
 ]
 }) }}
