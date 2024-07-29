@@ -17,7 +17,7 @@
 
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Information you need for<br> the decision letter</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Check the information you are<br> adding to the decision letter</h1>
 
       <!------------H1 LEGEND------------>
 
@@ -40,12 +40,9 @@
         We cannot award you PIP
 
         {% else %}
-        <p>You have been awarded PIP from 1 March 2024 until 6 March 2030</p>
-
-        <p>A review will take place before the end of the award</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>8 points for the daily living part - this means you have been awarded the standard rate of £68.10 a week</li>
-          <li>0 points for the mobility part - this means you have not been awarded for this part</li>
+          <li>12 points for the daily living part - this means you have been given the enhanced rate</li>
+          <li>12 points for the mobility part - this means you have been given the enhanced rate</li>
         </ul>
 
         {% endif %}
@@ -59,36 +56,29 @@
         rows: [
           {
             key: {
-              text: "Name"
-            },
-            value: {
-              text: "Jeff Bridges"
-            }
-          },
-          {
-            key: {
-              text: "National Insurance number"
-            },
-            value: {
-              text: "NA 11 22 33 c"
-            }
-          },
-          {
-            key: {
-              text: "Address"
-            },
-            value: {
-              html: "St. James' Park<br>Newcastle Upon Tyne<br>NE1 4ST"
-            }
-          },
-          {
-            key: {
               text: "Outcome"
             },
             value: {
               html: dynamicOutcome
             }
+          },
+          {
+            key: {
+              text: "Award start date"
+            },
+            value: {
+              text: "2 March 2024"
+            }
+          },
+          {
+            key: {
+              text: "Award review date"
+            },
+            value: {
+              html: "1 March 2026"
+            }
           }
+
 
         ]
       }) }}
@@ -122,7 +112,7 @@
 
                 {% endif %}
 
-                <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                <!-- <dl class="govuk-summary-list govuk-!-margin-bottom-4">
                   <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                       Additional content
@@ -136,9 +126,9 @@
                       </a>
                     </dd>
                   </div>
-                </dl>
+                </dl> -->
 
-      <h3 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
+      <h3 class="govuk-heading-l govuk-!-padding-top-2 govuk-!-margin-bottom-6">Daily living scoring</h3>
 
       <!-- 1 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -572,7 +562,7 @@
       </dl>
 
 
-      <h3 class="govuk-heading-m govuk-!-padding-top-2 govuk-!-margin-bottom-6">Mobility scoring</h3>
+      <h3 class="govuk-heading-l govuk-!-padding-top-2 govuk-!-margin-bottom-6">Mobility scoring</h3>
 
       <!-- 11 -->
       <dl class="govuk-summary-list govuk-!-margin-bottom-4">
@@ -662,11 +652,13 @@
 
       <br><br>
 
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">You will have finished processing this application <br>once you have created and sent the decision letter.</p>
-
-
+      <h3 class="govuk-heading-l govuk-!-padding-top-2 govuk-!-margin-bottom-6">What happens next?</h3>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The applicant's payments will be calculated and added to the letter along with the information on this page.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">The letter will then be sent to the applicant. A copy of the letter will be added to the applicant’s record.</p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">You do not need to do anything further once you confirm the letter content.</p>
+      <br><br>
       {{ govukButton({
-        text: "Finish and close",
+        text: "Confirm letter content and continue",
         classes: "govuk-!-margin-bottom-8"
       }) }}
 

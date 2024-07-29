@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
 
 
-    <form action="outcome" method="post" class="form">
+    <form action="assurance-outcome" method="post" class="form">
 
 
     <div class="govuk-grid-column-two-thirds">
@@ -186,12 +186,7 @@ text: "Check Searchlight and CPS."
 items: [
 {
 value: "Unexpected",
-text: "Yes - they are under 16",
-checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
-},
-{
-value: "Unexpected",
-text: "Yes - they are over 16",
+text: "Yes",
 checked: (data["assurance-sub-monolith-3-3"] == "Unexpected")
 },
 {
@@ -309,24 +304,9 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
   items: [
   {
     value: "Unexpected",
-    text: "Yes - exceptional rate",
+    text: "Yes",
     checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
   },
-  {
-    value: "Unexpected",
-    text: "Yes - intermediate rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - full day rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  },
-  {
-    value: "Unexpected",
-    text: "Yes - part day rate",
-    checked: (data["assurance-sub-monolith-3-7"] == "Unexpected")
-  }  ,
   {
       value: "Expected",
       text: "No",
@@ -364,19 +344,17 @@ checked: (data["assurance-sub-monolith-3-5"] == "Expected")
 }) }} -->
 
 
-<form action="outcome" method="post" class="form">
-
   {{ govukButton({
     text: "Continue",
     classes: "govuk-!-margin-bottom-8"
   }) }}
 
-
+</form>
 
 
         </div>
       </div>
 
-  </form>
+
 
 {% endblock %}

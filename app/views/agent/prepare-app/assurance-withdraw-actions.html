@@ -1,0 +1,68 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Withdrawal letter
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    <form action="#" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Creating a withdraw letter</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-2"><b>You need to:</b></p>
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+      <li>Use the catalyst to create context for the letter </li>
+      <li>download a copy of the letter you have created and upload it to ECMS - it will then be available in supporting documents</li>
+    </ul>
+
+
+            <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible"> -->
+
+
+
+      {{ govukCheckboxes({
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "You need to confirm that you have sent the letter brah",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "carcasses",
+            text: "I have moved the application to PIPCS"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Finish and close",
+        classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-4"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

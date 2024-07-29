@@ -115,6 +115,8 @@
 
       <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l">View cases</h1>
+        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total cases: <b>3</b></p>
+
         {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
 {{ govukTable({
@@ -127,16 +129,16 @@
       classes:"govuk-!-width-one-quarter"
     },
     {
-      text: "Claim start date",
+      text: "Date of claim",
       attributes: {
         "aria-sort": "none"
       }
     },
     {
-      text: "Claim status"
+      text: "Current status"
     },
     {
-      text: "Status change date",
+      text: "Days in current status",
       attributes: {
         "aria-sort": "none"
       }
