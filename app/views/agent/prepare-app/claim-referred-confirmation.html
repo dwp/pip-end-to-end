@@ -1,0 +1,34 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Claim referred confirmation
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "agent/process-app/record-id.html" %}
+
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-body govuk-!-font-size-19">This application will now go to an assessment provider</p>
+          <p class="govuk-body govuk-!-font-size-19"><a href="/agent/home/entry">Back to Agent Home</a></p>
+          </div>
+      </div>
+
+{% endblock %}
