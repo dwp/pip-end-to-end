@@ -54,6 +54,11 @@ router.post(`/agent/process-app/application-6-award-review-check`, (req, res) =>
 
 // PREPARE APP
 
+router.post('/agent/process-app/preparation-overview', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-outcome');
+});
+
+
 router.post(`/agent/process-app/preparation-outcome`, (req, res) => {
   const preparationOutcome = req.session.data['preparation-outcome']
 
@@ -100,16 +105,5 @@ router.post(`/agent/prepare-app/assurance-withdraw-check`, (req, res) => {
 router.post('/agent/prepare-app/assurance-withdraw-actions', (req, res, next) => {
         res.redirect('/agent/prepare-app/claim-withdrawn-confirmation');
 });
-
-
-
-
-
-
-
-
-
-
-
 
 }

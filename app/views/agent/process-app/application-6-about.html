@@ -29,22 +29,41 @@
         <div class="govuk-grid-column-three-quarters">
 
 
+          <table class="govuk-table">
 
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents</h1>
 
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"></td>
+                <td class="govuk-table__cell govuk-25-percent"></td>
+                <td class="govuk-table__cell govuk-15-percent"></td>
+              </tr>
+              </thead>
 
-              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-6-view-evidence">Review information and select documents used</a></p>
 
+              </td>
 
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">
 
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h2>
+                {% if data["application-evidence-used"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                {% endif %}
 
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/agent/case-manager-review/personal-details" target="_blank">Registration (PIP1) and health information gather (PIP2)</a></p>
-        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="https://supporting-docs-prototype.herokuapp.com/vStarling-award/document-list" target="_blank">Supporting documents</a></p>
-<br/>
+              </td>
+              </tr>
 
-                          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">
+</table>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
 
                             <table class="govuk-table">
                       <h1 class="govuk-heading-m govuk-!-margin-bottom-0">Daily living activities</h1>
@@ -261,6 +280,12 @@
 
 
                             </table>
+                            </div>
+                            </div>
+
+
+                            <div class="govuk-grid-row">
+                              <div class="govuk-grid-column-three-quarters">
 
                             <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2 govuk-!-margin-top-2">
 
@@ -320,6 +345,7 @@
                         </tr>
 
                   </table>
+
 
                 </div>
                 </div>

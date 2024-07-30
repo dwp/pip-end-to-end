@@ -1,0 +1,858 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        <form action="application-6-view-evidence" method="post" class="form">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+              {% include "agent/process-app/record-id.html" %}
+
+                        <h2 class="govuk-heading-xl govuk-!-margin-bottom-6">Which documents did you use when making your decision?</h2>
+                        <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-6">These will be referenced in the decision letter.<br>Select all that apply.</p>
+                        <!------------H1 LEGEND------------>
+                          {% set dynamicDivide %}
+
+                          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+                              {% endset %}
+                        <!------------Legend--------------->
+
+
+                        <!-- <h2 class="govuk-heading-m govuk-!-margin-bottom-6"></h2>
+                        <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">Do not add documents that did not 'support' the applciation</p> -->
+
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">C</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third govuk-!-margin-bottom-0">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by care home",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Care plan",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Certificate of Vision Impairment (CVI)",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by community mental health team",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Health professional consultation report",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by Customer Compliance Officer",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Letter from consultant",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Report from consultant",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Telephone advice from consultant",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Letter from counsellor",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Report from counsellor",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Telephone advice from counsellor",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">D</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by day centre",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Claim for Disability Living Allowance",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">E</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                  {
+                                                    value: "111",
+                                                    text: "Enquiry form",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: "Extra information applicant gave us",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Eye care professional's report",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Health care professional assessment for Employment and Support Allowance",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">F</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by Fraud Investigation Service",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">G</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by GP's surgery",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Letter from GP",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Report from GP",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Telephone advice from GP",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">H</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                {
+                                                  value: "111",
+                                                  text: "Health information gather (PIP2)",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by Home Office",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Information provided by hospital",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Letter from hospital doctor",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Report from hospital doctor",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Telephone advice from hospital doctor",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+                                            <div class="govuk-grid-row">
+                                              <div class="govuk-grid-column-one-third">
+                                                <h1 class="govuk-heading-l">I</h1>
+                                              </div>
+
+                                              <div class="govuk-grid-column-two-third">
+
+                                              {{ govukCheckboxes({
+                                                idPrefix: "application-evidence-used",
+                                                name: "application-evidence-used",
+                                                classes: "govuk-checkboxes--small",
+                                                fieldset: {
+                                                  legend: {
+                                                    text: "",
+                                                    isPageHeading: true,
+                                                    classes: "govuk-fieldset__legend--m"
+                                                  }
+                                                },
+                                                items: [
+                                                  {
+                                                    value: "111",
+                                                    text: " Health care professional assessment for Incapacity Benefit",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: "Interview under caution",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  },
+                                                  {
+                                                    value: "111",
+                                                    text: " Claim for Industrial Injuries Disablement Benefit",
+                                                    checked: (data["application-evidence-used"] == "1")
+                                                  }
+                                                ]
+                                              }) }}
+
+                                              <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                              </div>
+                                            </div>
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">J</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: "Information provided by Jobcentre Plus",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">L</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by local authority",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">N</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">O</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: "Letter from occupational therapist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from occupational therapist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from occupational therapist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">P</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by Pension Service",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by Primary Care Trust",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by Prison Service",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Letter from community psychiatric nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from community psychiatric nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from community psychiatric nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Letter from physiotherapist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from physiotherapist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from physiotherapist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Letter from psychiatric social worker",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from psychiatric social worker",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from psychiatric social worker",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Letter from psychiatrist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from psychiatrist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from psychiatrist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Letter from psychologist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from psychologist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from psychologist",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">R</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Health professional review report",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">S</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Health professional supplementary advice",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by school",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by school",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by social worker",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: "Surveillance logs",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Letter from specialist nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Report from specialist nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                },
+                                                {
+                                                  value: "111",
+                                                  text: " Telephone advice from specialist nurse",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">T</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by teacher",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">V</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Visiting officer's report",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+                                            <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible govuk-!-margin-bottom-4">
+
+                                            </div>
+                                          </div>
+
+
+                                          <div class="govuk-grid-row">
+                                            <div class="govuk-grid-column-one-third">
+                                              <h1 class="govuk-heading-l">W</h1>
+                                            </div>
+
+                                            <div class="govuk-grid-column-two-third">
+
+                                            {{ govukCheckboxes({
+                                              idPrefix: "application-evidence-used",
+                                              name: "application-evidence-used",
+                                              classes: "govuk-checkboxes--small",
+                                              fieldset: {
+                                                legend: {
+                                                  text: "",
+                                                  isPageHeading: true,
+                                                  classes: "govuk-fieldset__legend--m"
+                                                }
+                                              },
+                                              items: [
+                                                {
+                                                  value: "111",
+                                                  text: " Information provided by Welfare Rights Advisor",
+                                                  checked: (data["application-evidence-used"] == "1")
+                                                }
+                                              ]
+                                            }) }}
+
+
+                                            </div>
+                                          </div>
+
+
+              {{ govukButton({
+                text: "Continue",
+                classes: "govuk-!-margin-bottom-8"
+              }) }}
+
+                </div>
+              </div>
+
+          </form>
+
+        {% endblock %}
