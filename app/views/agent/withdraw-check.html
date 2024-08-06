@@ -40,8 +40,8 @@
           <!------------Legend--------------->
 
           {{ govukRadios({
-            idPrefix: "assurance-withdraw-check",
-            name: "assurance-withdraw-check",
+            idPrefix: "withdraw-check",
+            name: "withdraw-check",
             fieldset: {
               legend: {
                 html: "Is there any evidence to suggest this applicant could be vulnerable?",
@@ -57,17 +57,17 @@
             {
               value: "Yes",
               text: "Yes",
-              checked: (data["assurance-withdraw-check"] == "Yes")
+              checked: (data["withdraw-check"] == "Yes")
             },
             {
               value: "No",
               text: "No",
-              checked: (data["assurance-withdraw-check"] == "No")
+              checked: (data["withdraw-check"] == "No")
             },
             {
               value: "DontKnow",
               text: "I'm not sure",
-              checked: (data["assurance-withdraw-check"] == "DontKnow")
+              checked: (data["withdraw-check"] == "DontKnow")
             }
             ]
           }) }}

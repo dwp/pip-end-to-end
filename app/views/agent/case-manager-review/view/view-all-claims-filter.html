@@ -5,10 +5,115 @@
 {% block content %}
 
     <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <h2 class="govuk-heading-m govuk-!-Margin-bottom-5">Filters</h2>
+    <div id="filter-hint" class="govuk-hint govuk-!-Marchgin-bottom-4">
+      Select one or more filters to apply to the list.
+    </div>
+    <div class="table-filter">
+      <form id="filters" action="index" method="post">
+
+        <!--Filters-->
+        <!-- <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Current status
+          </legend>
+
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input govuk-body" id="status-1" name="current-status" type="checkbox" value="registered" checked>
+                <label class="govuk-label govuk-checkboxes__label " for="status-1">
+                  Registration (2)
+                </label>
+
+              </div>
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-2" name="current-status" type="checkbox" value="health-dis" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Health and disability (1)
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="status-3" name="current-status" type="checkbox" value="submitted" {% if checkstatus-3 %} checked {% endif %}>
+                  <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                    Submitted
+                  </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-4" name="current-status" type="checkbox" value="disallowed" {% if checkstatus-4 %} checked {% endif %}>
+                <label class="govuk-label govuk-checkboxes__label" for="status-4">
+                  Disallowed: failure to comply
+                </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="status-5" name="current-status" type="checkbox" value="Withdrawn" {% if checkstatus-5 %} checked {% endif %}>
+              <label class="govuk-label govuk-checkboxes__label" for="status-5">
+                Claim withdrawn
+              </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="status-6" name="current-status" type="checkbox" value="referred-ap" {% if checkstatus-6 %} checked {% endif %}>
+            <label class="govuk-label govuk-checkboxes__label" for="status-6">
+              Referred to assessment provider
+            </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="status-7" name="current-status" type="checkbox" value="Returned-ap" {% if checkstatus-7 %} checked {% endif %}>
+          <label class="govuk-label govuk-checkboxes__label" for="status-7">
+            Returned from assessment provider
+          </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="status-8" name="current-status" type="checkbox" value="Ready-decision" {% if checkstatus-8 %} checked {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="status-8">
+          Ready for decision
+        </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-9" name="current-status" type="checkbox" value="awarded" {% if checkstatus-9 %} checked {% endif %}>
+      <label class="govuk-label govuk-checkboxes__label" for="status-9">
+        Decision made: awarded
+      </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="status-10" name="current-status" type="checkbox" value="not-awarded" {% if checkstatus-10 %} checked {% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="status-10">
+          Decision made: not awarded
+        </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-11" name="current-status" type="checkbox" value="sent-directly" {% if checkstatus-11 %} checked {% endif %}>
+      <label class="govuk-label govuk-checkboxes__label" for="status-11">
+        Sent directly to PIPCS
+      </label>
+    </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="status-12" name="current-status" type="checkbox" value="rebuilt" {% if checkstatus-12 %} checked {% endif %}>
+      <label class="govuk-label govuk-checkboxes__label" for="status-12">
+        Manually rebuilt in PIPCS
+      </label>
+    </div>
+    </div>
+
+        </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+          Apply filters
+        </button>
+
+      </form>
+
+  </div>
+    </div> -->
 
 
-
-      <div class="govuk-grid-column-full">
+      <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l">View cases</h1>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total cases: <b>3</b></p>
 
