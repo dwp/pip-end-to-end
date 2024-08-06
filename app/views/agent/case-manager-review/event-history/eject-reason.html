@@ -1,6 +1,6 @@
 {% extends "agent/case-manager-review/includes/layout.html" %}
 
-{% block pageTitle %} Add an event {% endblock %}
+{% block pageTitle %} Eject reason {% endblock %}
 
 {% block main %}
 
@@ -53,17 +53,17 @@
 
 
 
-<form action="#" method="post" class="form">
+
 
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-          Add an event
+          Reason for eject
         </h1>
       </legend>
       <div id="changedName-hint" class="govuk-hint">
-        Select the event you want to record. If you have more than one then you can come back to add more.
+        Select the reason you want to record for case eject.
       </div>
 
 
@@ -72,61 +72,67 @@
     <div class="govuk-radios" data-module="govuk-radios">
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="disallow-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Disallow claim
+        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="disallow-claim">
+        <label class="govuk-label govuk-radios__label" for="eventType-5">
+          Change of circumstances
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="withdraw-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Withdraw claim
+        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="withdraw-claim">
+        <label class="govuk-label govuk-radios__label" for="eventType-5">
+          Error in claimant data gather
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="intend-withdraw-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Claimant intends to withdraw claim
+        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="extend-deadline">
+        <label class="govuk-label govuk-radios__label" for="eventType-5">
+          Death of claimant
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="extend-deadline">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Extend deadline
+        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="passed-idv">
+        <label class="govuk-label govuk-radios__label" for="eventType-5">
+          Additional support need identified
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="passed-idv">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Passed IDV
+        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="failed-idv">
+        <label class="govuk-label govuk-radios__label" for="eventType-5">
+          Re-referral request required
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="failed-idv">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Failed IDV
+        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
+        <label class="govuk-label govuk-radios__label" for="eventType-4">
+          Re-open and extend deadline (for PIP2 return)
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="case-eject">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Initiate case eject
+        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
+        <label class="govuk-label govuk-radios__label" for="eventType-4">
+          Cannot process - OIDV not completed
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="case-eject-complete">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Case eject completed
+        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
+        <label class="govuk-label govuk-radios__label" for="eventType-4">
+          Issues with application during pre referral checks
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
+        <label class="govuk-label govuk-radios__label" for="eventType-4">
+          Issues with application during pre decision checks
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="other" data-aria-controls="conditional-eventType-7">
-        <label class="govuk-label govuk-radios__label" for="eventType">
+        <input class="govuk-radios__input" id="eventType-7" name="eventType" type="radio" value="other" data-aria-controls="conditional-eventType-7">
+        <label class="govuk-label govuk-radios__label" for="eventType-7">
           Other
         </label>
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-eventType">
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-eventType-7">
         <div class="govuk-form-group">
           <label class="govuk-label" for="other-event-type">
             Enter an event type
@@ -142,17 +148,23 @@
 
 </div>
 
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
+
+
+
+
+
+
+
+
+<a href="add-a-note" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+  Continue
+</a>
 
 </main>
 </div>
 </div>
 
      </div>
-     </form>
 
 
 {% endblock %}

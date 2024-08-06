@@ -1,0 +1,39 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Withdrawal letter
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    <form action="case-manager-review/event-history/add-a-note" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have found reason for this claim to be withdrawn </h1>
+
+      <p class="govuk-body">Continue, to provide information about why the application is being withdrawn and formally log the event.</p>
+
+      {{ govukButton({
+        text: "Close task and continue",
+        classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-4"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

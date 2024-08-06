@@ -56,13 +56,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Task summary</h1>
+      <h1 class="govuk-heading-l">
+          Task summary
+        </h1>
 
-      <p class="govuk-body govuk-!-font-size-24 "><b>Below is the data that has been gathered to date via agent tasks. If you are moving this application to PIPCS, you need to:</b></p>
+      <p class="govuk-body">Below is the data that has been gathered to date via agent tasks. If you are moving this application to PIPCS, you need to:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
       <li>copy and paste this information to PIPCS</li>
       <li>download a copy of the <a class="" href="pip-doc2.pdf" target="_blank">application data (PDF)</a> and upload it<br> to ECMS - it will then be available in supporting documents</li>
-      <li>confirm you have completed the move to PIP</li>
+      <li>confirm you have completed the move to PIP by adding the event to 'Event history'</li>
     </ul>
 <br>
 
@@ -305,25 +307,8 @@
 
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-            {{ govukCheckboxes({
-              name: "confim-bau",
-              fieldset: {
-                legend: {
-                  text: "If you have moved the application to PIPCS, you need to confirm that you have done this.",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                text: ""
-              },
-              items: [
-                {
-                  value: "confim-bau",
-                  text: "I have moved the application to PIPCS"
-                }
-              ]
-            }) }}
+            <h3 class="govuk-heading-m govuk-!-padding-top-2">Have you used this information to move the application to PIPCS?</h3>
+            <p class="govuk-body">If you have moved the application to PIPCS, you need to confirm that you have done this by formally logging it as an event.</p>
 
             {{ govukButton({
               text: "Confirm move to PIPCS",

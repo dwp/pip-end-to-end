@@ -1,0 +1,41 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  You are moving this application to PIPCS
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+    <form action="case-manager-review/event-history/eject-reason" method="post" class="form">
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have found reason for this claim to be ejected</h1>
+      <p class="govuk-body">On completion of a claim rebuild, it will then be processed under BAU rules.</p>
+      <p class="govuk-body">Continue, to provide information about why the application needs to be moved to BAU and formally log the need for eject.</p>
+
+
+
+      {{ govukButton({
+        text: "Close task and continue",
+        classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-4"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}
