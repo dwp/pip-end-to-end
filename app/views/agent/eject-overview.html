@@ -13,7 +13,7 @@
 {% block content %}
 
 
-    <form action="case-manager-review/event-history/eject-reason" method="post" class="form">
+    <form action="/agent/home/entry" method="post" class="form">
 
 
 
@@ -24,8 +24,54 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have found reason for this claim to be ejected</h1>
       <p class="govuk-body">On completion of a claim rebuild, it will then be processed under BAU rules.</p>
-      <p class="govuk-body">Continue, to provide information about why the application needs to be moved to BAU and formally log the need for eject.</p>
+      <p class="govuk-body">Provide information about why this claim needs to be moved to BAU and formally log the need for eject in the <a href="case-manager-review/event-history/add-an-event" target="blank">Event history (opens in new tab)</a>.</p>
 
+        <div class="govuk-form-group">
+
+    <fieldset class="govuk-fieldset" aria-describedby="confim-event log">
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+      <h1 class="govuk-fieldset__heading">
+        You need to confirm that you have logged the event
+      </h1>
+
+    </legend>
+
+
+    <div id="confim-bau-hint" class="govuk-hint">
+
+    </div>
+
+
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+
+
+
+
+
+
+
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="confim-bau" name="confim-bau" type="checkbox" value="confim-bau">
+              <label class="govuk-label govuk-checkboxes__label" for="confim-bau">
+          I have logged the event
+        </label>
+
+            </div>
+
+
+
+
+    </div>
+
+
+  </fieldset>
+
+
+  </div>
 
 
       {{ govukButton({
