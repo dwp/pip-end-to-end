@@ -66,7 +66,7 @@ router.post(`/agent/process-app/preparation-outcome`, (req, res) => {
     res.redirect(`/agent/process-app/application-6-overview`)
   }
   else if (preparationOutcome == 'BAU') {
-    res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
+    res.redirect(`/agent/eject-overview`)
   }
   else if (preparationOutcome == 'Withdraw') {
     res.redirect(`/agent/withdraw-check`)
