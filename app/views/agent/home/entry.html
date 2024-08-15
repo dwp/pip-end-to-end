@@ -1,7 +1,7 @@
 {% extends "agent/process-app/includes/layout.html" %}
 
 {% block pageTitle %}
-  Process a PIP application
+  My home page
 {% endblock %}
 
 {% set pageStatus="Exploration" %}
@@ -72,7 +72,7 @@
                     <h2 class="govuk-body govuk-!-font-weight-bold">Processing</h2>
 
                     {% if data["application-1-task-t4"] == "Pause" %}   <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="/agent/process-app/preparation-overview">Pick up a task</a></p>
-                    {% else %}                                          <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="/agent/prepare-app/application-overview">Process a claim (prepare for AP)</a></p>
+                    {% else %}                                          <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="/agent/prepare-app/application-overview">Process a claim (pre AP)</a></p>
                                                                         <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="/agent/process-app/preparation-overview">Process a claim (decision)</a></p>
 
                     {% endif %}
