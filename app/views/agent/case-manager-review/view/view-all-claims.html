@@ -2,101 +2,106 @@
 
 {% block pageTitle %} View all claims {% endblock %}
 
-{% block content %}
+{% block main %}
 
-    <div class="govuk-grid-row">
+<div class="govuk-width-container">
 
+<a href="javascript:history.go(-1)" class="govuk-back-link" style="margin-top: 40px;">Back</a>
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
 
-      <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">View cases</h1>
         <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total cases: <b>3</b></p>
 
         {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
-{{ govukTable({
-  attributes: {
-    'data-module': 'moj-sortable-table'
-  },
-  head: [
-    {
-      text: "National Insurance number",
-      classes:"govuk-!-width-one-quarter"
-    },
-    {
-      text: "Date of claim",
-      attributes: {
-        "aria-sort": "none"
-      }
-    },
-    {
-      text: "Current status"
-    },
-    {
-      text: "Days in current status",
-      attributes: {
-        "aria-sort": "none"
-      }
-  }
-  ],
-  rows: [
-    [
-      {
-        html: '<a href="../personal-details" class="govuk-link">QQ 56 82 91 F'
-      },
-      {
-        text: "30 June 2024",
-        format: "numeric",
-        attributes: {
-          "data-sort-value": "30 June 2024"
-        }
-      },
-      {
-        text: "Health and Disability"
-      },
-      {
-        text: "3 July 2024"
-      }
-    ],
-    [
-      {
-        html: '<a href="../personal-details" class="govuk-link">QQ 23 64 77 A'
-      },
-      {
-        text: "30 June 2024",
-        format: "numeric",
-        attributes: {
-          "data-sort-value": "30 June 2024"
-        }
-      },
-      {
-        text: "Registration"
-      },
-      {
-        text: "30 June 2024"
-      }
-    ],
-    [
-      {
-        html: '<a href="../personal-details" class="govuk-link">QQ 12 34 56 C'
-      },
-      {
-        text: "1 July 2024",
-        format: "numeric",
-        attributes: {
-          "data-sort-value": "1 July 2024"
-        }
-      },
-      {
-        text: "Registration"
-      },
-      {
-        text: "1 July 2024"
-      }
-    ]
-  ]
-}) }}
+        {{ govukTable({
+          attributes: {
+            'data-module': 'moj-sortable-table'
+          },
+          head: [
+            {
+              text: "National Insurance number",
+              classes:"govuk-!-width-one-quarter"
+            },
+            {
+              text: "Date of claim",
+              attributes: {
+                "aria-sort": "none"
+              }
+            },
+            {
+              text: "Current status"
+            },
+            {
+              text: "Days in current status",
+              attributes: {
+                "aria-sort": "none"
+              }
+          }
+          ],
+          rows: [
+            [
+              {
+                html: '<a href="../personal-details" class="govuk-link">QQ 56 82 91 F'
+              },
+              {
+                text: "4 April 2024",
+                format: "numeric",
+                attributes: {
+                  "data-sort-value": "30 June 2024"
+                }
+              },
+              {
+                text: "Started health information gather"
+              },
+              {
+                text: "15 days"
+              }
+            ],
+            [
+              {
+                html: '<a href="../personal-details" class="govuk-link">QQ 23 64 77 A'
+              },
+              {
+                text: "4 April 2024",
+                format: "numeric",
+                attributes: {
+                  "data-sort-value": "4 April 2024"
+                }
+              },
+              {
+                text: "Decision made: awarded"
+              },
+              {
+                text: "1 day"
+              }
+            ],
+            [
+              {
+                html: '<a href="../personal-details" class="govuk-link">QQ 12 34 56 C'
+              },
+              {
+                text: "15 April 2024",
+                format: "numeric",
+                attributes: {
+                  "data-sort-value": "15 April 2024"
+                }
+              },
+              {
+                text: "Referred to assessment provider"
+              },
+              {
+                text: "5 days"
+              }
+            ]
+          ]
+        }) }}
         </div>
+    </div>
+</div>
 
         <script>
 
@@ -204,4 +209,4 @@
 
         </script>
 
-        {% endblock %}
+{% endblock %}
