@@ -1,7 +1,7 @@
 {% extends "agent/process-app/includes/layout.html" %}
 
 {% block pageTitle %}
-  Check details about the applicant
+  Check details about the claimant
 {% endblock %}
 
 {% set pageStatus="Work in progress" %}
@@ -28,7 +28,7 @@
       {% include "agent/process-app/record-id.html" %}
 
 
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check details about the applicant</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check details about the claimant</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
 
 
@@ -45,7 +45,7 @@
 
     <ol class="app-task-list">
       <li>
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Checking details from applciaton and interal</p> -->
+        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">Checking details from claim and interal</p> -->
 
       <ul class="app-task-list__items app-task-list__items-pip">
 
@@ -210,7 +210,7 @@ checked: (data["assurance-sub-monolith-1-5"] == "Unexpected")
   name: "assurance-sub-monolith-1-6",
   fieldset: {
     legend: {
-      html: "Is there any evidence to suggest this application could have been made under Special Rules End of Life (SREL)?",
+      html: "Is there any evidence to suggest this claimant could have been made under Special Rules End of Life (SREL)?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m "
     }
@@ -264,13 +264,13 @@ idPrefix: "assurance-sub-monolith-1-8",
 name: "assurance-sub-monolith-1-8",
 fieldset: {
 legend: {
-html: "Have they withdrawn their application?",
+html: "Have they withdrawn their claim?",
 isPageHeading: true,
 classes: "govuk-fieldset__legend--m "
 }
 },
 hint: {
-text: "Check event history and supporting documents for a letter requesting their application to be withdrawn."
+text: "Check event history and supporting documents for a letter requesting their claim to be withdrawn."
 },
 items: [
 {

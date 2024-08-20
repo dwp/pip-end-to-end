@@ -26,12 +26,12 @@
       {% if data["assurance-sub-monolith-1-0"] == "Unexpected" or data["assurance-sub-monolith-1-1"] == "Unexpected" or data["assurance-sub-monolith-1-2"] == "Unexpected" or data["assurance-sub-monolith-1-3"] == "Unexpected" or data["assurance-sub-monolith-1-4"] == "Unexpected" or data["assurance-sub-monolith-1-5"] == "Unexpected" or data["assurance-sub-monolith-1-6"] == "Unexpected" or data["assurance-sub-monolith-1-7"] == "Unexpected" or data["assurance-sub-monolith-1-8"] == "Unexpected" or data["assurance-sub-monolith-1-9"] == "Unexpected" or data["assurance-sub-monolith-2-1"] == "Unexpected" or data["assurance-sub-monolith-2-2"] == "Unexpected" or data["assurance-sub-monolith-2-3"] == "Unexpected" or data["assurance-sub-monolith-2-4"] == "Unexpected" or data["assurance-sub-monolith-2-5"] == "Unexpected" or data["assurance-sub-monolith-3-1"] == "Unexpected" or data["assurance-sub-monolith-3-2"] == "Unexpected" or data["assurance-sub-monolith-3-3"] == "Unexpected" or data["assurance-sub-monolith-3-4"] == "Unexpected" or data["assurance-sub-monolith-3-5"] == "Unexpected" or data["assurance-sub-monolith-3-6"] == "Unexpected" or data["assurance-sub-monolith-3-7"] == "Unexpected"
       %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are issues with this application</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are issues with this claim</h1>
       {% include "agent/prepare-app/assurance-outcome-list.html" %}
 
 
           {% else %}
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are no issues with this application</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">There are no issues with this claim</h1>
 
 
 
@@ -55,22 +55,22 @@
             items: [
             {
               value: "AP",
-              text: "Send application to assessment provider",
+              text: "Send claim to assessment provider",
               checked: (data["assurance-outcome"] == "AP")
             },
             {
               value: "BAU",
-              text: "Move application to PIPCS",
+              text: "Move claim to PIPCS",
               checked: (data["assurance-outcome"] == "BAU")
             },
             {
               value: "Disallow",
-              text: "Disallow application",
+              text: "Disallow claim",
               checked: (data["assurance-outcome"] == "Disallow")
             },
             {
               value: "Withdraw",
-              text: "Withdraw application",
+              text: "Withdraw claim",
               checked: (data["assurance-outcome"] == "Withdraw")
             }
             ]
