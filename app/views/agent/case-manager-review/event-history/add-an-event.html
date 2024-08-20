@@ -4,26 +4,9 @@
 
 {% block main %}
 
-<section class="key-details-bar" role="contentinfo" aria-label="Key details">
-    <dl class="key-details-bar__key-details">
-      <div class="key-details-bar__top-block">
-        <dt class="govuk-visually-hidden">Name:</dt>
-        <dt class="key-details-bar__name">Jane Doe</dt>
-
-        <dt class="govuk-visually-hidden">National Insurance number:</dt>
-        <dt class="key-details-bar__nino">QQ 12 34 56 C</dt>
-      <!--  <strong class="govuk-tag govuk-tag--grey" id="tag">In review</strong> -->
-      </div>
-
-      <div class="key-details-bar__bottom-block">
-        <dt>Date of birth:</dt>
-        <dd>4 June 1972</dd>
-      </div>
-    </dl>
-</section>
-
   <div class="govuk-width-container">
     <div class="column-full">
+      {% include "agent/case-manager-review/includes/record-id.html" %}
     <nav class="navigation-secondary">
       <ul>
         <li>
@@ -65,12 +48,6 @@
           Add an event
         </h1>
       </legend>
-      <div id="changedName-hint" class="govuk-hint">
-        Select the event you want to record. If you have more than one then you can come back to add more.
-      </div>
-
-
-
 
     <div class="govuk-radios" data-module="govuk-radios">
 
@@ -87,39 +64,21 @@
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="intend-withdraw-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Claimant intends to withdraw claim
-        </label>
-      </div>
-      <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="extend-deadline">
         <label class="govuk-label govuk-radios__label" for="eventType">
-          Extend deadline
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="passed-idv">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Passed AIDV
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="failed-idv">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Failed AIDV
+          Extend health information deadline
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="case-eject">
         <label class="govuk-label govuk-radios__label" for="eventType">
-          Initiate move to PIPCS
+          Move to PIPCS needed
         </label>
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="case-eject-complete">
         <label class="govuk-label govuk-radios__label" for="eventType">
-          Move to PIPCS completed
+          Moved to PIPCS
         </label>
       </div>
 
