@@ -104,17 +104,20 @@ router.post(`/agent/withdraw-check`, (req, res) => {
 
 //timeline__events
 
-router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res) => {
-  const eventType = req.session.data['eventType']
+// router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res) => {
+//   const eventType = req.session.data['eventType']
+//
+//   if (eventType == 'case-eject') {
+//     res.redirect(`/agent/case-manager-review/event-history/eject-reason`)
+//   }
+//    else {
+//     res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
+//   }
+// })
 
-  if (eventType == 'case-eject') {
-    res.redirect(`/agent/case-manager-review/event-history/eject-reason`)
-  }
-   else {
-    res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
-  }
-})
-
+router.post('/agent/case-manager-review/event-history/add-an-event', (req, res, next) => {
+        res.redirect('/agent/case-manager-review/event-history/add-a-note');
+});
 
 
 }
