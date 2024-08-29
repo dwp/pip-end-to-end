@@ -68,9 +68,6 @@ router.post(`/agent/process-app/preparation-outcome`, (req, res) => {
   else if (preparationOutcome == 'BAU') {
     res.redirect(`/agent/eject-overview`)
   }
-  else if (preparationOutcome == 'Withdraw') {
-    res.redirect(`/agent/withdraw-check`)
-  }
 })
 
 router.post(`/agent/prepare-app/assurance-outcome`, (req, res) => {
@@ -81,9 +78,6 @@ router.post(`/agent/prepare-app/assurance-outcome`, (req, res) => {
   }
   else if (assuranceOutcome == 'BAU') {
     res.redirect(`/agent/eject-overview`)
-  }
-  else if (assuranceOutcome == 'Withdraw') {
-    res.redirect(`/agent/withdraw-check`)
   }
    else {
     res.redirect(`/agent/prepare-app/assurance-outcome`)

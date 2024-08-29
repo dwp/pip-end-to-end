@@ -1,0 +1,374 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} Task summary {% endblock %}
+
+{% block main %}
+
+  <div class="govuk-width-container">
+    <div class="column-full">
+      {% include "agent/case-manager-review/includes/record-id.html" %}
+    <nav class="navigation-secondary">
+      <ul>
+        <li>
+          <a href="personal-details">Personal details</a>
+        </li>
+        <li>
+          <a href="supporting-documents">Supporting documents</a>
+        </li>
+        <li>
+          <a href="conditions">Conditions</a>
+        </li>
+        <li>
+          <a href="activities">Activities</a>
+        </li>
+        <li>
+          <a href="event-history">Event history</a>
+        </li>
+        <li>
+          <a href="decision" class="active" aria-current="section">Decision</a>
+        </li>
+      </ul>
+    </nav>
+</div>
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+<form action="/agent/case-manager-review/event-history" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-l">Decision</h1>
+
+<h2 class="govuk-heading-m">Award dates</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt id="decision" class="govuk-summary-list__key">
+      Start date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      2 March 2024
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt id="decision" class="govuk-summary-list__key">
+      End date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 March 2027
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt id="decision" class="govuk-summary-list__key">
+      Review date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      1 March 2026
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt id="decision" class="govuk-summary-list__key">
+      Review period
+    </dt>
+    <dd class="govuk-summary-list__value">
+      3 years
+    </dd>
+  </div>
+  </dl>
+
+    <h2 class="govuk-heading-m">Daily living scoring</h2>
+
+    <!-- 1 -->
+    <h3 class="govuk-heading-s">Preparing food</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Descriptor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          B: Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Justification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          You have no restrictions found in this area.
+        </dd>
+      </div>
+    </dl>
+
+        <!-- 2 -->
+        <h3 class="govuk-heading-s">Taking nutrition</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Descriptor
+              </dt>
+              <dd class="govuk-summary-list__value">
+              D: Needs prompting to be able to take nutrition
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Justification
+              </dt>
+              <dd class="govuk-summary-list__value">
+                You have no restrictions found in this area.
+              </dd>
+            </div>
+          </dl>
+
+
+    <!-- 3 -->
+    <h3 class="govuk-heading-s">Managing therapy or monitoring a health condition</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Descriptor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          C: Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Justification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          You have no restrictions found in this area.
+        </dd>
+      </div>
+    </dl>
+
+    <!-- 4 -->
+    <h3 class="govuk-heading-s">Washing and bathing</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Descriptor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          F: Cannot wash and bathe at all and needs another person to wash their entire bodyNeeds assistance to be able to wash their body between the shoulders and waist
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Justification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+        </dd>
+      </div>
+    </dl>
+
+    <!-- 5 -->
+    <h3 class="govuk-heading-s"> Managing toilet needs or incontinence</h3>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Descriptor
+        </dt>
+        <dd class="govuk-summary-list__value">
+          D: Needs assistance to be able to manage toilet needs
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Justification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+        </dd>
+      </div>
+    </dl>
+
+   <!-- 6 -->
+   <h3 class="govuk-heading-s">Dressing and undressing</h3>
+   <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Descriptor
+            </dt>
+            <dd class="govuk-summary-list__value">
+              B: Needs to use an aid or appliance to be able to dress or undress
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__value">
+              Justification
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+            </dd>
+          </div>
+   </dl>
+
+    <!-- 7 -->
+    <h3 class="govuk-heading-s">Communicating verbally</h3>
+     <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+             <dt class="govuk-summary-list__key">
+              Descriptor
+              </dt>
+                <dd class="govuk-summary-list__value">
+                 C: Needs communication support to be able to express or understand complex verbal information
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__value">
+                  Justification
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+                </dd>
+              </div>
+     </dl>
+
+      <!-- 8 -->
+      <h3 class="govuk-heading-s">Reading and understanding signs, symbols and words</h3>
+      <dl class="govuk-summary-list">
+               <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                 Descriptor
+                 </dt>
+                   <dd class="govuk-summary-list__value">
+                    B: Needs to use an aid or appliance, other than spectacles or contact lenses, to be able to read or understand either basic or complex written information
+                   </dd>
+                 </div>
+                 <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__value">
+                     Justification
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+                   </dd>
+                 </div>
+        </dl>
+
+        <!-- 9 -->
+        <h3 class="govuk-heading-s">Engaging with other people face to face</h3>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Descriptor
+            </dt>
+            <dd class="govuk-summary-list__value">
+              D: Cannot engage with other people due to such engagement causing either
+              <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                <li>
+                  overwhelming psychological distress to the claimant; or
+                </li>
+                <li>
+                  the claimant to exhibit behaviour which would result in a substantial risk of harm to the claimant or another person
+                </li>
+              </ul>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__value">
+              Justification
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+            </dd>
+          </div>
+        </dl>
+
+          <!-- 10 -->
+          <h3 class="govuk-heading-s">Making budgeting decisions</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Descriptor
+              </dt>
+              <dd class="govuk-summary-list__value">
+                D: Cannot make any budgeting decisions at all
+                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
+                  <li>
+                    overwhelming psychological distress to the claimant; or
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+                  </li>
+                </ul>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__value">
+                Justification
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+              </dd>
+            </div>
+          </dl>
+
+          <h2 class="govuk-heading-m govuk-!-margin-top-8">Mobility scoring</h2>
+
+        <!-- 11 -->
+        <h3 class="govuk-heading-s">Planning and following journeys</h3>
+          <dl class="govuk-summary-list">
+                   <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                     Descriptor
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      F: Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                      </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__value">
+                          Justification
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                        </dd>
+                      </div>
+           </dl>
+
+        <!-- 12 -->
+        <h3 class="govuk-heading-s">Moving around</h3>
+          <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row">
+                   <dt class="govuk-summary-list__key">
+                    Descriptor
+                   </dt>
+                   <dd class="govuk-summary-list__value">
+                    C: Can stand and then move unaided more than 20 metres but no more than 50 metres
+                     </dd>
+                     </div>
+
+                     <div class="govuk-summary-list__row">
+                       <dt class="govuk-summary-list__value">
+                         Justification
+                       </dt>
+                       <dd class="govuk-summary-list__value">
+                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                       </dd>
+                     </div>
+          </dl>
+<br>
+
+
+</div>
+
+  </div>
+
+</form>
+
+
+
+</div></div>
+</main>
+
+   </div>
+
+
+{% endblock %}
