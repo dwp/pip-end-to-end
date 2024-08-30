@@ -1,7 +1,7 @@
 {% extends "agent/process-app/includes/layout.html" %}
 
 {% block pageTitle %}
-  Check the claimant's details
+  Check the applicant's details
 {% endblock %}
 
 {% set pageStatus="Work in progress" %}
@@ -24,24 +24,6 @@
 
       <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Check any potential flags or markers</h2>
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-4">Claim attached is what the citizen submitted using AfPC. Do X Y and Z to check against the following tasks</p> -->
-
-
-
-
-    </div>
-  </div>
-
-
-    <!------------ ––– ------------>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-    <ol class="app-task-list">
-      <li>
-        <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-8">XXXX.</p> -->
-
-      <ul class="app-task-list__items app-task-list__items-pip">
 
 
         {{ govukRadios({
@@ -169,7 +151,7 @@
         }
         },
         hint: {
-        text: "You can also call the claimant if necessary."
+        text: "You can also call the applicant if necessary."
         },
         items: [
         {
