@@ -1,7 +1,7 @@
 {% extends "agent/process-app/includes/layout.html" %}
 
 {% block pageTitle %}
-  Withdrawal letter
+  Disallowing this claim
 {% endblock %}
 
 {% set pageStatus="Work in progress" %}
@@ -13,7 +13,7 @@
 {% block content %}
 
 
-    <form action="case-manager-review/event-history/add-a-note" method="post" class="form">
+<form action="/agent/case-manager-review/event-history/add-an-event" method="post" class="form">
 
 
 
@@ -22,18 +22,17 @@
 
       {% include "agent/process-app/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">You have found reason for this claim to be withdrawn </h1>
-
-      <p class="govuk-body">Continue, to provide information about why the application is being withdrawn and formally log the event.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Disallowing this claim</h1>
+      <p class="govuk-body-l">Select ‘Disallow claim in event history to complete this action.</p>
 
       {{ govukButton({
-        text: "Close task and continue",
+        text: "Continue",
         classes: "govuk-!-margin-bottom-8 govuk-!-margin-top-4"
       }) }}
 
-        </div>
-      </div>
+    </div>
+  </div>
 
-  </form>
+</form>
 
 {% endblock %}
