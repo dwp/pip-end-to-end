@@ -78,7 +78,7 @@
                   </tr>
                   </thead>
 
-                  <tr class="govuk-table__row">
+                  <!-- <tr class="govuk-table__row">
                     <td class="govuk-table__cell table-spacer"><a href="application-6-about-a1">Preparing food</a></td>
                     <td class="govuk-table__cell table-spacer">
 
@@ -99,6 +99,24 @@
                     </td>
 
 
+
+                    </tr> -->
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell table-spacer"><a href="application-6-about-a1-score">Preparing food</a></td>
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["application-about-a1-score-overwrite"] %}
+                        {% include "agent/process-app/application-about-a1-score-overwrite.html" %}
+                        {% else %}
+                        0
+                        {% endif %}
+                      </td>
+
+                      <td class="govuk-table__cell table-spacer">
+                        {% if data["application-about-a1-score-overwrite"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                        {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                        {% endif %}
+                      </td>
 
                     </tr>
 
