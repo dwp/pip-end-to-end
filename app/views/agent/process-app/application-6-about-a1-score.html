@@ -10,7 +10,7 @@
 
 {% block content %}
 
-<form action="application-6-about-a1-reason" method="post" class="form">
+<form action="application-6-about" method="post" class="form">
 
   <div class="govuk-grid-row">
 
@@ -23,8 +23,8 @@
 
             <!------------H1 LEGEND------------>
               {% set dynamicH1 %}
-              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor B (2 points)?
-                  </h2>
+              <!-- <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor B (2 points)?</h2> -->
+              <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select for preparing food?</h2>
                   {% endset %}
             <!------------Legend--------------->
 
@@ -50,6 +50,11 @@
                 checked: (data["application-5-about-a1-score-overwrite"] == "0")
               },
               {
+                value: "b2",
+                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
+                checked: (data["application-5-about-a1-score-overwrite"] == "2")
+              },
+              {
                 value: "c3",
                 html: "<strong>Descriptor C (2 points):</strong> Cannot cook a simple meal using a conventional cooker but is able to do so using a microwave",
                 checked: (data["application-5-about-a1-score-overwrite"] == "2")
@@ -72,23 +77,28 @@
               ]
             }) }}
 
+            <br>
 
-              <!-- THIS IS THE SELECTED DESCRiPTOR
-              {
-                value: "b2",
-                html: "<strong>Descriptor B (2 points):</strong> Needs to use an aid or appliance to be able to either prepare or cook a simple meal",
-                checked: (data["application-5-about-a1-score-overwrite"] == "2")
+            {{ govukTextarea({
+              name: "application-about-a1-reason",
+              id: "application-about-a1-reason",
+              classes: " govukTextarea--overwrite govuk-!-margin-bottom-8",
+              label: {
+                text: "Justification",
+                classes: "govuk-label--m",
+                isPageHeading: true
               },
+              hint: {
+                html: legendCanned
+              },
+              value: ""
+            }) }}
 
-              -->
 
-<div class="govuk-button-group">
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
 
-  <a class="govuk-link" href="application-5-about-a1">Cancel change</a>
-</div>
         </div>
       </div>
 
