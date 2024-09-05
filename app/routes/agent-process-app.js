@@ -79,6 +79,12 @@ router.post(`/agent/prepare-app/assurance-outcome`, (req, res) => {
   else if (assuranceOutcome == 'BAU') {
     res.redirect(`/agent/eject-overview`)
   }
+  else if (assuranceOutcome == 'Disallow') {
+    res.redirect(`/agent/eject-overview`)
+  }
+  else if (assuranceOutcome == 'Withdraw') {
+    res.redirect(`/agent/eject-overview`)
+  }
    else {
     res.redirect(`/agent/prepare-app/assurance-outcome`)
   }
