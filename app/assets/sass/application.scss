@@ -7,6 +7,15 @@
 
 //GENERAL
 
+@media (min-width: 770px) {
+  .agent-nav {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 10px;
+  }
+}
+
 .app-task-list__apl-task-alignment {
   float: right;
 }
