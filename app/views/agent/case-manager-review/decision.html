@@ -1,6 +1,6 @@
 {% extends "agent/case-manager-review/includes/layout.html" %}
 
-{% block pageTitle %} Task summary {% endblock %}
+{% block pageTitle %} Decision {% endblock %}
 
 {% block main %}
 
@@ -32,232 +32,273 @@
 </div>
   <main class="govuk-main-wrapper" id="main-content" role="main">
   <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 
-<form action="/agent/case-manager-review/event-history" method="post" class="form">
-
-  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-        <h1 class="govuk-heading-l">Decision</h1>
+        <h1 class="govuk-heading-xl">Decision</h1>
 
-<h2 class="govuk-heading-m">Award dates</h2>
+          <h2 class="govuk-heading-l">Outcome</h2>
 
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt id="decision" class="govuk-summary-list__key">
-      Start date
-    </dt>
-    <dd class="govuk-summary-list__value">
-      2 March 2024
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt id="decision" class="govuk-summary-list__key">
-      End date
-    </dt>
-    <dd class="govuk-summary-list__value">
-      1 March 2027
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt id="decision" class="govuk-summary-list__key">
-      Review date
-    </dt>
-    <dd class="govuk-summary-list__value">
-      1 March 2026
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt id="decision" class="govuk-summary-list__key">
-      Review period
-    </dt>
-    <dd class="govuk-summary-list__value">
-      3 years
-    </dd>
-  </div>
-  </dl>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt id="decision" class="govuk-summary-list__key">
+                Daily living part
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <b>34 points</b>
+                <br>This means that the applicant has been given the [standard/enhanced] rate.
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt id="decision" class="govuk-summary-list__key">
+                Mobility part
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <b>11 points</b>
+                <br>This means the applicant has not been given this part.
+              </dd>
+            </div>
 
-    <h2 class="govuk-heading-m">Daily living scoring</h2>
+            </dl>
+
+      <h2 class="govuk-heading-l">Award dates</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt id="decision" class="govuk-summary-list__key">
+            Start date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2 March 2024
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt id="decision" class="govuk-summary-list__key">
+            End date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 March 2027
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt id="decision" class="govuk-summary-list__key">
+            Review date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 March 2026
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt id="decision" class="govuk-summary-list__key">
+            Review period
+          </dt>
+          <dd class="govuk-summary-list__value">
+            3 years
+          </dd>
+        </div>
+        </dl>
+
+        <h2 class="govuk-heading-l">Supporting documents</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-margin-bottom-3">
+              Documents referenced in decision letter
+            </dt>
+            <dd class="govuk-summary-list__value">
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-3">
+              <li>Information provided by care home</li>
+              <li>Care plan</li>
+              <li>Certificate of Vision Impairment (CVI)</li>
+              <li>Extra information applicant gave us</li>
+              <li>Letter from GP</li>
+              <li>Health information gather (PIP2)</li>
+              <li>Letter from hospital doctor</li>
+            </ul>
+            </dd>
+          </div>
+        </dl>
+
+    <h2 class="govuk-heading-l">Daily living scoring</h2>
 
     <!-- 1 -->
-    <h3 class="govuk-heading-s">Preparing food</h3>
+    <h3 class="govuk-heading-m">Preparing food</h3>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Descriptor
         </dt>
         <dd class="govuk-summary-list__value">
-          B: Needs to use an aid or appliance to be able to either prepare or cook a simple meal
+          <strong>B</strong>: Needs to use an aid or appliance to be able to either prepare or cook a simple meal
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
+        <dt class="govuk-summary-list__key">
           Justification
         </dt>
         <dd class="govuk-summary-list__value">
-          You have no restrictions found in this area.
+          You said you can manage preparing food. I agree you can manage.
         </dd>
       </div>
     </dl>
 
         <!-- 2 -->
-        <h3 class="govuk-heading-s">Taking nutrition</h3>
+        <h3 class="govuk-heading-m">Taking nutrition</h3>
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Descriptor
+                <b>Descriptor</b>
               </dt>
               <dd class="govuk-summary-list__value">
-              D: Needs prompting to be able to take nutrition
+                <strong>D</strong>: Needs prompting to be able to take nutrition
               </dd>
             </div>
             <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__value">
+              <dt class="govuk-summary-list__key">
                 Justification
               </dt>
               <dd class="govuk-summary-list__value">
-                You have no restrictions found in this area.
+                You said you have difficulties remembering to take nutrition. I agree you have difficulties.
               </dd>
             </div>
           </dl>
 
 
     <!-- 3 -->
-    <h3 class="govuk-heading-s">Managing therapy or monitoring a health condition</h3>
+    <h3 class="govuk-heading-m">Managing therapy or monitoring a health condition</h3>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Descriptor
         </dt>
         <dd class="govuk-summary-list__value">
-          C: Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
+          <strong>C</strong>: Needs supervision, prompting or assistance to be able to manage therapy that takes no more than 3.5 hours a week
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
+        <dt class="govuk-summary-list__key">
           Justification
         </dt>
         <dd class="govuk-summary-list__value">
-          You have no restrictions found in this area.
+          You said you have difficulties managing your condition by forgetting to take the necessary nutrition and medication. I agree you have difficulties and need supervision.
         </dd>
       </div>
     </dl>
 
     <!-- 4 -->
-    <h3 class="govuk-heading-s">Washing and bathing</h3>
+    <h3 class="govuk-heading-m">Washing and bathing</h3>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Descriptor
         </dt>
         <dd class="govuk-summary-list__value">
-          F: Cannot wash and bathe at all and needs another person to wash their entire bodyNeeds assistance to be able to wash their body between the shoulders and waist
+          <strong>F</strong>: Cannot wash and bathe at all and needs another person to wash their entire body. Needs assistance to be able to wash their body between the shoulders and waist
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
+        <dt class="govuk-summary-list__key">
           Justification
         </dt>
         <dd class="govuk-summary-list__value">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+         You said you have cannot wash or bathe independantly and have a carer to help. I agree you have difficulties and need supervision.
         </dd>
       </div>
     </dl>
 
     <!-- 5 -->
-    <h3 class="govuk-heading-s"> Managing toilet needs or incontinence</h3>
+    <h3 class="govuk-heading-m"> Managing toilet needs or incontinence</h3>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Descriptor
         </dt>
         <dd class="govuk-summary-list__value">
-          D: Needs assistance to be able to manage toilet needs
+          <strong>D</strong>: Needs assistance to be able to manage toilet needs
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
+        <dt class="govuk-summary-list__key">
           Justification
         </dt>
         <dd class="govuk-summary-list__value">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+          You said you cannot do this independantly. I agree you need asssitance.
         </dd>
       </div>
     </dl>
 
    <!-- 6 -->
-   <h3 class="govuk-heading-s">Dressing and undressing</h3>
+   <h3 class="govuk-heading-m">Dressing and undressing</h3>
    <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Descriptor
             </dt>
             <dd class="govuk-summary-list__value">
-              B: Needs to use an aid or appliance to be able to dress or undress
+              <strong>B</strong>: Needs to use an aid or appliance to be able to dress or undress
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__value">
+            <dt class="govuk-summary-list__key">
               Justification
             </dt>
             <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+              You said you do not have the physical ability to dress or undress. I agree you need aid or an appliance to do so.
             </dd>
           </div>
    </dl>
 
     <!-- 7 -->
-    <h3 class="govuk-heading-s">Communicating verbally</h3>
+    <h3 class="govuk-heading-m">Communicating verbally</h3>
      <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
              <dt class="govuk-summary-list__key">
               Descriptor
               </dt>
                 <dd class="govuk-summary-list__value">
-                 C: Needs communication support to be able to express or understand complex verbal information
+                  <strong>C</strong>: Needs communication support to be able to express or understand complex verbal information
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__value">
+                <dt class="govuk-summary-list__key">
                   Justification
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+                  You have no commuication condition to suggest significant restrictions in this activity.
                 </dd>
               </div>
      </dl>
 
       <!-- 8 -->
-      <h3 class="govuk-heading-s">Reading and understanding signs, symbols and words</h3>
+      <h3 class="govuk-heading-m">Reading and understanding signs, symbols and words</h3>
       <dl class="govuk-summary-list">
                <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                  Descriptor
                  </dt>
                    <dd class="govuk-summary-list__value">
-                    B: Needs to use an aid or appliance, other than spectacles or contact lenses, to be able to read or understand either basic or complex written information
+                    <strong>B</strong>: Needs to use an aid or appliance, other than spectacles or contact lenses, to be able to read or understand either basic or complex written information
                    </dd>
                  </div>
                  <div class="govuk-summary-list__row">
-                   <dt class="govuk-summary-list__value">
+                   <dt class="govuk-summary-list__key">
                      Justification
                    </dt>
                    <dd class="govuk-summary-list__value">
-                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+                    You said you wear glasses daily for reading. I agree you need an appliance to read.
                    </dd>
                  </div>
         </dl>
 
         <!-- 9 -->
-        <h3 class="govuk-heading-s">Engaging with other people face to face</h3>
+        <h3 class="govuk-heading-m">Engaging with other people face to face</h3>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Descriptor
             </dt>
             <dd class="govuk-summary-list__value">
-              D: Cannot engage with other people due to such engagement causing either
+              <strong>D</strong>: Cannot engage with other people due to such engagement causing either
               <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
                 <li>
                   overwhelming psychological distress to the claimant; or
@@ -270,87 +311,79 @@
           </div>
 
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__value">
+            <dt class="govuk-summary-list__key">
               Justification
             </dt>
             <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+              You said you experience overwhelming psychological distress in most public scearios in terms of physical tasks. I partially agree you cannot engage.
             </dd>
           </div>
         </dl>
 
           <!-- 10 -->
-          <h3 class="govuk-heading-s">Making budgeting decisions</h3>
+          <h3 class="govuk-heading-m">Making budgeting decisions</h3>
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Descriptor
               </dt>
               <dd class="govuk-summary-list__value">
-                D: Cannot make any budgeting decisions at all
-                <ul class="govuk-list govuk-!-padding-top-0 govuk-!-margin-bottom-0 govuk-list--bullet">
-                  <li>
-                    overwhelming psychological distress to the claimant; or
-                  </li>
-                  <li>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
-                  </li>
-                </ul>
+                <strong>D</strong>: Cannot make any budgeting decisions at all
               </dd>
             </div>
 
             <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__value">
+              <dt class="govuk-summary-list__key">
                 Justification
               </dt>
               <dd class="govuk-summary-list__value">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,.
+                You have a minor cognotive condition to suggest significant restrictions in this activity. I partially agree this dedscriptor.
               </dd>
             </div>
           </dl>
 
-          <h2 class="govuk-heading-m govuk-!-margin-top-8">Mobility scoring</h2>
+          <h2 class="govuk-heading-l govuk-!-margin-top-8">Mobility scoring</h2>
 
         <!-- 11 -->
-        <h3 class="govuk-heading-s">Planning and following journeys</h3>
+        <h3 class="govuk-heading-m">Planning and following journeys</h3>
           <dl class="govuk-summary-list">
                    <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                      Descriptor
                     </dt>
                     <dd class="govuk-summary-list__value">
-                      F: Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
+                      <strong>F</strong>: Cannot follow the route of a familiar journey without another person, an assistance dog or an orientation aid
                       </dd>
                       </div>
 
                       <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__value">
+                        <dt class="govuk-summary-list__key">
                           Justification
                         </dt>
                         <dd class="govuk-summary-list__value">
-                          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                         You said you need constant help to move. I agree you have difficulties.
                         </dd>
                       </div>
            </dl>
 
         <!-- 12 -->
-        <h3 class="govuk-heading-s">Moving around</h3>
+        <h3 class="govuk-heading-m">Moving around</h3>
           <dl class="govuk-summary-list">
                   <div class="govuk-summary-list__row">
                    <dt class="govuk-summary-list__key">
                     Descriptor
                    </dt>
                    <dd class="govuk-summary-list__value">
-                    C: Can stand and then move unaided more than 20 metres but no more than 50 metres
+                    <strong>C</strong>: Can stand and then move unaided more than 20 metres but no more than 50 metres
                      </dd>
                      </div>
 
                      <div class="govuk-summary-list__row">
-                       <dt class="govuk-summary-list__value">
+                       <dt class="govuk-summary-list__key">
                          Justification
                        </dt>
                        <dd class="govuk-summary-list__value">
-                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Dis sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+                        You need constant help to move, but can stand. I partially agree but think more help with movement is needed.
                        </dd>
                      </div>
           </dl>
@@ -359,13 +392,8 @@
 
 </div>
 
+
   </div>
-
-</form>
-
-
-
-</div></div>
 </main>
 
    </div>
