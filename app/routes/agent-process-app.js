@@ -102,6 +102,17 @@ router.post(`/agent/withdraw-check`, (req, res) => {
   }
 })
 
+// router.post(`/agent/case-manager-review/find/record-found`, (req, res) => {
+//   const rightPerson = req.session.data['right-person']
+//
+//   if (rightPerson == 'Yes') {
+//     res.redirect(`/agent/case-manager-review/find/find-someone`)
+//   }
+//    else {
+//     res.redirect(`/agent/case-manager-review/personal-details`)
+//   }
+// })
+
 
 
 

@@ -22,7 +22,7 @@
 
       {% include "agent/process-app/record-id.html" %}
 
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have completed your checks to prepare this application for a decision</h1>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">You have completed your checks to prepare this claim for a decision</h1>
 
 
 
@@ -51,17 +51,17 @@
             },
             {
               value: "BAU",
-              text: "Move application to PIPCS",
+              text: "Move claim to PIPCS",
               checked: (data["preparation-outcome"] == "BAU")
             },
             {
               value: "Disallow",
-              text: "Disallow application",
+              text: "Disallow claim",
               checked: (data["preparation-outcome"] == "Disallow")
             },
             {
               value: "Withdraw",
-              text: "Withdraw application",
+              text: "Withdraw claim",
               checked: (data["preparation-outcome"] == "Withdraw")
             }
             ]
