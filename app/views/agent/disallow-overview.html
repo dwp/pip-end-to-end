@@ -13,7 +13,7 @@
 {% block content %}
 
 
-<form action="/agent/case-manager-review/event-history/add-an-event" method="post" class="form">
+<form action="/agent/case-manager-review/event-history" method="post" class="form">
 
 
 
@@ -22,8 +22,8 @@
 
       {% include "agent/process-app/record-id.html" %}
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Disallowing this claim</h1>
-      <p class="govuk-body-l">Select ‘Disallow claim' in event history to complete this action.</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-8">Disallowing this application</h1>
+      <p class="govuk-body-l">Select ‘Disallow application' in event history to complete this action.</p>
 
       {{ govukButton({
         text: "Continue",
