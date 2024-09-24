@@ -74,7 +74,8 @@ router.post(`/agent/prepare-app/assurance-outcome`, (req, res) => {
   const assuranceOutcome = req.session.data['assurance-outcome']
 
   if (assuranceOutcome == 'AP') {
-    res.redirect(`/agent/ap-referral-confirmation`)
+    res.redirect(`/agent/home/entry`)
+    // res.redirect(`/agent/ap-referral-confirmation`)
   }
   else if (assuranceOutcome == 'BAU') {
     res.redirect(`/agent/eject-overview`)
