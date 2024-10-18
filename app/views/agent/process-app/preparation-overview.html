@@ -8,6 +8,9 @@
   {% include "includes/phase-banner.html" %}
 {% endblock %}
 
+{% set pageStatus="Work in progress" %}
+{% set teamName="Starling" %}
+
 {% block content %}
 
 <form action="#" method="post" class="form">
@@ -18,7 +21,7 @@
       {% include "agent/process-app/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare a claim for a decision</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for a decision</h1>
 
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 25 January 2024</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 1 February 2024</p>
@@ -41,7 +44,7 @@
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Claim submitted</td>
+            <td class="govuk-table__header">Application submitted</td>
             <td class="govuk-table__cell">25 January 2024</td>
           </tr>
           <tr class="govuk-table__row">

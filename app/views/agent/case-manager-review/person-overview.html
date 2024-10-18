@@ -1,0 +1,112 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} Activities {% endblock %}
+
+{% block main %}
+
+  <div class="govuk-width-container">
+    <div class="column-full">
+      {% include "agent/case-manager-review/includes/record-id.html" %}
+    </div>
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <h1 class="govuk-heading-xl">
+            Cases associated to Jeff Bridges
+          </h1>
+
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total cases: <b>3</b></p>
+
+          {%- from "govuk/components/table/macro.njk" import govukTable -%}
+
+          {{ govukTable({
+            attributes: {
+              'data-module': 'moj-sortable-table'
+            },
+            head: [
+              {
+                text: "Case ID",
+                classes:"govuk-!-width-one-quarter"
+              },
+              {
+                text: "Date of claim",
+                attributes: {
+                  "aria-sort": "none"
+                }
+              },
+              {
+                text: "Current status"
+              },
+              {
+                text: "Type",
+                attributes: {
+                  "aria-sort": "none"
+                }
+            }
+            ],
+            rows: [
+              [
+                {
+                  html: '<a href="./personal-details" class="govuk-link">QQ 56 82 91 F'
+                },
+                {
+                  text: "24 April 2024",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "30 June 2024"
+                  }
+                },
+                {
+                  text: "Started health information gather"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--yellow"> Appointee </strong>'
+                }
+              ],
+              [
+                {
+                  html: '<a href="./personal-details" class="govuk-link">QQ 23 64 77 A'
+                },
+                {
+                  text: "4 April 2024",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "4 April 2024"
+                  }
+                },
+                {
+                  text: "Referred to assessment provider"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue"> Self serve </strong>'
+                }
+              ],
+              [
+                {
+                  html: '<a href="./personal-details" class="govuk-link">QQ 12 34 56 C'
+                },
+                {
+                  text: "15 April 2022",
+                  format: "numeric",
+                  attributes: {
+                    "data-sort-value": "15 April 2022"
+                  }
+                },
+                {
+                  text: "Decision made: awarded"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue"> Self serve </strong>'
+                }
+              ]
+            ]
+          }) }}
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+
+{% endblock %}

@@ -32,8 +32,6 @@ router.post(`/agent-day-0-1-2/award-dates-review-manual`, (req, res) => {
   }
 })
 
-
-
 router.post(`/award-dates-payment-check-router`, (req, res) => {
   const paymentEndDate = req.session.data['award-dates-payment-check']
 

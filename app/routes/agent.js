@@ -14,7 +14,7 @@ router.post(`/agent/process-app/application-6-about-a1`, (req, res) => {
   if (aboutA1 == 'Agree') {
     res.redirect(`/agent/process-app/application-6-about-a1-reason`)
   } else if (aboutA1 == 'Amended') {
-    res.redirect(`/agent/process-app/application-6-about-a1-score`)
+    res.redirect(`/agent/process-app/application-6-about-a1-score0`)
   } else {
    res.redirect(`/agent/process-app/application-6-about`)
  }
@@ -31,7 +31,8 @@ router.post(`/agent/process-app/award-dates-AP-rec-check`, (req, res) => {
     res.redirect(`/agent/process-app/award-dates-playback`)
   }
    else {
-    res.redirect(`/agent/process-app/award-dates-review-manual`)
+     res.redirect(`/agent/eject-overview`)
+    // res.redirect(`/agent/process-app/award-dates-review-manual`)
   }
 })
 
