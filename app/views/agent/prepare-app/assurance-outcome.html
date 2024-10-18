@@ -4,8 +4,6 @@
   Outcome
 {% endblock %}
 
-{% set pageStatus="Work in progress" %}
-
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
 {% endblock %}
@@ -62,19 +60,21 @@
               value: "BAU",
               text: "Move application to PIPCS",
               checked: (data["assurance-outcome"] == "BAU")
-            },
-            {
-              value: "Disallow",
-              text: "Disallow application",
-              checked: (data["assurance-outcome"] == "Disallow")
-            },
-            {
-              value: "Withdraw",
-              text: "Withdraw application",
-              checked: (data["assurance-outcome"] == "Withdraw")
             }
             ]
           }) }}
+
+
+          <!-- {
+            value: "Disallow",
+            text: "Disallow application",
+            checked: (data["assurance-outcome"] == "Disallow")
+          },
+          {
+            value: "Withdraw",
+            text: "Withdraw application",
+            checked: (data["assurance-outcome"] == "Withdraw")
+          } -->
 
 
 

@@ -1,4 +1,4 @@
-{% extends "agent-day-0-1-2/includes/layout.html" %}
+{% extends "agent/process-app/includes/layout.html" %}
 
 {% block pageTitle %}
   Process a PIP application
@@ -8,8 +8,11 @@
   {% include "includes/phase-banner.html" %}
 {% endblock %}
 
+{% set pageStatus="Work in progress" %}
+{% set teamName="Starling" %}
+
 {% block content %}
-<form action="/agent/decision-success" method="post" class="form">
+<form action="/agent/home/entry" method="post" class="form">
   {% include "agent-day-0-1-2/includes/js-back-link.html" %}
 
   <div class="govuk-grid-row">
