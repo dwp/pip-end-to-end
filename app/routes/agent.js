@@ -6,7 +6,49 @@ module.exports = function (router) {
 
 // —————————————————————————————————
 
+router.post(`/agent/process-app/qppt-dl-3m-check`, (req, res) => {
+  const qpptDL3mCheck = req.session.data['qppt-dl-3m-check']
 
+  if (qpptDL3mCheck == 'Yes') {
+    res.redirect(`/agent/process-app/qppt-dl-9m-check`)
+  }
+   else {
+     res.redirect(`/agent/process-app/application-6-about-eject`)
+  }
+})
+
+router.post(`/agent/process-app/qppt-dl-9m-check`, (req, res) => {
+  const qpptDL9mCheck = req.session.data['qppt-dl-9m-check']
+
+  if (qpptDL9mCheck == 'Yes') {
+    res.redirect(`/agent/process-app/application-6-about-qppt`)
+  }
+   else {
+     res.redirect(`/agent/process-app/application-6-about-eject`)
+  }
+})
+
+router.post(`/agent/process-app/qppt-m-3m-check`, (req, res) => {
+  const qpptM3mCheck = req.session.data['qppt-m-3m-check']
+
+  if (qpptM3mCheck == 'Yes') {
+    res.redirect(`/agent/process-app/qppt-m-9m-check`)
+  }
+   else {
+     res.redirect(`/agent/process-app/application-6-about-eject`)
+  }
+})
+
+router.post(`/agent/process-app/qppt-m-9m-check`, (req, res) => {
+  const qpptM9mCheck = req.session.data['qppt-m-9m-check']
+
+  if (qpptM9mCheck == 'Yes') {
+    res.redirect(`/agent/process-app/application-6-about`)
+  }
+   else {
+     res.redirect(`/agent/process-app/application-6-about-eject`)
+  }
+})
 
 router.post(`/agent/process-app/application-6-about-a1`, (req, res) => {
   const aboutA1 = req.session.data['application-5-about-a1']

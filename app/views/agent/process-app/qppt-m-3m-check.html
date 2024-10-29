@@ -1,0 +1,81 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+{% set teamName="Starling" %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+
+
+
+            <!------------H1 LEGEND------------>
+              {% set dynamicH1 %}
+              <!-- <h2 class="govuk-heading-xl govuk-!-margin-bottom-0">Which descriptor do you want to select instead of Descriptor B (2 points)?</h2> -->
+              <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+                  Did the applicant meet the 3 month qualifying period for daily living when they submitted their application on 1 January 2024 ?</h2>
+                  {% endset %}
+            <!------------Legend--------------->
+
+            {{ govukRadios({
+              idPrefix: "qppt-m-3m-check",
+              name: "qppt-m-3m-check",
+              fieldset: {
+                legend: {
+                  html: dynamicH1,
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              hint: {
+                text:"The assessment provider indicated they had daily living restrictions for at least 3 months before their assessment on 1 March 2024."
+              },
+              classes: "govuk-radios",
+              items: [
+              {
+                value: "Yes",
+                html: "Yes"
+              },
+              {
+                value: "EffectiveDate",
+                html: "No – I need to enter the date the qualifying period will be met"
+              },
+              {
+                value: "NoRestrictions",
+                html: "No – they will not meet the qualifying period for this application"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "SplitRate",
+                html: "I need to make a split rate decision"
+              }
+              ]
+            }) }}
+
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

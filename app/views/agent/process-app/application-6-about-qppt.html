@@ -1,0 +1,109 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Process a PIP application
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% set pageStatus="Work in progress" %}
+{% set teamName="Starling" %}
+{% set pageNotes="QPPT screens being added to task" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Select and justify a descriptor for each activity</h1>
+
+    </div>
+  </div>
+
+
+      <!------------ ––– ------------>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          <table class="govuk-table">
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Supporting documents</h1>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"></td>
+                <td class="govuk-table__cell govuk-25-percent"></td>
+                <td class="govuk-table__cell govuk-15-percent"></td>
+              </tr>
+            </thead>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-6-view-evidence">Review information and select documents used</a></p>
+              </td>
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">
+                {% if data["application-evidence-used"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                {% endif %}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+          <table class="govuk-table">
+            <h1 class="govuk-heading-m govuk-!-margin-bottom-0 govuk-!-padding-top-6">Qualifying period and prospective test</h1>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell govuk-60-percent"></td>
+                <td class="govuk-table__cell govuk-25-percent"></td>
+                <td class="govuk-table__cell govuk-15-percent"></td>
+              </tr>
+            </thead>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="qppt-dl-3m-check">Daily living</a></p>
+              </td>
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">
+                {% if data["qppt-dl-9m-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                {% endif %}
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell table-spacer">
+                <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="application-5-view-evidence" target="_blank">View and assess supporting documents<br>(Open in a new window)</a></p> -->
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-0"><a href="qppt-m-3m-check">Mobility</a></p>
+              </td>
+              <td class="govuk-table__cell table-spacer"></td>
+              <td class="govuk-table__cell table-spacer">
+                {% if data["qppt-m-9m-check"] %}      <strong class="govuk-tag app-task-list__apl-task-done">Done</strong>
+                {% else %}                                            <strong class="govuk-tag app-task-list__apl-task-not-done" id="eligibility-completed">To do</strong>
+                {% endif %}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+
+        <!------------ ––– ------------>
+
+
+  <!-- <br><br>
+  <p class="govuk-body-s"><a href="/agent/eject-overview">I need to move this claim to PIPCS</a></p> -->
+
+{% endblock %}
