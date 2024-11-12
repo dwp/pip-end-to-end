@@ -1,6 +1,6 @@
 {% extends "agent/case-manager-review/includes/layout.html" %}
 
-{% block pageTitle %} View all claims {% endblock %}
+{% block pageTitle %} View all applications {% endblock %}
 
 {% set pageStatus="Work in progress" %}
 {% set teamName="Pelican" %}
@@ -106,12 +106,12 @@
       </div>
 
         <!-- status 10: Disallowed: not eligible -->
-         <div class="govuk-checkboxes__item">
+         <!-- <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="status-4" name="current-status" type="checkbox" value="not-eligible">
                     <label class="govuk-label govuk-checkboxes__label" for="status-4">
                       Disallowed: not eligible
                     </label>
-         </div>
+         </div> -->
 
        <!-- status 11 Disallowed: failure to comply -->
           <div class="govuk-checkboxes__item">
@@ -122,12 +122,12 @@
           </div>
 
        <!-- status 12: Withdrawn -->
-        <div class="govuk-checkboxes__item">
+        <!-- <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="status-5" name="current-status" type="checkbox" value="Withdrawn">
               <label class="govuk-label govuk-checkboxes__label" for="status-5">
                 Withdrawn (1)
               </label>
-       </div>
+       </div> -->
 
         </div></fieldset>
         </div>
@@ -144,8 +144,8 @@
 
         <div class="govuk-grid-column-three-quarters">
 
-          <h1 class="govuk-heading-xl">View all cases</h1>
-          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total cases: <b>3</b></p>
+          <h1 class="govuk-heading-xl">View all applications</h1>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Total cases: <b>4</b></p>
 
           {%- from "govuk/components/table/macro.njk" import govukTable -%}
 
@@ -157,6 +157,9 @@
               {
                 text: "National Insurance number",
                 classes:"govuk-!-width-one-quarter"
+              },
+              {
+                text: "Date of claim"
               },
               {
                 text: "Current status"
@@ -174,6 +177,9 @@
                   html: '<a href="../personal-details" class="govuk-link">QQ 56 82 91 F'
                 },
                 {
+                  text: "30 June 2024"
+                },
+                {
                   text: "Started health information gather"
                 },
                 {
@@ -183,6 +189,9 @@
               [
                 {
                   html: '<a href="../personal-details" class="govuk-link">QQ 23 64 77 A'
+                },
+                {
+                  text: "30 June 2024"
                 },
                 {
                   text: "Moved to PIPCS"
@@ -196,6 +205,9 @@
                   html: '<a href="../personal-details" class="govuk-link">QQ 12 34 56 C'
                 },
                 {
+                  text: "1 July 2024"
+                },
+                {
                   text: "Ready for decision"
                 },
                 {
@@ -205,6 +217,9 @@
               [
                 {
                   html: '<a href="../personal-details" class="govuk-link">QQ 114 60 C'
+                },
+                {
+                  text: "14 May 2024"
                 },
                 {
                   text: "Disallowed: failure to comply"
@@ -218,7 +233,7 @@
         </div>
         </div>
     </div>
-</div>
+
 
         <script>
 

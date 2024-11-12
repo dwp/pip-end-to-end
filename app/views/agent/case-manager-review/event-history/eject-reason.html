@@ -2,6 +2,9 @@
 
 {% block pageTitle %} Eject reason {% endblock %}
 
+{% set pageStatus="Work in progress" %}
+{% set teamName="Pelican" %}
+
 {% block main %}
 
   <div class="govuk-width-container">
@@ -32,99 +35,138 @@
 </div>
 <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
 
-<div class="govuk-grid-row">
+<br><br><br><br>
+
+
+ <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <form class="form" action="./eject-add-a-note" method="post">
 
 
 
 
 
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          Reason for eject
-        </h1>
-      </legend>
-      <div id="changedName-hint" class="govuk-hint">
-        Select the reason you want to record for case eject.
-      </div>
+<div class="govuk-form-group">
 
+  <fieldset class="govuk-fieldset">
 
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+      <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+        Reason for move to PIPCS
+      </h1>
+
+    </legend>
 
 
     <div class="govuk-radios" data-module="govuk-radios">
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="disallow-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType-5">
-          Change of circumstances
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="withdraw-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType-5">
-          Error in claimant data gather
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="extend-deadline">
-        <label class="govuk-label govuk-radios__label" for="eventType-5">
-          Death of claimant
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="passed-idv">
-        <label class="govuk-label govuk-radios__label" for="eventType-5">
-          Additional support need identified
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-5" name="eventType" type="radio" value="failed-idv">
-        <label class="govuk-label govuk-radios__label" for="eventType-5">
-          Re-referral request required
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
-        <label class="govuk-label govuk-radios__label" for="eventType-4">
-          Re-open and extend deadline (for PIP2 return)
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
-        <label class="govuk-label govuk-radios__label" for="eventType-4">
-          Cannot process - OIDV not completed
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
-        <label class="govuk-label govuk-radios__label" for="eventType-4">
-          Issues with application during pre referral checks
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-4" name="eventType" type="radio" value="case-eject">
-        <label class="govuk-label govuk-radios__label" for="eventType-4">
-          Issues with application during pre decision checks
-        </label>
-      </div>
+
+
+
+
+
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType-7" name="eventType" type="radio" value="other" data-aria-controls="conditional-eventType-7">
-        <label class="govuk-label govuk-radios__label" for="eventType-7">
-          Other
+        <input class="govuk-radios__input" id="reason" name="reason" type="radio" value="Change of circumstances">
+        <label class="govuk-label govuk-radios__label" for="reason">
+          Change of circumstances
         </label>
+
       </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-eventType-7">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="other-event-type">
-            Enter an event type
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="other-event-type" name="otherEventType" type="text">
-        </div>
+
+
+
+
+
+
+
+
+      <!-- <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-2" name="reason" type="radio" value="telephony-idv">
+        <label class="govuk-label govuk-radios__label" for="reason-2">
+          IDV passed in telephony
+        </label>
+
+      </div> -->
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-3" name="reason" type="radio" value="Additional support need identified">
+        <label class="govuk-label govuk-radios__label" for="reason-3">
+          Additional support need identified
+        </label>
+
       </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-4" name="reason" type="radio" value="Pre-referral checks">
+        <label class="govuk-label govuk-radios__label" for="reason-4">
+          Issues with application during pre-referral checks
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-5" name="reason" type="radio" value="Pre-decision checks">
+        <label class="govuk-label govuk-radios__label" for="reason-5">
+          Issues with application during pre-decision checks
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-6" name="reason" type="radio" value="Mandatory reconsideration">
+        <label class="govuk-label govuk-radios__label" for="reason-6">
+          Mandatory reconsideration
+        </label>
+
+      </div>
+
+
+
+
+
+
+
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="reason-7" name="reason" type="radio" value="Outcome from assessment provider">
+        <label class="govuk-label govuk-radios__label" for="reason-7">
+          Outcome from assessment provider
+        </label>
+
+      </div>
+
+
 
 
     </div>
@@ -139,17 +181,22 @@
 
 
 
-
-
-<a href="add-a-note" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+<button type="submit" class="govuk-button" data-module="govuk-button">
   Continue
-</a>
+</button>
 
-</main>
+
+</form>
+
 </div>
 </div>
 
-     </div>
+
+
+<br><br>
+
+</div>
+
 
 
 {% endblock %}

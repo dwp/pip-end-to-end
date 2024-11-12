@@ -2,9 +2,10 @@
 
 {% block pageTitle %} Add an event {% endblock %}
 
-{% block main %}
+{% set pageStatus="Work in progress" %}
+{% set teamName="Pelican" %}
 
-<form action="add-a-note" method="post" class="form">
+{% block main %}
 
   <div class="govuk-width-container">
     <div class="column-full">
@@ -34,91 +35,84 @@
 </div>
 <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
 
+<br><br><br><br>
+
+
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-<main class="govuk-main-wrapper " id="main-content" role="main">
+ <div class="govuk-grid-column-two-thirds">
+
+   <form class="form" action="#" method="post">
+
+<div class="govuk-form-group">
+
+ <fieldset class="govuk-fieldset">
+
+   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+     <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
+       Add an event
+     </h1>
+   </legend>
+
+   <div class="govuk-radios" data-module="govuk-radios">
+
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="add-event" name="add-event" type="radio" value="case-eject">
+       <label class="govuk-label govuk-radios__label" for="add-event">
+         Identified need to move to PIPCS
+       </label>
+     </div>
+
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="add-event" name="add-event" type="radio" value="completed-case-eject">
+       <label class="govuk-label govuk-radios__label" for="add-event">
+         Completed move to PIPCS
+       </label>
+     </div>
+
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="add-event" name="add-event" type="radio" value="verified-identity">
+       <label class="govuk-label govuk-radios__label" for="add-event">
+         Verified claimant&#39;s identity
+       </label>
+     </div>
+
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="add-event" name="add-event" type="radio" value="extend-hig">
+       <label class="govuk-label govuk-radios__label" for="add-event">
+         Extend health information deadline
+       </label>
+     </div>
+
+     <div class="govuk-radios__item">
+       <input class="govuk-radios__input" id="add-event" name="add-event" type="radio" value="other-event">
+       <label class="govuk-label govuk-radios__label" for="add-event">
+         Other event
+       </label>
+     </div>
 
 
 
-<form action="#" method="post" class="form">
 
-  <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-        <h1 class="govuk-fieldset__heading govuk-!-margin-bottom-6">
-          Add an event
-        </h1>
-      </legend>
+   </div>
 
-    <div class="govuk-radios" data-module="govuk-radios">
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="case-eject">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Identified need to move to PIPCS
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="case-eject-complete">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Completed move to PIPCS
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="identity">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Verified applicant's identity
-        </label>
-      </div>
-      <!-- <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="extend-deadline">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Extend health information deadline
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="disallow-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Disallow application
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="withdraw-claim">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Withdraw application
-        </label>
-      </div> -->
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="eventType" name="eventType" type="radio" value="other" data-aria-controls="conditional-eventType-7">
-        <label class="govuk-label govuk-radios__label" for="eventType">
-          Other event
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-eventType">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="other-event-type">
-            Enter an event type
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="other-event-type" name="otherEventType" type="text">
-        </div>
-      </div>
-    </div>
-
-  </fieldset>
+ </fieldset>
 
 </div>
 
-{{ govukButton({
-  text: "Continue",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
+<button type="submit" class="govuk-button" data-module="govuk-button">
+ Continue
+</button>
 
-</main>
+
+</form>
 </div>
 </div>
 
- </div>
- </form>
+
+
+<br><br>
+
+</div>
 
 
 {% endblock %}
