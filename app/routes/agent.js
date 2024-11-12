@@ -21,7 +21,7 @@ router.post(`/agent/process-app/qppt-dl-9m-check`, (req, res) => {
   const qpptDL9mCheck = req.session.data['qppt-dl-9m-check']
 
   if (qpptDL9mCheck == 'Yes') {
-    res.redirect(`/agent/process-app/application-6-about-qppt`)
+    res.redirect(`/agent/process-app/application-6-about`)
   }
    else {
      res.redirect(`/agent/process-app/application-6-about-eject`)
@@ -143,6 +143,18 @@ router.post(`/agent/withdraw-check`, (req, res) => {
   }
    else {
     res.redirect(`/agent/eject-overview`)
+  }
+})
+
+
+router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res) => {
+  const addEvent = req.session.data['add-event']
+
+  if (addEvent == 'case-eject') {
+    res.redirect(`/agent/case-manager-review/event-history/eject-reason`)
+  }
+   else {
+    res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
   }
 })
 
