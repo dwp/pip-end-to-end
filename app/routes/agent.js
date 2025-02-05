@@ -148,21 +148,19 @@ router.post(`/agent/withdraw-check`, (req, res) => {
 
 
 
-router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res, next) => {
+
+
+
+router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res) => {
+  const addEvent = req.session.data['add-event']
+
+  if (addEvent == 'case-eject') {
+    res.redirect(`/agent/case-manager-review/event-history/eject-reason`)
+  }
+   else {
     res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
+  }
 })
-
-
-// router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res) => {
-//   const addEvent = req.session.data['add-event']
-//
-//   if (addEvent == 'case-eject') {
-//     res.redirect(`/agent/case-manager-review/event-history/eject-reason`)
-//   }
-//    else {
-//     res.redirect(`/agent/case-manager-review/event-history/add-a-note`)
-//   }
-// })
 
 // router.post(`/agent/case-manager-review/find/record-found`, (req, res) => {
 //   const rightPerson = req.session.data['right-person']
