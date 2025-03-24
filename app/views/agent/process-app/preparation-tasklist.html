@@ -388,6 +388,81 @@
                 {% endif %}
             </div>
           </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="preparation-tasklist-item-24" aria-describedby="task-24">
+                Hospital or similar institutions
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["preparation-tasklist-item-24"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["preparation-tasklist-item-24"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["preparation-tasklist-item-24"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="preparation-tasklist-item-25" aria-describedby="task-25">
+                Care homes
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["preparation-tasklist-item-25"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["preparation-tasklist-item-25"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["preparation-tasklist-item-25"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="preparation-tasklist-item-26" aria-describedby="task-26">
+                Nursing homes
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["preparation-tasklist-item-26"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["preparation-tasklist-item-26"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["preparation-tasklist-item-26"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="preparation-tasklist-item-27" aria-describedby="task-27">
+                Residential schools or colleges
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["preparation-tasklist-item-27"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["preparation-tasklist-item-27"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["preparation-tasklist-item-27"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="preparation-tasklist-item-28" aria-describedby="task-28">
+                Prison or legal custody
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["preparation-tasklist-item-28"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["preparation-tasklist-item-28"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["preparation-tasklist-item-28"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
         </ul>
 
         <!------------ ––– ------------>
@@ -401,7 +476,7 @@
   <div class="govuk-grid-row ">
   <div class="govuk-grid-column-two-thirds">
 
-    {% if data["preparation-tasklist-item-23"] == "Unexpected"%}
+    {% if data["preparation-tasklist-item-28"] == "Unexpected"%}
 
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
       <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -443,7 +518,7 @@
       }) }}
 
 
-{% elif data["preparation-tasklist-item-23"] == "Expected"%}
+{% elif data["preparation-tasklist-item-28"] == "Expected"%}
 
 <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are no issues with this application</h1>
 <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
@@ -486,7 +561,7 @@
 
 {% else %}
 
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-exit-bail" rel="noopener">I need to come back to this application later</a></p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="../application-exit" rel="noopener">I need to come back to this application later</a></p>
 
 
 {% endif %}
