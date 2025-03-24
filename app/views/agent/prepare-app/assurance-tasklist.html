@@ -1,0 +1,511 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Check the applicant's details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="#" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-8">Prepare an application for an assessment provider</h2>
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h1>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/agent/case-manager-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="/agent/case-manager-review/supporting-documents" target="_blank" rel="noopener">Supporting documents (opens in new tab)</a></p>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+    <!------------ ––– ------------>
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h2 class="app-task-list__section">
+          Check application
+        </h2>
+
+        <ul class="govuk-task-list">
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-1" aria-describedby="task-1">
+                National Insurance number
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-1"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-1"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-1"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-2" aria-describedby="task-2">
+                Name
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-2"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-2"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-2"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-3" aria-describedby="task-3">
+                Address
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-3"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-3"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-3"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-4" aria-describedby="task-4">
+                Date of birth
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-4"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-4"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-4"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-5" aria-describedby="task-5">
+                Date of death
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-5"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-5"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-5"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-6" aria-describedby="task-6">
+                Nationality
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-6"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-6"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-6"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-7" aria-describedby="task-7">
+                Residency and presence
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-7"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-7"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-7"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-8" aria-describedby="task-8">
+                Immigration status
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-8"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-8"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-8"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-9" aria-describedby="task-9">
+                Special Rules End of Life (SREL)
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-9"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-9"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-9"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-10" aria-describedby="task-10">
+                Representitive or appointee
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-10"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-10"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-10"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-11" aria-describedby="task-11">
+                Withdrawn
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-11"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-11"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-11"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-12" aria-describedby="task-12">
+                Age criteria
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-12"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-12"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-12"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-13" aria-describedby="task-13">
+                Additonal support
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-13"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-13"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-13"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-14" aria-describedby="task-14">
+                Alternative format
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-14"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-iten14"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-14"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-15" aria-describedby="task-15">
+                Fraud
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-15"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-15"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-15"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-16" aria-describedby="task-16">
+                Keep customer interactions safe (KCIS)
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-16"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-16"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-16"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-17" aria-describedby="task-17">
+                Working abroad
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-17"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-17"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-17"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-18" aria-describedby="task-18">
+                Foreign benefits
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-18"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-18"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-18"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-19" aria-describedby="task-19">
+                Disability Living Allowance (DLA)
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-19"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-19"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-19"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-20" aria-describedby="task-20">
+                Child Diability Payment or Adult Disability Payment
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-20"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-20"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-20"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-21" aria-describedby="task-21">
+                Armed Forces Independnce Payment (AFIP)
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-21"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-21"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-21"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-22" aria-describedby="task-22">
+                War Pensioners' Mobility Supplement (WPMS)
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-22"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-22"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-22"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="assurance-tasklist-item-23" aria-describedby="task-23">
+                Constant Attendance Allowance
+              </a>
+            </div>
+            <div class="govuk-task-list__status" id="status">
+                {% if data["assurance-tasklist-item-23"] == "Expected" %}      <strong class="govuk-tag govuk-tag--green" id="X">Done</strong>
+                {% elif data["assurance-tasklist-item-23"] == "Unexpected" %}     <strong class="govuk-tag govuk-tag--red" id="X">Issue</strong>
+                {% elif data["assurance-tasklist-item-23"] == "Pause" %}   <strong class="govuk-tag govuk-tag--yellow" id="X">Paused</strong>
+
+                {% else %}                                            <strong class="govuk-tag govuk-tag--grey" id="X">To do</strong>
+                {% endif %}
+            </div>
+          </li>
+        </ul>
+
+        <!------------ ––– ------------>
+
+    </div>
+  </div>
+
+
+
+<br/><br/>
+  <div class="govuk-grid-row ">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if data["assurance-tasklist-item-23"] == "Unexpected"%}
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are issues with this application</h1>
+      <!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">You can move this application to be processed in PIPCS, disallow, or send it to an assessment provider.</p>
+
+
+        {{ govukRadios({
+          idPrefix: "assurance-outcome",
+          name: "assurance-outcome",
+          fieldset: {
+            legend: {
+              html: "What do you want to do now?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: ""
+          },
+          classes: "govuk-radios",
+          items: [
+          {
+            value: "AP",
+            text: "Send application to assessment provider",
+            checked: (data["assurance-outcome"] == "AP")
+          },
+          {
+            value: "BAU",
+            text: "Move application to PIPCS",
+            checked: (data["assurance-outcome"] == "BAU")
+          },
+          {
+            value: "Disallow",
+            text: "Disallow application",
+            checked: (data["preparation-outcome"] == "Disallow")
+          }
+          ]
+        }) }}
+
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+{% elif data["assurance-tasklist-item-23"] == "Expected"%}
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">There are no issues with this application</h1>
+<!-- <h1 class="govuk-heading-l govuk-!-margin-bottom-2">This application matches [Good Outcome]</h1> -->
+<p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">It is ready to go to an assessment provider.</p>
+
+  {{ govukRadios({
+    idPrefix: "assurance-outcome",
+    name: "assurance-outcome",
+    fieldset: {
+      legend: {
+        html: "What do you want to do now?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: ""
+    },
+    classes: "govuk-radios",
+    items: [
+    {
+      value: "AP",
+      text: "Send application to assessment provider",
+      checked: (data["assurance-outcome"] == "AP")
+    },
+    {
+      value: "BAU",
+      text: "Move application to PIPCS",
+      checked: (data["assurance-outcome"] == "BAU")
+    },
+    {
+      value: "Disallow",
+      text: "Disallow application",
+      checked: (data["preparation-outcome"] == "Disallow")
+    }
+    ]
+  }) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+
+
+{% else %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="application-exit-bail" rel="noopener">I need to come back to this application later</a></p>
+
+
+{% endif %}
+
+      </div>
+      </div>
+
+  </form>
+
+{% endblock %}
