@@ -1,0 +1,73 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Check the applicant's details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <form action="assurance-tasklist" method="post" class="form">
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {% include "agent/process-app/record-id.html" %}
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="assurance-tasklist-item-9-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+              <h1 class="govuk-fieldset__heading">
+                Is there any evidence to suggest this application could have been made under Special Rules End of Life (SREL)?
+              </h1>
+
+            </legend>
+
+            <div id="account-number-hint" class="govuk-hint">
+              Check supporting documents for an SR1 form
+            </div>
+            <div class="govuk-radios govuk-radios govuk-!-margin-bottom-4" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="assurance-tasklist-item-9" name="assurance-tasklist-item-9" type="radio" value="Unexpected">
+                <label class="govuk-label govuk-radios__label" for="assurance-tasklist-item-9">Yes</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="assurance-tasklist-item-9-2" name="assurance-tasklist-item-9" type="radio" value="Expected">
+                <label class="govuk-label govuk-radios__label" for="assurance-tasklist-item-9-2">No</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="assurance-tasklist-item-9-3" name="assurance-tasklist-item-9" type="radio" value="Pause">
+                <label class="govuk-label govuk-radios__label" for="assurance-tasklist-item-9-3">I need to come back to this later</label>
+              </div>
+
+            </div>
+
+          </fieldset>
+
+        </div>
+
+        <button class="govuk-button govuk-!-margin-bottom-8" data-module="govuk-button">
+          Continue
+        </button>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  </form>
+
+{% endblock %}

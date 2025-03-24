@@ -14,7 +14,7 @@
 
 {% block content %}
 
-<form action="assurance-tasks" method="post" class="form">
+<form action="#" method="post" class="form">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -22,7 +22,7 @@
       {% include "agent/process-app/record-id.html" %}
 
 
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Prepare an application for an assessment provider</h1>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Application overview</h1>
 
       <!-- <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 25 January 2024</p>
       <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 1 February 2024</p>
@@ -50,19 +50,17 @@
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__header">Age of applicant</td>
-            <td class="govuk-table__cell">40 (1 January 1984)</td>
+            <td class="govuk-table__cell">40</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Date of birth</td>
+            <td class="govuk-table__cell">1 January 1984</td>
           </tr>
 
 
         </tbody>
       </table>
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/agent/case-manager-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="/agent/case-manager-review/supporting-documents" target="_blank" rel="noopener">Supporting documents (opens in new tab)</a></p>
-
-
-<br>
       {{ govukButton({
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"

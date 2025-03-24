@@ -98,11 +98,15 @@ router.post(`/agent/process-app/application-6-award-review-check`, (req, res) =>
 // PREPARE APP
 
 router.post('/agent/process-app/preparation-overview', (req, res, next) => {
-        res.redirect('/agent/process-app/preparation-outcome');
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+
+router.post('/agent/process-app/preparation-tasklist-item-23', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
 });
 
 
-router.post(`/agent/process-app/preparation-outcome`, (req, res) => {
+router.post(`/agent/process-app/preparation-tasklist`, (req, res) => {
   const preparationOutcome = req.session.data['preparation-outcome']
 
   if (preparationOutcome == 'Decide') {
@@ -113,24 +117,28 @@ router.post(`/agent/process-app/preparation-outcome`, (req, res) => {
   }
 })
 
-router.post(`/agent/prepare-app/assurance-outcome`, (req, res) => {
+router.post('/agent/prepare-app/application-overview', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assurance-tasklist');
+});
+
+router.post('/agent/prepare-app/assurance-tasklist-item-23', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assurance-tasklist');
+});
+
+router.post(`/agent/prepare-app/assurance-tasklist`, (req, res, next) => {
   const assuranceOutcome = req.session.data['assurance-outcome']
 
-  if (assuranceOutcome == 'AP') {
-    res.redirect(`/agent/home/entry`)
-    // res.redirect(`/agent/ap-referral-confirmation`)
+  if (assuranceOutcome === 'AP') {
+    res.redirect(`/agent/ap-referral-confirmation`)
   }
-  else if (assuranceOutcome == 'BAU') {
+  else if (assuranceOutcome === 'BAU') {
     res.redirect(`/agent/eject-overview`)
   }
-  else if (assuranceOutcome == 'Disallow') {
+  else if (assuranceOutcome === 'Disallow') {
     res.redirect(`/agent/disallow-overview`)
   }
-  else if (assuranceOutcome == 'Withdraw') {
+  else if (assuranceOutcome === 'Withdraw') {
     res.redirect(`/agent/withdraw-overview`)
-  }
-   else {
-    res.redirect(`/agent/prepare-app/assurance-outcome`)
   }
 })
 

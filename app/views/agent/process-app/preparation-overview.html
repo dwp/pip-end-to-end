@@ -8,9 +8,7 @@
   {% include "includes/phase-banner.html" %}
 {% endblock %}
 
-{% set pageStatus="Work in progress" %}
-{% set teamName="Starling" %}
-{% set pageNotes="New tasklist view coming" %}
+
 
 {% block content %}
 
@@ -53,21 +51,19 @@
             <td class="govuk-table__cell">2 February 2024</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__header">Age of claimant</td>
-            <td class="govuk-table__cell">40 (1 January 1984)</td>
+            <td class="govuk-table__header">Age of applicant</td>
+            <td class="govuk-table__cell">40</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__header">Date of birth</td>
+            <td class="govuk-table__cell">1 January 1984</td>
           </tr>
 
 
         </tbody>
       </table>
 
-      <h1 class="govuk-heading-m govuk-!-margin-bottom-2">Review supplied information</h1>
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="/agent/case-manager-review/personal-details" target="_blank" rel="noopener">Registration (PIP1) (opens in new tab)</a></p>
-      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1"><a href="has-report" target="_blank" rel="noopener">Health assessment report (opens in new tab)</a></p> -->
-      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="/agent/case-manager-review/supporting-documents" target="_blank" rel="noopener">Supporting documents (opens in new tab)</a></p>
 
-
-<br>
       {{ govukButton({
         text: "Continue",
         classes: "govuk-!-margin-bottom-8"
