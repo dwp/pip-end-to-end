@@ -101,7 +101,88 @@ router.post('/agent/process-app/preparation-overview', (req, res, next) => {
         res.redirect('/agent/process-app/preparation-tasklist');
 });
 
+router.post('/agent/process-app/preparation-tasklist-item-1', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-2', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-3', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-4', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-5', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-6', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-7', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-8', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-9', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-10', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-11', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-12', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-13', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-14', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-15', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-16', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-17', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-18', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-19', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-20', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-21', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-22', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
 router.post('/agent/process-app/preparation-tasklist-item-23', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-24', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-25', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-26', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-27', (req, res, next) => {
+        res.redirect('/agent/process-app/preparation-tasklist');
+});
+router.post('/agent/process-app/preparation-tasklist-item-28', (req, res, next) => {
         res.redirect('/agent/process-app/preparation-tasklist');
 });
 
@@ -121,8 +202,74 @@ router.post('/agent/prepare-app/application-overview', (req, res, next) => {
         res.redirect('/agent/prepare-app/assurance-tasklist');
 });
 
-router.post('/agent/prepare-app/assurance-tasklist-item-23', (req, res, next) => {
-        res.redirect('/agent/prepare-app/assurance-tasklist');
+router.post('/agent/prepare-app/assuarance-tasklist-item-1', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-2', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-3', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-4', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-5', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-6', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-7', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-8', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-9', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-10', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-11', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-12', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-13', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-14', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-15', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-16', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-17', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-18', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-19', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-20', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-21', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-22', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
+});
+router.post('/agent/prepare-app/assuarance-tasklist-item-23', (req, res, next) => {
+        res.redirect('/agent/prepare-app/assuarance-tasklist');
 });
 
 router.post(`/agent/prepare-app/assurance-tasklist`, (req, res, next) => {
