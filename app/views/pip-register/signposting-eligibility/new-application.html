@@ -18,28 +18,32 @@ href: "javascript:window.history.back()"
 
     <form action="#" method="post" method="post">
 
+    <h1 class="govuk-heading-xl">
+      Do you want to apply for PIP in England and Wales?
+    </h1>
+
+
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
-      name: "ni-pip",
+      name: "gb-pip",
       fieldset: {
         legend: {
-          text: "Do you want to apply for PIP in Northern Ireland?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--xl"
         }
       },
       items: [
         {
           value: "yes",
-          text: "Yes, Northern Ireland"
+          text: "Yes, England and Wales"
         },
         {
           divider: "or"
         },
         {
-          value: "england-wales",
-          text: "No, England and Wales"
+          value: "n-ireland",
+          text: "No, Northern Ireland"
         },
         {
           value: "scotland",
@@ -53,7 +57,7 @@ href: "javascript:window.history.back()"
     }) }}
 
   </form>
-    
+
   </div>
 </div>
 

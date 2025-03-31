@@ -18,40 +18,43 @@ href: "javascript:window.history.back()"
 
     <form action="#" method="post" method="post">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Are you calling to claim PIP for yourself?
       </h1>
 
-      <p class="govuk-hint">Select 'Yes' if caller is helping applicant make the claim, and is in the room with them.</p>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-    {{ govukRadios({
-      name: "claiming-self",
-      fieldset: {
-        legend: {
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes, for myself or with an interpreter"
+      {{ govukRadios({
+        name: "claiming-self",
+        fieldset: {
+          legend: {
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
         },
-        {
-          value: "no",
-          text: " No, for someone else"
-        }
-      ]
-    }) }}
+        items: [
+          {
+            value: "yes",
+            text: "For myself"
+          },
+          {
+            value: "no",
+            text: " For someone else"
+          }
+        ]
+      }) }}
+
+      {{ govukInsetText({
+        classes: 'colour-blue',
+          text: "Action: Select 'Yes' if caller is helping applicant make the claim, and is in the room with them."
+      }) }}
 
     {{ govukButton({
       text: "Continue"
     }) }}
 
   </form>
-    
+
   </div>
 </div>
 

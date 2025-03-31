@@ -23,14 +23,14 @@
           {% call govukFieldset({
             legend: {
               text: "What is the postcode and building number of their work address?",
-              classes: "govuk-fieldset__legend--l",
+              classes: "govuk-fieldset__legend--xl",
               isPageHeading: true
             }
           }) %}
 
          <div class="govuk-hint">You can give us their home address if they’re a friend or family member.</div>
          <div class="govuk-hint govuk-!-margin-bottom-3"></div>
-           
+
           {{ govukInput({
             label: {
               text: "Postcode"
@@ -53,11 +53,11 @@
             {{ govukButton({
               text: "Find address"
             }) }}
-    
-          <p class="govuk-body"><a href="/ucd-register/healthcare-professional/support-address-manually" class="govuk-link">Enter address manually</a></p>
 
-          <p class="govuk-body"><a href="/ucd-register/task-list-hcp-done" class="govuk-link">Applicant does not know the address</a></p>
-          
+          <p class="govuk-body"><a href="/pip-register/healthcare-professional/support-address-manually" class="govuk-link">Enter address manually</a></p>
+
+          <p class="govuk-body"><a href="/pip-register/healthcare-professional/consent class="govuk-link">Applicant does not know the address</a></p>
+
         </div>
       </form>
     </div>

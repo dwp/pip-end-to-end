@@ -17,25 +17,48 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="#" method="post">
-        
-        <h1 class="govuk-heading-l">
-          Who will you ask for help? 
+
+        <h1 class="govuk-heading-xl">
+          Who is helping you? 
         </h1>
 
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-
-        {{ govukInput({
-          label: {
-            text: "Name of helper"
-          },
-          classes: "govuk-!-width-two-thirds",
-          id: "helper-name",
-          name: "helpertName"
+        {{ govukRadios({
+          name: "whoishelping",
+          items: [
+            {
+              value: "family",
+              text: "A family member"
+            },
+            {
+              value: "friend",
+              text: "A friend"
+            },
+            {
+              value: "carer",
+              text: "A carer"
+            },
+            {
+              value: "hp",
+              text: "A health professional"
+            },
+            {
+              value: "organisation",
+              text: "A support organisation"
+            },
+            {
+              value: "council",
+              text: "Your local council"
+            },
+            {
+              value: "other",
+              text: "Other"
+            }
+          ]
         }) }}
-        
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
 
       </form>

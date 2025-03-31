@@ -21,26 +21,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="#" method="post">
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
       <form class="form" action="#" method="post">
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {% from "govuk/components/input/macro.njk" import govukInput %}
-        
-        <h1 class="govuk-heading-l">
-         Your nationality
+
+        <h1 class="govuk-heading-xl">
+         What is your nationality?
         </h1>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="sort">
             Choose nationality
           </label>
-          <div class="govuk-hint">
-            Enter nationality and select it from the list.
-          </div>
           <select id="country" name="another-nationality" class="form-control">
             <option value="Afghanistan">Afghan</option>
             <option value="Albania">Albanian</option>
@@ -120,12 +112,12 @@
 
 
             Faroese	Fijian	Filipino	Finnish
-          
+
             <option value="Faroe Islands">Faroese</option>
             <option value="Fiji">	Fijian</option>
             <option value="Finland">Finnish</option>
             <option value="France">French</option>
-           
+
 
             <option value="Gabon">Gabonese</option>
             <option value="Gambia">Gambian</option>
@@ -182,7 +174,7 @@
             <option value="Lithuania">Lithuanian</option>
             <option value="Luxembourg">Luxembourger</option>
 
-          
+
             <option value="Macao">Macanese</option>
             <option value="Macedonia, The Former Yugoslav Republic of">Macedonian</option>
             <option value="Madagascar">Malagasy</option>
@@ -206,7 +198,7 @@
             <option value="Morocco">Moroccan</option>
             <option value="Myanmar"> Mosotho</option>
             <option value="Mozambique">Mozambican</option>
-           
+
 
             <option value="Namibia">Namibian</option>
             <option value="Nauru">Naurun</option>
@@ -276,7 +268,7 @@
             <option value="Tanzania, United Republic of">Tanzanian</option>
             <option value="Thailand">Thai</option>
             <option value="Togo">Togolese</option>
- 
+
             <option value="Tonga">Tongan</option>
             <option value="Trinidad and Tobago">Tristanian</option>
             <option value="Trinidad and Tobago">Trinidadian</option>
@@ -314,7 +306,7 @@
           {{ govukButton({
             text: "Continue"
           }) }}
-    
+
       </form>
       {% endblock %}
     </div>

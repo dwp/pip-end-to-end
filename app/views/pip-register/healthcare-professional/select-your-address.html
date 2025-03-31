@@ -18,13 +18,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
+      <h1 class="govuk-heading-xl">
         Can you confirm the full address?
       </h1>
 
-      <form class="form" action="/ucd-register/healthcare-professional/enter-address-manually" method="post">
+      <form class="form" action="#" method="post">
         <div class="govuk-width-container">
-          <p>6 addresses found for <b>wr11nl</b> and <b>1</b>. <a href="/ucd-register/healthcare-professional/postcode">Search again</a></p>
+          <p>6 addresses found for <b>wr11nl</b> and <b>1</b>. <a href="/pip-register/healthcare-professional/postcode">Search again</a></p>
 
         {{ govukRadios({
           name: "select-an-address",
@@ -55,15 +55,15 @@
             }
           ]
         }) }}
-        
-      </div> 
+
+      </div>
 
         {{ govukButton({
           text: "Confirm this address"
         }) }}
 
 
-        <p class="govuk-body govuk-!-margin-bottom-6"><a href="/ucd-register/healthcare-professional/enter-address-manually" class="govuk-link">Enter address manually</a></p>
+        <p class="govuk-body govuk-!-margin-bottom-6"><a href="/pip-register/healthcare-professional/enter-address-manually" class="govuk-link">Enter address manually</a></p>
 
       </form>
 

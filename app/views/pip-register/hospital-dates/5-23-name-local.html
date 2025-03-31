@@ -21,17 +21,17 @@
       <form class="form" action="#" method="post">
         <div class="govuk-width-container">
 
-          <h1 class="govuk-heading-l">
+          <h1 class="govuk-heading-xl">
             What is the name of the [organisation type]?
           </h1>
 
-          
+
           {% from "govuk/components/input/macro.njk" import govukInput %}
           {{ govukInput({
             id: "event-name",
             name: "eventName"
           }) }}
-  
+
             {{ govukButton({
               text: "Continue"
             }) }}

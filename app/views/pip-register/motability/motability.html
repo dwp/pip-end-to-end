@@ -17,16 +17,20 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="#" method="post" method="post">
-        
-          <h1 class="govuk-heading-l">
+
+          <h1 class="govuk-heading-xl">
             The next question is about the Motability Scheme
           </h1>
 
-          <p class="govuk-body">The Motability Scheme lets disabled people use their mobility payments to lease a car, scooter or powered wheelchair.</p>
+          <p class="govuk-body">The Motability Scheme lets disabled people lease a car, scooter or powered wheelchair using all or some of their PIP mobility payments.</p>
 
-          <p class="govuk-body">If you're eligible, we can send you a leaflet with information about the help they offer. We will not share your personal details with the Scheme.</p>
+          <p class="govuk-body">The scheme is operated by a not for profit organisation and is regulated by the Motability Charity.</p>
 
-          <h2 class="govuk-heading-m"> Would you like us to send you information about the Motability Scheme?  </h2>
+          <p class="govuk-body">If you would like more information we will share your name and address with the scheme operators.</p>
+
+          <p class="govuk-body">If you're eligible and do not apply for the scheme, they will send you information about it in the post in around 12 months.</p>
+
+          <h2 class="govuk-heading-m">If eligible, would you like the Motability Scheme to send you information about it?</h2>
 
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -49,12 +53,11 @@
             ]
           }) }}
 
-          <p class="govuk-body">If you decide you do not want us to send you this information, you can let us know by calling the number I gave you earlier.</p>
-          <p class="govuk-body">DfC phone number: 0800 587 0932</p>
+          <p class="govuk-body">If you change your mind about receiving Motability Scheme information, you can let us know by calling the number I gave you earlier. We will send you an email when you submit your claim which will include these contact details.</p>
 
-            {{ govukButton({
-              text: "Continue"
-            }) }}
+          {{ govukButton({
+            text: "Continue"
+          }) }}
 
       </form>
 

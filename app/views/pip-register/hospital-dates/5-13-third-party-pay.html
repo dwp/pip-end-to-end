@@ -21,7 +21,7 @@
       <form class="form" action="#" method="post">
         <div class="govuk-width-container">
 
-          <h1 class="govuk-heading-l">Are any of the costs to live there paid by a health and social care trust, the Education Authority, a government department, or a charity?</h1>
+          <h1 class="govuk-heading-xl">Are any of the costs to live there paid by a health and social care trust, the Education Authority, a government department, or a charity?</h1>
 
           {% call govukFieldset({
             legend: {
@@ -32,7 +32,7 @@
 
           {{ govukRadios({
             name: "third-party-pay",
-            items: [           
+            items: [
            {
              value: "no",
              text: "No, none of these"
@@ -64,12 +64,12 @@
           }) }}
 
           {% endcall %}
-          
+
             {{ govukButton({
               text: "Continue"
             }) }}
-    
-          
+
+
         </div>
       </form>
     </div>

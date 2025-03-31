@@ -21,12 +21,14 @@
         {% call govukFieldset({
           legend: {
             text: "What is the postcode and building number of the address we should send letters to?",
-            classes: "govuk-fieldset__legend--l",
+            classes: "govuk-fieldset__legend--xl",
             isPageHeading: true
           }
         }) %}
 
-        <p class="govuk-hint">This can be the applicant's local Jobcentre, if there is no other address.</p>
+        {{ govukInsetText({
+          text: "This can be the applicant's local Jobcentre, if there is no other address."
+        }) }}
 
         {{ govukInput({
           label: {
@@ -52,7 +54,7 @@
         text: "Find address"
         }) }}
 
-        <p class="govuk-body govuk-!-margin-bottom-6"><a href="/v2-ucd-register/contact-details/correspondence-enter-address-manually" class="govuk-link">Enter address manually</a></p>
+        <p class="govuk-body govuk-!-margin-bottom-6"><a href="correspondence-enter-address-manually" class="govuk-link">Enter address manually</a></p>
 
       </div>
     </form>

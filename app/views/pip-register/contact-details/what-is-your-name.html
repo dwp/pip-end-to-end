@@ -20,7 +20,7 @@
       <form class="form" action="#" method="post">
 
         <span class="govuk-caption-l">Contact information</span>
-        <h1 class="govuk-heading-l">
+        <h1 class="govuk-heading-xl">
           What is your name?
         </h1>
 
@@ -70,44 +70,6 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
 
-      {% set noHtml %}
-      {{ govukInput({
-        id: "contact-by-phone",
-        name: "contactByPhone",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          text: "Preferred name"
-        }
-      }) }}
-      {% endset -%}
-
-
-        {{ govukRadios({
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Is this the name we should use when we contact you?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No",
-              conditional: {
-                html: noHtml
-              }
-            }
-          ]
-        }) }}
-      
         {{ govukButton({
           text: "Continue"
         }) }}
@@ -117,4 +79,3 @@
   </div>
 
 {% endblock %}
-

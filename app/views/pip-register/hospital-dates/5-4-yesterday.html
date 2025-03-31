@@ -20,18 +20,18 @@
 
       <form class="form" action="#" method="post">
         <div class="govuk-width-container">
-    
-          <h1 class="govuk-heading-l">
+
+          <h1 class="govuk-heading-xl">
             Were you in hospital yesterday?
           </h1>
-          
+
           {% call govukFieldset({
             legend: {
               classes: "govuk-fieldset__legend--l",
               isPageHeading: true
             }
           }) %}
-          
+
           {{ govukRadios({
             name: "hospital-yesterday",
             items: [
@@ -52,7 +52,7 @@
               text: "Continue"
             }) }}
 
-          
+
         </div>
       </form>
     </div>
