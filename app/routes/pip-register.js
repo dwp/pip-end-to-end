@@ -98,7 +98,7 @@ module.exports = function (router) {
 
   // Declaration
   router.post('/pip-register/declaration', function(request, response) {
-      response.redirect('/pip-register/task-list')
+      response.redirect('/pip-register/contact-details/what-is-your-name')
   })
 
   // --------------------------------------------------------------------------------------
