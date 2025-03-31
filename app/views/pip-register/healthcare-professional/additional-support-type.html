@@ -39,50 +39,17 @@
           Your second health contact
         </h1>
 
-          {% set jobHtml %}
-          {{ govukInput({
-            id: "job",
-            name: "job",
-            type: "tel",
-            autocomplete: "tel",
-            classes: "govuk-!-width-two-thirds",
-            label: {
-              text: "Enter job title or support role"
-            }
-          }) }}
-          {% endset -%}
+        {{ govukInput({
+          label: {
+            text: "What is their job or their relationship to you?",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "contact",
+          name: "contact"
+        }) }}
 
-          {{ govukRadios({
-            name: "contact",
-            fieldset: {
-              legend: {
-                text: "What is their job or their relationship to you?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "GP",
-                text: "GP"
-              },
-              {
-                value: "hospital-doctor",
-                text: "Hospital doctor"
-              },
-              {
-                value: "specialist-nurse",
-                text: "Specialist nurse"
-              },
-              {
-                value: "other",
-                text: "Other job or support role",
-                conditional: {
-                  html: jobHtml
-                }
-              }
-            ]
-          }) }}
+
 
         <div class="govuk-body govuk-!-margin-bottom-6"></div>
 
@@ -101,50 +68,20 @@
 
           <div class="govuk-body govuk-!-margin-bottom-6"></div>
 
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-          {% from "govuk/components/input/macro.njk" import govukInput %}
-
-
-        {% set phoneHtml %}
-        {{ govukInput({
-          id: "phone-number",
-          name: "phoneNumber",
-          type: "tel",
-          autocomplete: "tel",
-          classes: "govuk-!-width-two-thirds",
-          label: {
-            text: "Enter phone number"
-          },
-          hint: {
-            text: "For example, 07700 900 982 or 01632 960 001."
-          }
-        }) }}
-        {% endset -%}
-
-          {{ govukRadios({
-            name: "contact",
-            fieldset: {
-              legend: {
-                text: "Do you know their phone number?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
+          {{ govukInput({
+            label: {
+              text: "What is their phone number?",
+              classes: "govuk-label--m",
+              isPageHeading: true
             },
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                conditional: {
-                  html: phoneHtml
-                }
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
+            hint: {
+              text: "For example, 07700 900 982 or 01632 960 001."
+            },
+            id: "contact",
+            name: "contact",
+            classes: "govuk-input--width-20"
           }) }}
+
 
           {{ govukInput({
             label: {
