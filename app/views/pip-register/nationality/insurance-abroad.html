@@ -16,15 +16,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="#" method="post"> 
-      
+    <form class="form" action="#" method="post">
+
       {{ govukRadios({
         name: "insurance-abroad",
         fieldset: {
           legend: {
             text: "Are you or a family member working or paying insurance in a country in the European Economic Area or Switzerland?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend--xl"
           }
         },
           hint: {
@@ -46,6 +46,8 @@
           }
         ]
       }) }}
+
+      <p><a href="https://www.gov.uk/eu-eea" class="govuk-link" rel="noreferrer noopener" target="_blank">Check which countries are in the EEA (opens in new tab)</a></p>
 
     {{ govukButton({
       text: "Continue"

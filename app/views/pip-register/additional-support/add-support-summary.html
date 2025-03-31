@@ -17,12 +17,12 @@
 
       <div class="govuk-body govuk-!-margin-bottom-9">
 
-        <h1 class="govuk-heading-l">
+        <h1 class="govuk-heading-xl">
           Check your answers
         </h1>
 
         <h2 class="govuk-heading-m">
-          Additional support
+          How we communicate
         </h2>
 
               {{ govukSummaryList({
@@ -115,10 +115,10 @@
             },
             {
               key: {
-                text: "Helper name"
+                text: "Helper relationship"
               },
               value: {
-                text: "Judy Dench"
+                text: "A family member"
               },
               actions: {
                 items: [
@@ -132,28 +132,97 @@
             },
             {
               key: {
-                text: "Would like 'Make the Call' assistance"
+                text: "Alternative letter format"
               },
               value: {
-                text: "Yes / No"
+                text: "No / Large print / Audio / Braille / Email / PDF"
               },
               actions: {
                 items: [
                   {
-                    href: "/pip-register/additional-support/advice-as-marker",
+                    href: "/pip-register/contact-details/correspondence-address",
                     text: "Change",
-                    visuallyHiddenText: "Question 7"
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Large print letter size"
+              },
+              value: {
+                text: "16 / [size entered in conditional reveal textbox]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/pip-register/contact-details/correspondence-address",
+                    text: "Change",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Need for email"
+              },
+              value: {
+                text: "[text entered in text area]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/pip-register/contact-details/correspondence-address",
+                    text: "Change",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Need for PDF"
+              },
+              value: {
+                text: "[text entered in text area]"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/pip-register/contact-details/correspondence-address",
+                    text: "Change",
+                    visuallyHiddenText: "Question 3"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                text: "example@gmail.com"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/pip-register/contact-details/correspondence-address",
+                    text: "Change",
+                    visuallyHiddenText: "Question 3"
                   }
                 ]
               }
             }
+
           ]
         }) }}
       </div>
 
             {{ govukButton({
               text: "Save and continue",
-              href: "/pip-register/task-list-as-done"
+              href: "/pip-register/nationality/start"
             }) }}
 
 

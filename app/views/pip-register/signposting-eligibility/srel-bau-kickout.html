@@ -18,17 +18,17 @@ href: "javascript:window.history.back()"
 
     <form action="#" method="post" method="post">
 
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+      <h1 class="govuk-heading-xl">
+        I need to collect some more details to continue the application
+      </h1>
 
       {{ govukInsetText({
-        classes: 'colour-blue govuk-!-font-size-36 govuk-!-font-weight-bold',
-          html: '<h1 class="govuk-heading-l">Agent: You need to register this claim in PIPCS </h3>'
+        classes: 'colour-blue',
+          text: "Action: Register the claim in PIPCS, and follow normal procedure for applicants applying under Special Rules for End of Life (SREL)."
       }) }}
 
-      <p class="govuk-body">Follow normal procedure for applicants applying under Special Rules for End of Life (SREL).</p>
-
   </form>
-    
+
   </div>
 </div>
 

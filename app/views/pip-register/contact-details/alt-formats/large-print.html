@@ -3,7 +3,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript: window.history.go(-1)"   
+    href: "javascript: window.history.go(-1)"
   }) }}
 {% endblock %}
 
@@ -14,7 +14,7 @@
 
       <form class="form" action="#" method="post" novalidate>
 
-        <h1 class="govuk-heading-l">Our large print letters are usually font size 16</h1>
+        <h1 class="govuk-heading-xl">Our large print letters are usually font size 16</h1>
 
         <h2 class="govuk-heading-m">Is that large enough for you to read?</h2>
 
@@ -41,12 +41,12 @@
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
-            
+
           },
           items: [
             {
               value: "large-print-16",
-              text: "Yes, size 16" 
+              text: "Yes, size 16"
             },
             {
               value: "another-size",
@@ -57,7 +57,7 @@
             }
           ]
         }) }}
-        
+
           {{ govukButton({
             text: "Continue"
           }) }}
@@ -68,7 +68,7 @@
 {% endblock %}
 
 
-{# 
+{#
 
 , {
     checked: data["altFormats"]["written"]["large-print-other"],

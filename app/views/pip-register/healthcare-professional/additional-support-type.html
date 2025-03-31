@@ -35,7 +35,7 @@
 
       <form action="#" method="post" novalidate>
 
-        <h1 class="govuk-heading-l">
+        <h1 class="govuk-heading-xl">
           Your second health contact
         </h1>
 
@@ -100,12 +100,12 @@
         }) }}
 
           <div class="govuk-body govuk-!-margin-bottom-6"></div>
-      
+
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {% from "govuk/components/input/macro.njk" import govukInput %}
-  
-  
+
+
         {% set phoneHtml %}
         {{ govukInput({
           id: "phone-number",
@@ -121,7 +121,7 @@
           }
         }) }}
         {% endset -%}
-  
+
           {{ govukRadios({
             name: "contact",
             fieldset: {
@@ -146,13 +146,26 @@
             ]
           }) }}
 
+          {{ govukInput({
+            label: {
+              text: "When did you last speak to them?",
+              classes: "govuk-label--m",
+              isPageHeading: true
+            },
+            hint: {
+              text: "This can be approximate - for example January 2025 or 6 months"
+            },
+            id: "event-name",
+            name: "eventName"
+          }) }}
+
 
           <div class="govuk-body govuk-!-margin-bottom-6"></div>
-          
+
             {{ govukButton({
               text: "Continue"
             }) }}
-    
+
       </form>
     </div>
   </div>

@@ -8,12 +8,32 @@ module.exports = function (router) {
 
   // Eligibility launched from main UI
   router.post('/pip-register/signposting-eligibility/service-start-page', function(request, response) {
-  var newClaim = request.session.data['claiming-self']
-  if (newClaim == 'yes'){
-      response.redirect('/pip-register/signposting-eligibility/over-16')
-  } else if (newClaim == "no") {
-      response.redirect('/pip-register/signposting-eligibility/someone-else-bau-kickout')
-  }
+    var newApp = request.session.data['new-app']
+    if (newApp == 'yes'){
+        response.redirect('/pip-register/signposting-eligibility/new-application')
+    } else if (newApp == "no") {
+        response.redirect('/pip-register/signposting-eligibility/existing-claims')
+    }
+  })
+
+  router.post('/pip-register/signposting-eligibility/new-application', function(request, response) {
+    var gbPIP = request.session.data['gb-pip']
+    if (gbPIP == 'yes'){
+        response.redirect('/pip-register/signposting-eligibility/claiming-self')
+    } else if (gbPIP == "n-ireland") {
+        response.redirect('/pip-register/signposting-eligibility/northern-ireland')
+    } else if (gbPIP == "scotland") {
+      response.redirect('/pip-register/signposting-eligibility/scotland')
+    }
+  })
+
+  router.post('/pip-register/signposting-eligibility/claiming-self', function(request, response) {
+    var claimingSelf = request.session.data['claiming-self']
+    if (claimingSelf == 'yes'){
+        response.redirect('/pip-register/signposting-eligibility/over-16')
+    } else if (claimingSelf == "no") {
+        response.redirect('/pip-register/signposting-eligibility/someone-else-bau-kickout')
+    }
   })
 
 
@@ -21,7 +41,7 @@ module.exports = function (router) {
   router.post('/pip-register/signposting-eligibility/over-16', function(request, response) {
       var correctAge = request.session.data['age']
       if (correctAge == 'yes'){
-          response.redirect('/pip-register/signposting-eligibility/security-check')
+          response.redirect('/pip-register/signposting-eligibility/srel')
       } else if (correctAge == "no-under-16") {
           response.redirect('/pip-register/signposting-eligibility/under-16-ineligible')
       } else if (correctAge == "no-over-spa") {
@@ -29,44 +49,50 @@ module.exports = function (router) {
       }
   })
 
-  // What security questions were answered?
-  router.post('/pip-register/signposting-eligibility/security-check', function(request, response) {
-      var srel = request.session.data['security-verified']
-      if (srel == 'yes'){
-          response.redirect('/pip-register/signposting-eligibility/srel')
-      } else if (srel == "no") {
-          response.redirect('/pip-register/signposting-eligibility/failed-security')
-      }
-      })
-
   // Claiming under SREL?
   router.post('/pip-register/signposting-eligibility/srel', function(request, response) {
       var srel = request.session.data['srel']
       if (srel == 'yes'){
           response.redirect('/pip-register/signposting-eligibility/srel-bau-kickout')
       } else if (srel == "no") {
-          response.redirect('/pip-register/welcome-screens/welcome-screen-ni')
+          response.redirect('/pip-register/signposting-eligibility/what-is-ni-number')
       }
       })
+
+  router.post('/pip-register/signposting-eligibility/what-is-ni-number', function(request, response) {
+      response.redirect('/pip-register/signposting-eligibility/security-check')
+  })
+
+  // How many security questions were answered?
+  router.post('/pip-register/signposting-eligibility/security-check', function(request, response) {
+      var secVerified = request.session.data['security-verified']
+      if (secVerified == '2correct'){
+          response.redirect('/pip-register/welcome-screen')
+      } else {
+          response.redirect('/pip-register/signposting-eligibility/failed-security')
+      }
+      })
+
+
 
   //---------------------------------------------------------------------------------------------
 
   // Welcome screens
 
-  // Welcome screen NI
-  router.post('/pip-register/welcome-screens/welcome-screen-ni', function(request, response) {
-      response.redirect('/pip-register/welcome-screens/welcome-screen-ni-2')
-  })
-
-  // Welcome screen 2
-  router.post('/pip-register/welcome-screens/welcome-screen-ni-2', function(request, response) {
-      response.redirect('/pip-register/welcome-screens/welcome-screen-ni-3')
-  })
-
-  // Welcome screen 3
-  router.post('/pip-register/welcome-screens/welcome-screen-ni-3', function(request, response) {
+  // Welcome screen GB
+  router.post('/pip-register/welcome-screen', function(request, response) {
       response.redirect('/pip-register/declaration')
   })
+
+  // // Welcome screen 2
+  // router.post('/pip-register/welcome-screens/welcome-screen-ni-2', function(request, response) {
+  //     response.redirect('/pip-register/welcome-screens/welcome-screen-ni-3')
+  // })
+  //
+  // // Welcome screen 3
+  // router.post('/pip-register/welcome-screens/welcome-screen-ni-3', function(request, response) {
+  //     response.redirect('/pip-register/declaration')
+  // })
 
   //---------------------------------------------------------------------------------------------
 
@@ -86,26 +112,6 @@ module.exports = function (router) {
 
   // What is your DOB
   router.post('/pip-register/contact-details/what-is-your-dob', function(request, response) {
-      response.redirect('/pip-register/contact-details/what-is-your-phone-number')
-  })
-
-  // What is your phone number page
-  router.post('/pip-register/contact-details/what-is-your-phone-number', function(request, response) {
-          response.redirect("/pip-register/contact-details/do-you-want-to-receive-text-updates")
-  })
-
-  // What is your Textphone number?
-  router.post('/pip-register/contact-details/alt-formats/what-is-your-textphone-number', function(request, response) {
-      response.redirect('/pip-register/contact-details/do-you-want-to-receive-text-updates')
-  })
-
-  // What signing or lipspeaking service do you need?
-  router.post('/pip-register/contact-details/alt-formats/signing-lipspeaking', function(request, response) {
-      response.redirect('/pip-register/contact-details/do-you-want-to-receive-text-updates')
-  })
-
-  // Do you want to receive text updates
-  router.post('/pip-register/contact-details/do-you-want-to-receive-text-updates', function(request, response) {
       response.redirect('/pip-register/contact-details/what-is-your-postcode')
   })
 
@@ -128,23 +134,108 @@ module.exports = function (router) {
   router.post('/pip-register/contact-details/correspondence-address', function(request, response) {
       var sendLettersElsewhere = request.session.data['should-we-write-to-you']
       if (sendLettersElsewhere == 'yes'){
-          response.redirect('/pip-register/contact-details/alt-formats/written-format')
+          response.redirect('/pip-register/contact-details/what-is-your-phone-number')
       } else if (sendLettersElsewhere == 'no') {
           response.redirect('/pip-register/contact-details/correspondence-postcode')
       }
   })
 
+  // What is your correspondence postcode page
+  router.post('/pip-register/contact-details/correspondence-postcode', function(request, response) {
+      response.redirect('/pip-register/contact-details/confirm-correspondence-address')
+  })
+
+  // Confirm correspondence address > correspondence alt formats page
+  router.post('/pip-register/contact-details/confirm-correspondence-address', function(request, response) {
+      response.redirect('/pip-register/contact-details/what-is-your-phone-number')
+  })
+
+  // Confirm correspondence address page
+  router.post('/pip-register/contact-details/correspondence-enter-address-manually', function(request, response) {
+      response.redirect('/pip-register/contact-details/what-is-your-phone-number')
+  })
+
+  // What is your phone number page
+  router.post('/pip-register/contact-details/what-is-your-phone-number', function(request, response) {
+          response.redirect("/pip-register/contact-details/do-you-want-to-receive-text-updates")
+  })
+
+
+  // Do you want to receive text updates
+  router.post('/pip-register/contact-details/do-you-want-to-receive-text-updates', function(request, response) {
+      response.redirect('/pip-register/contact-details/contact-details-summary')
+  })
+
+  // Contact details summary
+  router.post('/pip-register/contact-details/contact-details-summary', function(request, response) {
+      response.redirect('/pip-register/additional-support/start-info')
+  })
+
+  //----------------------------------------------------------------------------------
+  //pip-register/ADDITIONAL-SUPPORT
+
+  // start
+  router.post('/pip-register/additional-support/start-info', function(request, response) {
+      response.redirect('/pip-register/additional-support/do-you-have-a-condition')
+  })
+
+  // do you have a condition
+  router.post('/pip-register/additional-support/do-you-have-a-condition', function(request, response) {
+      var anyCondition = request.session.data['any-condition']
+      if (anyCondition == 'yes'){
+          response.redirect('/pip-register/additional-support/complete-forms')
+      } else if (anyCondition == 'no') {
+          response.redirect('/pip-register/contact-details/alt-formats/written-format')
+      }
+  })
+
+  // can you complete forms
+  router.post('/pip-register/additional-support/complete-forms', function(request, response) {
+      response.redirect('/pip-register/additional-support/read-letters')
+  })
+
+  router.post('/pip-register/additional-support/read-letters', function(request, response) {
+      response.redirect('/pip-register/additional-support/post')
+  })
+
+  router.post('/pip-register/additional-support/post', function(request, response) {
+      response.redirect('/pip-register/additional-support/helpers')
+  })
+
+  // Do you have anyone to help you?
+  router.post('/pip-register/additional-support/helpers', function(request, response) {
+      var anyoneHelp = request.session.data['helpers']
+      if (anyoneHelp == 'yes'){
+          response.redirect('/pip-register/additional-support/who-helps')
+      } else if (anyoneHelp == 'no') {
+          response.redirect('/pip-register/additional-support/support-no-help')
+      }
+  })
+
+  router.post('/pip-register/additional-support/who-helps', function(request, response) {
+      response.redirect('/pip-register/additional-support/support-with-help')
+  })
+
+  router.post('/pip-register/additional-support/support-no-help', function(request, response) {
+      response.redirect('/pip-register/contact-details/alt-formats/written-format')
+  })
+  router.post('/pip-register/additional-support/support-with-help', function(request, response) {
+      response.redirect('/pip-register/contact-details/alt-formats/written-format')
+  })
+  // -------------------------------------------------------------------------------------
+
+
   // Would you like us to send your letters in another way, like larger text, audio or braille?
   router.post('/pip-register/contact-details/alt-formats/written-format', function(request, response) {
       var writtenFormat = request.session.data['written-format']
       if (writtenFormat == 'standard-letter'){
-          response.redirect('/pip-register/task-list-cd-done')
+          response.redirect('/pip-register/additional-support/add-support-summary')
       } else if (writtenFormat == 'large-print') {
           response.redirect('/pip-register/contact-details/alt-formats/large-print')
        } else if (writtenFormat == 'audio') {
-          response.redirect('/pip-register/contact-details/contact-details-summary')
+          response.redirect('/pip-register/additional-support/add-support-summary')
       } else if (writtenFormat == 'braille') {
-          response.redirect('/pip-register/contact-details/contact-details-summary')
+          response.redirect('/pip-register/additional-support/add-support-summary')
       } else if (writtenFormat == 'email') {
           response.redirect('/pip-register/contact-details/alt-formats/email-reason')
       } else if (writtenFormat == 'pdf') {
@@ -155,7 +246,7 @@ module.exports = function (router) {
 
   // What size print do you need?
   router.post('/pip-register/contact-details/alt-formats/large-print', function(request, response) {
-      response.redirect('/pip-register/contact-details/contact-details-summary')
+      response.redirect('/pip-register/additional-support/add-support-summary')
   })
 
   // Why do you need us to contact you by email instead of printed letters?
@@ -165,34 +256,13 @@ module.exports = function (router) {
 
   // What is your email address?
   router.post('/pip-register/contact-details/alt-formats/what-is-your-email', function(request, response) {
-      response.redirect('/pip-register/contact-details/contact-details-summary')
+      response.redirect('/pip-register/additional-support/add-support-summary')
   })
 
-  // What is your correspondence postcode page
-  router.post('/pip-register/contact-details/correspondence-postcode', function(request, response) {
-      response.redirect('/pip-register/contact-details/confirm-correspondence-address')
+  // Summary
+  router.post('/pip-register/additional-support/add-support-summary', function(request, response) {
+      response.redirect('/pip-register/nationality/start')
   })
-
-  // Confirm correspondence address > correspondence alt formats page
-  router.post('/pip-register/contact-details/confirm-correspondence-address', function(request, response) {
-      response.redirect('/pip-register/contact-details/alt-formats/written-format')
-  })
-
-  // Confirm correspondence address page
-  router.post('/pip-register/contact-details/correspondence-enter-address-manually', function(request, response) {
-      response.redirect('/pip-register/contact-details/alt-formats/written-format')
-  })
-
-  // Contact details summary page
-  router.post('/pip-register/contact-details/contact-details-summary', function(request, response) {
-      response.redirect('/pip-register/task-list-cd-done')
-  })
-
-  // -------------------------------------------------------------------------------------
-
-  //pip-register/ADDITIONAL-SUPPORT
-
-  // -------------------------------------------------------------------------------------
 
   //pip-register/NATIONALITY
 
@@ -211,6 +281,8 @@ module.exports = function (router) {
           response.redirect('/pip-register/nationality/uk-2-of-3-years')
       } else if (nationality == 'irish') {
           response.redirect('/pip-register/nationality/uk-2-of-3-years')
+        } else if (nationality == 'eea') {
+            response.redirect('/pip-register/nationality/eea-nationality')
       } else if (nationality == 'other') {
           response.redirect('/pip-register/nationality/another-nationality')
       }
@@ -228,11 +300,16 @@ module.exports = function (router) {
       }
   })
 
+  //Select eea nationality
+  router.post('/pip-register/nationality/eea-nationality', function(request, response) {
+    response.redirect('/pip-register/nationality/living-in-uk')
+  })
+
   //Select other nationality
   router.post('/pip-register/nationality/another-nationality', function(request, response) {
       var anotherNationality = request.session.data['another-nationality']
       if (anotherNationality == 'Norway' || anotherNationality == 'Iceland'){
-          response.redirect('/pip-register/nationality/unhappy-path/nationality-types/living-in-uk-before')
+          response.redirect('/pip-register/nationality/living-in-uk')
       }
       if (anotherNationality == 'Australia' || anotherNationality == 'Brazil' || anotherNationality == 'Bangladesh' ){
           response.redirect('/pip-register/nationality/uk-2-of-3-years')
@@ -240,7 +317,7 @@ module.exports = function (router) {
   })
 
   //Were you living in the UK on or before 31/12/20?
-  router.post('/pip-register/nationality/unhappy-path/nationality-types/living-in-uk-before', function(request, response) {
+  router.post('/pip-register/nationality/living-in-uk', function(request, response) {
       response.redirect('/pip-register/nationality/uk-2-of-3-years')
   })
 
@@ -259,9 +336,9 @@ module.exports = function (router) {
     router.post('/pip-register/nationality/benefits-abroad', function(request, response) {
         var payingBenefits= request.session.data['benefits-abroad']
         if (payingBenefits == 'no'){
-          response.redirect('/pip-register/task-list-nat-done')
+          response.redirect('/pip-register/nationality/nationality-summary')
         } else if (payingBenefits == 'yes') {
-            response.redirect('/pip-register/task-list-nat-done')
+            response.redirect('/pip-register/nationality/nationality-summary')
         }
     })
 
@@ -393,6 +470,10 @@ module.exports = function (router) {
 
   //healthcare-prof-type ---> find address
   router.post('/pip-register/healthcare-professional/healthcare-prof-type', function(request, response) {
+      response.redirect('/pip-register/healthcare-professional/healthcare-prof-details')
+  })
+
+  router.post('/pip-register/healthcare-professional/healthcare-prof-details', function(request, response) {
       response.redirect('/pip-register/healthcare-professional/postcode')
   })
 
@@ -418,7 +499,7 @@ module.exports = function (router) {
       if (hcpTwoNeeded == 'yes'){
           response.redirect('/pip-register/healthcare-professional/additional-support-type')
       } else if (hcpTwoNeeded == 'no') {
-          response.redirect('/pip-register/healthcare-professional/consent-NI')
+          response.redirect('/pip-register/healthcare-professional/consent')
       }
   })
 
@@ -440,12 +521,12 @@ module.exports = function (router) {
 
   //select support address ---> hospital and accom start
   router.post('/pip-register/healthcare-professional/select-support-address', function(request, response) {
-      response.redirect('/pip-register/healthcare-professional/consent-NI')
+      response.redirect('/pip-register/healthcare-professional/consent')
   })
 
   //consent NI ----> hcp cya 2 person
-  router.post('/pip-register/healthcare-professional/consent-NI', function(request, response) {
-      response.redirect('/pip-register/healthcare-professional/hcp-cyas/hp-summary-two')
+  router.post('/pip-register/healthcare-professional/consent', function(request, response) {
+      response.redirect('/pip-register/healthcare-professional/hp-summary-two-remove')
   })
 
   //---------------------------------------------------------------------------------
@@ -492,61 +573,10 @@ module.exports = function (router) {
   }
   })
 
-  //----------------------------------------------------------------------------------
-  //pip-register/ADDITIONAL-SUPPORT
 
-  router.post('/pip-register/additional-support/start-info', function(request, response) {
-      response.redirect('/pip-register/additional-support/do-you-have-a-condition')
+  router.post('/pip-register/healthcare-professional/hp-summary-two-remove', function(request, response) {
+      response.redirect('/pip-register/hospital-dates/5-1-why-we-need-details')
   })
-
-  // do you have a condition
-  router.post('/pip-register/additional-support/do-you-have-a-condition', function(request, response) {
-      var anyCondition = request.session.data['any-condition']
-      if (anyCondition == 'yes'){
-          response.redirect('/pip-register/additional-support/complete-forms')
-      } else if (anyCondition == 'no') {
-          response.redirect('/pip-register/additional-support/advice-non-as-marker')
-      }
-  })
-
-  // can you complete forms
-  router.post('/pip-register/additional-support/complete-forms', function(request, response) {
-      var forms = request.session.data['forms']
-      var letters = request.session.data['letters']
-      var post = request.session.data['post']
-      if (forms == 'yes' && letters == 'yes' && post == 'yes') {
-          response.redirect('/pip-register/additional-support/advice-non-as-marker')
-        } else if (forms == 'no' || letters == 'no' || post == 'no') {
-          response.redirect('/pip-register/additional-support/helpers')
-        }
-  })
-
-  router.post('/pip-register/additional-support/read-letters', function(request, response) {
-      response.redirect('/pip-register/additional-support/post')
-  })
-
-  router.post('/pip-register/additional-support/post', function(request, response) {
-      response.redirect('/pip-register/additional-support/helpers')
-  })
-
-  // Do you have anyone to help you?
-  router.post('/pip-register/additional-support/helpers', function(request, response) {
-      var anyoneHelp = request.session.data['helpers']
-      if (anyoneHelp == 'yes'){
-          response.redirect('/pip-register/additional-support/who-helps')
-      } else if (anyoneHelp == 'no') {
-          response.redirect('/pip-register/additional-support/advice-as-marker')
-      }
-  })
-
-  router.post('/pip-register/additional-support/who-helps', function(request, response) {
-      response.redirect('/pip-register/additional-support/advice-as-marker')
-  })
-
-  router.post('/pip-register/additional-support/advice', function(request, response) {
-      response.redirect('/pip-register/additional-support/add-support-summary')
-  })
-  // -------------------------------------------------------------------------------------
 
   //pip-register/HOSPITAL-DATES
 
@@ -584,22 +614,22 @@ module.exports = function (router) {
 
   // postcode > select address
   router.post('/pip-register/hospital-dates/5-7-select-hospital-address', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // hospital manually > start bank
   router.post('/pip-register/hospital-dates/5-17-hospital-address-manually', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // hospice manually > start bank
   router.post('/pip-register/hospital-dates/5-18-hospice-address-manually', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // other manually > start bank
   router.post('/pip-register/hospital-dates/5-19-other-address-manually', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // Were you in hospice yesterday?
@@ -629,7 +659,7 @@ module.exports = function (router) {
 
   //  Can you confirm the first line of the address place you are staying in?
   router.post('/pip-register/hospital-dates/5-11-select-hospice-address', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // Are you living in a care home or nursing home, sheltered housing, a residential college or a hostel today?
@@ -638,7 +668,7 @@ module.exports = function (router) {
       if (otherToday == 'yes'){
           response.redirect('/pip-register/hospital-dates/5-12-other-yesterday')
       } else if (otherToday == 'no') {
-          response.redirect('/pip-register/task-list-accom-done')
+          response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
       }
   })
 
@@ -668,7 +698,7 @@ module.exports = function (router) {
       if (thirdPartyPay == 'health-trust'){
           response.redirect('/pip-register/hospital-dates/5-23-name-local')
       } else if (thirdPartyPay == 'no') {
-          response.redirect('/pip-register/task-list-accom-done')
+          response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
       } else if (thirdPartyPay == 'yes') {
           response.redirect('/pip-register/hospital-dates/5-23-name')
       }
@@ -676,7 +706,7 @@ module.exports = function (router) {
 
   // What is the name of the [organisation type]?
   router.post('/pip-register/hospital-dates/5-23-name', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // local auth ---> What is the name -----> agreement?
@@ -686,12 +716,16 @@ module.exports = function (router) {
 
   // agreement to task list
   router.post('/pip-register/hospital-dates/5-14-local-agreement', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
   })
 
   // Do you have an agreement with the local authority to repay any of the costs?
   router.post('/pip-register/hospital-dates/hospital-dates/5-14-local-agreement', function(request, response) {
-      response.redirect('/pip-register/task-list-accom-done')
+      response.redirect('/pip-register/hospital-dates/hospital-residence-summary')
+  })
+
+  router.post('/pip-register/hospital-dates/hospital-residence-summary', function(request, response) {
+      response.redirect('/pip-register/bank-details/6-1-start')
   })
 
   // -------------------------------------------------------------------------------------
@@ -720,16 +754,11 @@ module.exports = function (router) {
 
   // Bank details CYA to task list
   router.post('/pip-register/bank-details/bank-details-summary', function(request, response) {
-      response.redirect('/pip-register/task-list-bank-done')
+      response.redirect('/pip-register/motability/motability')
   })
 
   //Motability to Motability CYA
   router.post('/pip-register/motability/motability', function(request, response) {
-      response.redirect('/pip-register/task-list-motability-done')
-  })
-
-  //Motability to Motability CYA
-  router.post('/pip-register/task-list-motability-done', function(request, response) {
       response.redirect('/pip-register/what-happens-next/what-happens-next')
   })
 

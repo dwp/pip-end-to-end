@@ -17,6 +17,13 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form class="form" action="#" method="post">
+        <h1 class="govuk-heading-xl">
+          Can we write to you at this address?
+        </h1>
+
+        {{ govukInsetText({
+          text: "1 Washington Street, Worcester, WR1 1NL"
+        }) }}
 
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -25,9 +32,9 @@
             name: "should-we-write-to-you",
             fieldset: {
               legend: {
-                text: "Is this the address we should send letters to?",
+                text: "",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
+                classes: "govuk-fieldset__legend--xl"
               }
             },
             items: [
