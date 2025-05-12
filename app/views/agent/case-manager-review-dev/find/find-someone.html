@@ -1,0 +1,40 @@
+{% extends "agent/case-manager-review/includes/layout.html" %}
+
+{% block pageTitle %} Find a claimant {% endblock %}
+
+{% block main %}
+
+<form action="/agent/case-manager-review/find/record-found" method="post" class="form">
+
+<div class="govuk-width-container">
+
+<!-- <a href="javascript:history.go(-1)" class="govuk-back-link" style="margin-top: 40px;">Back</a> -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <h1 class="govuk-heading-xl">
+        Find an applicant or claimant
+   </h1>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="width-10">
+    National Insurance number
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+
+{{ govukButton({
+  text: "Continue",
+  classes: "govuk-!-margin-bottom-8"
+}) }}
+
+</main>
+  </div>
+</div>
+
+     </div>
+     </form>
+
+
+{% endblock %}
