@@ -1,0 +1,268 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Prepare a claim for an assessment provider
+{% endblock %}
+
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form action="login-router" method="post" class="form">
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+              <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jeff Bridges</h1>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 11 22 33 C</p>
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter govuk-!-margin-bottom-8">
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="overview" class="govuk-link" rel="noreferrer noopener">Overview</a></p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Event history</a>
+              <!-- {{govukTag({
+                text: "10",
+                classes: "govuk-tag--event-notifications"
+              })}} -->
+      </p>
+              <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="applications-decisions" class="govuk-link" rel="noreferrer noopener" target="">Applications<br>and decisions</a></p>
+
+      <!-- <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6"><a href="record-1-sent-comms" class="govuk-link" rel="noreferrer noopener" target="">Notifications sent</a></p> -->
+
+      <h3 class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-19 govuk-!-margin-bottom-2">Other actions</h3>
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">View supplied<br>information</a></p>
+
+      <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2"><a href="#" class="govuk-link" rel="noreferrer noopener" target="">Move to...</a></p>
+
+
+    </div>
+
+    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-8">
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Overview</h1>
+
+      <p class="govuk-body">Total sub cases in case: 4</p>
+      <p class="govuk-body">Sub-cases in Award: 0<br>
+	    Sub-cases in Application: 1 <br>
+	    Historic closed subcases: 3</p>
+
+      <h2 class="govuk-heading-l">Submission history</h2>
+      <p class="govuk-body">The latest live award relates to subcase submission ID: N/A</p>
+
+      <table class="govuk-table" style="font-size: 16px;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Sub-case ID</th>
+            <th scope="col" class="govuk-table__header">Submission ID</th>
+            <th scope="col" class="govuk-table__header">Date of submission </th>
+            <th scope="col" class="govuk-table__header">Submission type</th>
+            <th scope="col" class="govuk-table__header">Decision stage</th>
+            <th scope="col" class="govuk-table__header">Decision date</th>
+            <th scope="col" class="govuk-table__header">Originating decision</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-d">D</a></td>
+            <td class="govuk-table__cell"><a href="#">020</a></td>
+            <td class="govuk-table__cell">1/10/2025</td>
+            <td class="govuk-table__cell">New claim</td>
+            <td class="govuk-table__cell">Referred for assessment</td>
+            <td class="govuk-table__cell">Pending</td>
+            <td class="govuk-table__cell">N/A</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">019</a></td>
+            <td class="govuk-table__cell">7/3/2025</td>
+            <td class="govuk-table__cell">Change of circumstance</td>
+            <td class="govuk-table__cell">Nil/Nil</td>
+            <td class="govuk-table__cell">17/5/2024</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">018</a></td>
+            <td class="govuk-table__cell">5/5/2024</td>
+            <td class="govuk-table__cell">Change of circumstance</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">31/5/2024</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">017</a></td>
+            <td class="govuk-table__cell">17/10/2023</td>
+            <td class="govuk-table__cell">MR (Entitlement)</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">17/12/2023</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">016</a></td>
+            <td class="govuk-table__cell">29/7/2023</td>
+            <td class="govuk-table__cell">Award Review</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">13/9/2023</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">015</a></td>
+            <td class="govuk-table__cell">28/7/2020</td>
+            <td class="govuk-table__cell">Award Review</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">11/8/2020</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">014</a></td>
+            <td class="govuk-table__cell">30/7/2019</td>
+            <td class="govuk-table__cell">Change of circumstance</td>
+            <td class="govuk-table__cell">Standard/Standard</td>
+            <td class="govuk-table__cell">12/9/2018</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">013</a></td>
+            <td class="govuk-table__cell">21/5/2018</td>
+            <td class="govuk-table__cell">MR (Entitlement)</td>
+            <td class="govuk-table__cell">Standard/Standard</td>
+            <td class="govuk-table__cell">20/6/2018</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-c">C</a></td>
+            <td class="govuk-table__cell"><a href="#">012</a></td>
+            <td class="govuk-table__cell">14/2/2018</td>
+            <td class="govuk-table__cell">New claim</td>
+            <td class="govuk-table__cell">Standard/Nil</td>
+            <td class="govuk-table__cell">7/5/2018</td>
+            <td class="govuk-table__cell">C 012</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-b">B</a></td>
+            <td class="govuk-table__cell"><a href="#">011</a></td>
+            <td class="govuk-table__cell">7/1/2017</td>
+            <td class="govuk-table__cell">Appeal</td>
+            <td class="govuk-table__cell">Standard/Nil</td>
+            <td class="govuk-table__cell">9/9/2018</td>
+            <td class="govuk-table__cell">N/A</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-b">B</a></td>
+            <td class="govuk-table__cell"><a href="#">010</a></td>
+            <td class="govuk-table__cell">11/8/2017</td>
+            <td class="govuk-table__cell">MR (Entitlement)</td>
+            <td class="govuk-table__cell">Standard/Nil</td>
+            <td class="govuk-table__cell">9/10/2017</td>
+            <td class="govuk-table__cell">B 009</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-b">B</a></td>
+            <td class="govuk-table__cell"><a href="#">009</a></td>
+            <td class="govuk-table__cell">29/5/2017</td>
+            <td class="govuk-table__cell">New claim</td>
+            <td class="govuk-table__cell">Nil/Nil</td>
+            <td class="govuk-table__cell">30/7/2017</td>
+            <td class="govuk-table__cell">B 009</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">008</a></td>
+            <td class="govuk-table__cell">25/10/2016</td>
+            <td class="govuk-table__cell">MR (Entitlement)</td>
+            <td class="govuk-table__cell">Nil/Nil</td>
+            <td class="govuk-table__cell">21/11/2016</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">007</a></td>
+            <td class="govuk-table__cell">12/9/2016</td>
+            <td class="govuk-table__cell">Award Review</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">19/10/2016</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">006</a></td>
+            <td class="govuk-table__cell">11/3/2015</td>
+            <td class="govuk-table__cell">Change of circumstance</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">17/4/2015</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="applications-decisions-a">005</a></td>
+            <td class="govuk-table__cell">10/9/2014</td>
+            <td class="govuk-table__cell">New claim</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">5/12/2014</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">004</a></td>
+            <td class="govuk-table__cell">1/10/2013</td>
+            <td class="govuk-table__cell">Appeal</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">1/7/2013</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">003</a></td>
+            <td class="govuk-table__cell">30/7/2013</td>
+            <td class="govuk-table__cell">MR (Entitlement)</td>
+            <td class="govuk-table__cell">Enhanced/Standard</td>
+            <td class="govuk-table__cell">28/9/2013</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">002</a></td>
+            <td class="govuk-table__cell">8/8/2013</td>
+            <td class="govuk-table__cell">MR (Eligibilty)</td>
+            <td class="govuk-table__cell">Standard/Standard</td>
+            <td class="govuk-table__cell">14/8/2013</td>
+            <td class="govuk-table__cell">A001</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="applications-decisions-a">A</a></td>
+            <td class="govuk-table__cell"><a href="#">001</a></td>
+            <td class="govuk-table__cell">1/8/2013</td>
+            <td class="govuk-table__cell">New Claim</td>
+            <td class="govuk-table__cell">Standard/Nil</td>
+            <td class="govuk-table__cell">13/9/2013</td>
+            <td class="govuk-table__cell">N/A</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+
+    </div>
+
+
+  </form>
+
+{% endblock %}

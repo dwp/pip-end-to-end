@@ -1,0 +1,60 @@
+{% extends "agent/process-app/includes/layout.html" %}
+
+{% block pageTitle %}
+  Prepare a claim for an assessment provider
+{% endblock %}
+
+{% block content %}
+
+<form action="#" method="post" class="form">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Select an option
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scenario1" name="scenario" type="radio" value="scenario1">
+              <label class="govuk-label govuk-radios__label" for="scenario1">
+                Scenario 1: New claim followed by submission of an MR
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scenario2" name="scenario" type="radio" value="scenario2">
+              <label class="govuk-label govuk-radios__label" for="scenario2">
+                Scenario 2:  New claim followed by submission of another new claim, followed by an Award review
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scenario3" name="scenario" type="radio" value="scenario3">
+              <label class="govuk-label govuk-radios__label" for="scenario3">
+                Scenario 3: Multiple submissions over an extended period including change of circs
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="scenario4" name="scenario" type="radio" value="scenario4">
+              <label class="govuk-label govuk-radios__label" for="scenario4">
+                Scenario 4: Nested journey concept
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-bottom-8"
+      }) }}
+
+        </div>
+      </div>
+
+  </form>
+
+{% endblock %}

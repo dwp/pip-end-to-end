@@ -329,7 +329,19 @@ router.post(`/agent/case-manager-review/event-history/add-an-event`, (req, res) 
 // })
 
 
+router.post(`/agent/person-record/ur-select`, (req, res) => {
+  const scenario = req.session.data['scenario']
 
+  if (scenario == 'scenario1') {
+    res.redirect(`/agent/person-record/v1/overview`)
+  } else if (scenario == 'scenario2') {
+    res.redirect(`/agent/person-record/v2/overview`)
+  } else if (scenario == 'scenario3') {
+    res.redirect(`/agent/person-record/v3/overview`)
+  } else {
+   res.redirect(`/agent/person-record/v4/overview`)
+ }
+})
 
 
 }
