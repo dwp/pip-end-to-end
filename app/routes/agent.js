@@ -340,8 +340,12 @@ router.post(`/agent/person-record/ur-select`, (req, res) => {
     res.redirect(`/agent/person-record/v3/overview`)
   } else if (scenario == 'scenario4') {
     res.redirect(`/agent/person-record/v4/overview`)
+  } else if (scenario == 'scenario5') {
+    res.redirect(`/agent/person-record/v5/overview`)
+  } else if (scenario == 'scenario6') {
+    res.redirect(`/agent/person-record/v6/overview`)
   } else {
-   res.redirect(`/agent/person-record/v5/overview`)
+   res.redirect(`/agent/person-record/v7/overview`)
  }
 })
 
