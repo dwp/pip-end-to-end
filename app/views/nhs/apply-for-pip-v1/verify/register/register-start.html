@@ -1,0 +1,29 @@
+{% set pageTitle = "Register" %}
+
+{% extends "layouts/gov-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Register</h1>
+
+      <form action="#" method="post" novalidate>
+
+        <p>In this section you would create a One Login account so you can sign in securely each time you visit. If you already have an account you could just sign in.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

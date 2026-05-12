@@ -1,0 +1,68 @@
+{% block pageTitle %}
+Consent
+{% endblock %}
+
+{% extends "layouts/gov-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form id="form" method="post" action="#">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="consent-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Sharing information about your health conditions
+                        </h1>
+                    </legend>
+                    <br>
+                    <p>The Department for Work and Pensions (DWP), or approved healthcare professionals who work for DWP, may need more information about:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>your health conditions and how they affect you</li>
+                      <li>medication you have been prescribed</li>
+                    </ul>
+
+                    <p>We may get this information from your:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>health and care professionals that you tell us about</li>
+                      <li>your NHS record</li>
+                    </ul>
+
+
+                    <h2 class="govuk-heading-m">How we uses this information</h2>
+                    <p>We will only ask or look for information relevant to your claim. We use this information to:
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>process your claim</li>
+                        <li>make a decision on your claim, or any mandatory reconsideration or appeal you make</li>
+                      </ul>
+                    </p>
+                    <p>The law allows us to obtain, keep and use this information.
+
+                    <p>We ask for your consent on behalf of the NHS, your doctor, or other relevant professionals you tell them about. This reassures the NHS, your doctor and the others that they can legally share this information.</p>
+                    <p>We can lawfully ask your doctor, hospital, or other relevant professionals for information about your health condition and how it affects you. This is because we are asking for information to help us carry out our official security functions.</p>
+
+                    <p>You do not have to give consent. If you do not, we will make a decision based on the information we have and any additional information you provide.</p>
+
+                    <h2 class="govuk-heading-m">If you change your mind</h2>
+                      <p>You can change your mind and give or withdraw your consent at any time.</p>
+                      <p>Call the PIP enquiry line and say you want to give or withdraw your consent to DWP accessing your NHS record.
+
+                      <div class="govuk-inset-text">
+                        Enquiry line number: 0800 121 4433
+                      </div>
+            <input type="submit" class="govuk-button" value="I understand" id="submit">
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-row -->
+
+
+
+{% endblock %}

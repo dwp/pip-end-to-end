@@ -1,0 +1,92 @@
+{% block pageTitle %}
+Consent
+{% endblock %}
+
+{% extends "layouts/gov-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "apply-for-pip/includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+<form id="form" method="post" action="#">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form id="form" method="post" action="#"></form>
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="consent-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Sharing information from your NHS record
+                        </h1>
+                    </legend>
+                    <br>
+                    <p>The Department for Work and Pensions (DWP), or approved healthcare professionals that work for them, may need more information about:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>your health conditions and how they affect you</li>
+                      <li>medication you have been prescribed</li>
+                    </ul>
+
+                    <p>DWP may access your NHS record to view this information.
+
+                    <h2 class="govuk-heading-m">How DWP uses this information</h2>
+                    <p>DWP will only use information relevant to your claim. DWP use this information to:
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>process your claim</li>
+                        <li>make a decision on your claim, or any mandatory reconsideration or appeal you make</li>
+                      </ul>
+                    </p>
+                    <p>The law allows them to get, keep and use this information.
+
+                    <p>You do not have to give your consent. If you do not, DWP will make a decision based on the information we have and any additional information you provide.</p>
+
+                    <h2 class="govuk-heading-m">Do you give consent for DWP, or approved healthcare professionals, to access your NHS record to view relevant information about your health conditions and medication?</h2>
+
+                    <div class="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="nhs-consent-1" name="nhs-consent" type="radio"
+                                value="Yes, I agree" aria-describedby="nhs-consent-1-item-hint">
+                            <label class="govuk-label govuk-radios__label" for="nhs-consent-1">
+                                Yes, I give consent
+                            </label>
+                            <!-- <span id="consent-1-item-hint" class="govuk-hint govuk-radios__hint">
+                                My health and care professionals can give DWP relevant information to support my claim.
+                            </span> -->
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="nhs-consent-2" name="nhs-consent" type="radio"
+                                value="No, I do not agree" aria-describedby="nhs-consent-2-item-hint">
+                            <label class="govuk-label govuk-radios__label" for="nhs-consent-2">
+                                No, I do not give consent
+                            </label>
+                            <!-- <span id="consent-1-item-hint" class="govuk-hint govuk-radios__hint">
+                                DWP will make a decision on my claim using the information they have already.
+                            </span> -->
+                        </div>
+                    </div>
+                </fieldset>
+            </div> <!-- govuk form group -->
+            <h2 class="govuk-heading-m">If you change your mind</h2>
+              <p>You can change your mind and give or withdraw your consent at any time.</p>
+              <p>Call the PIP enquiry line and say you want to give or withdraw your consent to DWP accessing your NHS record.
+              <p>If you do withdraw your consent after previously giving it, DWP will no longer be allowed to view your NHS record.
+
+              <div class="govuk-inset-text">
+                Enquiry line number: 0800 121 4433
+              </div>
+
+            <input type="submit" class="govuk-button" value="Save and continue" id="submit">
+
+        </form>
+
+        </div> <!-- govuk-grid-column-two-thirds -->
+    </div> <!-- govuk-grid-row -->
+
+
+
+{% endblock %}
